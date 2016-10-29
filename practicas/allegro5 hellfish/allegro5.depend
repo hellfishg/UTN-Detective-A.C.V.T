@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1476370062 source:/home/hellfishg/Dropbox/Compartir/UTN/labProgramacion2/TP2/practicas/allegro5/main.cpp
+	<iostream>
+	<allegro5/allegro5.h>
+

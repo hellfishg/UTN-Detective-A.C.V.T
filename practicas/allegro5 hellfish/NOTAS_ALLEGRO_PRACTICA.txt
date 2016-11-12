@@ -1,0 +1,17 @@
+Tutoriales utiles:
+
+
+Tutorial 3 native boxes:Crea ventanas de error usando el compose nativo.
+
+Tutorial 8: Timer events:
+
+
+
+Cosas que necesito saber:
+
++Donde joraca guarda las clases c++.
++Escucha de eventos mouse.
++Creacion de imagenes, manipulacion, redimension.
++Estructura del programa.
++Musica
++sonidos

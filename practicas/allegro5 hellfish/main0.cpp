@@ -3,37 +3,6 @@
 #include <allegro5/allegro_native_dialog.h>//Carga ventanas nativas del sistama//es un addom.
 #include <allegro5/allegro_image.h>
 
-class Display {
-//Encargado del manejo de las visualizacion y propiedades de la ventana visible.
-private:
-
-
-public:
-    Display (){
-
-   }
-   virtual ~Display ();
-
-};
-
-
-class Menu {
-//Escena del menu principal:
-private:
-
-
-public:
-
-   Menu(ALLEGRO_DISPLAY * display){
-
-
-   }
-   ~Menu (){
-
-
-   }
-
-};
 
 //Variables globales para pasar la resolucion:
 #define ScreenWidth 800

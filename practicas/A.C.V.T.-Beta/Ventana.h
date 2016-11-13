@@ -12,11 +12,15 @@ public:
 
    void cargarBoton(int NrBoton,int xi,int xd,int ys,int yi,ALLEGRO_BITMAP *btn);
 
-   ALLEGRO_BITMAP * getFondo(){return fondo;};
+   ALLEGRO_BITMAP * getFondo(){return fondo;}
+   int getCantBotones(){return cantBotones;}
+   Boton * getBoton(int indice){return &botones[indice];}
+
    void cargarDatosVentana(int,ALLEGRO_BITMAP *);
    int obtenerBotonClick(DatosMouse *dm);
    bool clickEnRectangulo(int xM,int yM,int x1,int y1,int x2, int y2);
-
+   virtual void dibujar(){};
+   virtual void destruir(){};
 
 };
 
@@ -51,8 +55,10 @@ int Ventana::obtenerBotonClick(DatosMouse *dm){
    for(int i=0;i<cantBotones;i++){
 
       if(retorno==0 && this->clickEnRectangulo(
-         dm->getX(),dm->getX(), botones[i].getXIzq(), botones[i].getYSup(),
-      botones[i].getXDer(),botones[i].getYInf()){
+         dm->getX(),dm->getY(),
+         botones[i].getXIzq(), botones[i].getYSup(),
+         botones[i].getXDer(),botones[i].getYInf()))
+      {
 
          retorno=i+1;
       }
@@ -60,8 +66,6 @@ int Ventana::obtenerBotonClick(DatosMouse *dm){
 
    return retorno;
 }
-
-
 
 
 #endif //VENTANA_H

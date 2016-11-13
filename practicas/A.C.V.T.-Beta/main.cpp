@@ -11,7 +11,7 @@ int main(void) {
 
 /////////////////////////////////////////////////////////////////////////////////
    ALLEGRO_DISPLAY * display;
-   display = al_create_display (800,600);//Instancia Display.
+   display = al_create_display (800,600);//FinDeJuego Display.
 
 
    al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);//resible nativo en la ventana.
@@ -30,40 +30,26 @@ int main(void) {
 ////////////////////////////////////////////////////////////////////////////////
 
    al_install_mouse();//configura el mouse;
-   int x;//Mouse
-   int y;//Mouse
-
-
    al_init_image_addon();//configura la carga de imagenes por archivo;
 
-   ALLEGRO_BITMAP *player =al_load_bitmap("guybrush.png");//instancia una imagen;
-
-
 ///////////////////////////////////////////////////////////////////////////////
-   al_init_font_addon();
-   al_init_ttf_addon();
-   ALLEGRO_FONT *font = al_load_font("orbitron-black.ttf",12,0);//la fuente en la carpeta
-
-
-/////////////////////////////////////////////////////////////////////////////
    ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();//Cola de eventos.
 
    //Definicion de tipos de escuchas de eventos:
    al_register_event_source(event_queue, al_get_display_event_source(display));
    al_register_event_source(event_queue, al_get_mouse_event_source());
 
-
 ///////////////////////////////////////////////////////////////////////////////
 
-   ScreenManager screenManager;//instanciar mostrar pantalla principal primera vez.
-
+   ScreenManager screenManager;//FinDeJuegor mostrar pantalla principal primera vez.
 
    ALLEGRO_EVENT events;
    DatosMouse *punteroMouse=new DatosMouse();
-   int instancia=1;//Variable que maneja el hilo de ejecucion.
+   bool FinDeJuego=false;//Variable que maneja el hilo de ejecucion.
 
+///////////////////////////////////////////////////////////////////////////////
 
-   while(instancia!=0){//hilo de ejecucion:
+   while(!FinDeJuego){//hilo de ejecucion:
 
       punteroMouse->CargarDatos(0,0,0);//Limpia el objeto mouse;
 
@@ -72,18 +58,20 @@ int main(void) {
       }
 
       if(punteroMouse->getBoton() == 1) {
-         screenManager.cargarEscena(punteroMouse);
+         FinDeJuego=screenManager.cargarEscena(punteroMouse);
       }
       // if(punteroMouse->getBoton() == 2){
       //    std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;
-      // }//Para ver donde esta el muse, funcion de debug.
-      
+      // }//Para ver donde esta el mouse, funcion de debug.
+
       al_flip_display();
 
-      al_wait_for_event (event_queue, &events);//Escucha los eventos:
+      if (!FinDeJuego) {
+            al_wait_for_event (event_queue, &events);//Escucha los eventos:
+      }
 
       if(events.type == ALLEGRO_EVENT_DISPLAY_CLOSE){//Definicion del evento.
-         instancia=0;
+         FinDeJuego=true;
       }
 
    }
@@ -95,8 +83,8 @@ int main(void) {
   //regresa la memoria usada:
   al_destroy_display(display);
   al_destroy_event_queue(event_queue);
-  al_destroy_bitmap(player);
-  al_destroy_font(font);
+  // al_destroy_bitmap(player);
+  // al_destroy_font(font);
 
     return 0;
 }

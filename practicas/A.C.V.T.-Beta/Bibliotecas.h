@@ -17,6 +17,7 @@
 #include "Ventana.h"
 #include "Menu.h"
 #include "MenuPrincipal.h"
+#include "MenuRanking.h"
 
 
 

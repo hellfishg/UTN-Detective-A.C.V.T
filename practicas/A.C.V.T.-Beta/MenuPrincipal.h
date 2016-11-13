@@ -3,10 +3,9 @@
 
 #include "Bibliotecas.h"
 
-class MenuPrincipal:public Ventana {
+class MenuPrincipal:public Ventana{
 
 private:
-
 
    // int seleccionDelmouse (int ,int );
    bool clickEnRectangulo(int ,int,int,int,int, int);
@@ -15,6 +14,8 @@ public:
 
    MenuPrincipal();
 
+   void dibujar();
+   void destruir();
 
    void cargarPantalla(int,int,int );
 
@@ -27,93 +28,35 @@ MenuPrincipal::MenuPrincipal(){
 
    this->cargarDatosVentana(2,al_load_bitmap("fondoMenu.png"));
 
-   this->cargarBoton(1,546,706,255,296,al_load_bitmap("boton_1.png"));
+   this->cargarBoton(1,546,706,255,296,al_load_bitmap("Boton_1.png"));
 
-   this->cargarBoton(2,546,706,300,340,al_load_bitmap("boton_1.png"));
+   this->cargarBoton(2,546,706,300,340,al_load_bitmap("Boton_1.png"));
 
 }
-
 ///////////////////////////////////////////////////////////////////////
-bool MenuPrincipal::clickEnRectangulo(int xM,int yM,int x1,int y1,int x2, int y2){
+void MenuPrincipal::dibujar(){
 
-   bool retorno=false;
+   al_draw_bitmap(this->getFondo(),0,0,0);
 
-   if (xM>x1 && xM<x2 && yM>y1 && yM<y2){retorno=true;}
+   Boton *botTemp;
 
-   return retorno;
-}
-///////////////////////////////////////////////////////////////////////
-/*int MenuPrincipal::seleccionDelmouse (int x,int y){
+   for(int i=0;i<this->getCantBotones();i++){
 
-   int retorno=0;
-
-   switch (pantallaActual) {
+      botTemp=this->getBoton(i);
+      al_draw_bitmap(botTemp->getImagen(),botTemp->getXIzq(),botTemp->getYSup(),0);
 
 
-      case 1:
-         if (retorno == 0 && clickEnRectangulo(x,y,10,10,250,250)){
-            retorno=2;
-         }
-      break;
-
-      default:
-         if (retorno == 0 && clickEnRectangulo(x,y,546,255,706,296)) {retorno=1;}
-
-         if (retorno == 0 && clickEnRectangulo(x,y,563,553,690,590)) {retorno=5;}
-         break;
    }
+   // al_draw_bitmap(botones,400,200,0);
+}
+///////////////////////////////////////////////////////////////////////
+void MenuPrincipal::destruir(){
 
+   std::cout << "destruccion de todo el mundo todos" << std::endl;
 
-   return retorno;
 }
 ///////////////////////////////////////////////////////////////////////
 
-void MenuPrincipal::cargarPantalla(int x,int y,int bn){
-
-
-
-
-
-
-
-   pantallaActual=seleccionDelmouse(x,y);
-
-   switch (pantallaActual) {
-      case 0:
-      al_draw_bitmap(fondo,0,0,0);
-      al_draw_bitmap(botones,400,200,0);
-      break;
-
-      case 1:
-      al_clear_to_color(al_map_rgb(0, 0, 0));
-
-      al_draw_bitmap(fondo,0,0,0);
-      al_draw_bitmap(botones,400,200,0);
-
-         al_draw_bitmap(guybrush,10,10,0);
-         std::cout << "ups" << std::endl;
-         break;
-      case 2:
-      al_clear_to_color(al_map_rgb(0, 0, 0));
-
-      al_draw_bitmap(fondo,0,0,0);
-      al_draw_bitmap(botones,400,200,0);
-            al_draw_bitmap(botones,10,10,0);
-            break;
-
-      case 5:
-
-         std::cout << "Se fue por aca!" << std::endl;
-
-         break;
-   }
-
-
-
-}
-
-
-*/
 
 #endif //MenuPrincipal_H
 

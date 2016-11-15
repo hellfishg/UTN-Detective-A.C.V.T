@@ -76,8 +76,6 @@ void MenuPrincipal::dibujar(DatosMouse * dm){
       break;
    }
 
-
-
 }
 ///////////////////////////////////////////////////////////////////////
 void MenuPrincipal::destruir(){

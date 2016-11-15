@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1479166981 source:c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\main.cpp
-	"Bibliotecas.h"
-	"ScreenManager.h"
+1479245210 source:c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\main.cpp
+	"Bibliotecas.hh"
+	"ScreenManager.hh"
 
 1479241407 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\bibliotecas.h
 	<iostream>
@@ -276,4 +276,42 @@
 
 1479242262 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\screenmanager.h
 	"Bibliotecas.h"
+
+1479243763 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\bibliotecas.hh
+	<iostream>
+	<allegro5/allegro5.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	"DatosMouse.hh"
+	"Boton.hh"
+	"Ventana.hh"
+	"MenuPrincipal.hh"
+	"MenuCargar.hh"
+	"MenuRanking.hh"
+	"MenuOpciones.h"
+
+1479217910 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\datosmouse.hh
+
+1479233831 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\boton.hh
+	"Bibliotecas.hh"
+
+1479243755 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\ventana.hh
+	"Bibliotecas.hh"
+
+1479243755 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\menuprincipal.hh
+	"Bibliotecas.hh"
+
+1479233831 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\menucargar.hh
+	"Bibliotecas.hh"
+
+1479243755 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\menuranking.hh
+	"Bibliotecas.hh"
+
+1479245567 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\screenmanager.hh
+	"Bibliotecas.hh"
+
+1479248838 c:\users\damian\documents\utn\segundo cuatrimestre\programacion - laboratorio ii\juego laboratorio ii\utn-detective-a.c.v.t\juego beta 2.0\menuopciones.h
+	"Bibliotecas.hh"
 

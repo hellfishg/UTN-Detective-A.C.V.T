@@ -71,7 +71,6 @@ int Ventana::comprobarClickBoton(DatosMouse *dm){
          botones[i].getXIzq(), botones[i].getYSup(),
          botones[i].getXDer(),botones[i].getYInf()))
       {
-
          retorno=i+1;
       }
    }

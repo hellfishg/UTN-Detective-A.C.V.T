@@ -19,6 +19,8 @@
 #include "MenuCargar.hh"
 #include "MenuRanking.hh"
 #include "NuevaPartida.hh"
+#include "MenuOpciones.h"
+
 
 
 

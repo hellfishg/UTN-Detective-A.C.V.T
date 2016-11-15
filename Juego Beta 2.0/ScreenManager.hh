@@ -12,7 +12,7 @@ public:
 
    ScreenManager(DatosMouse *dm);
 
-   bool cargarEscena(DatosMouse *);
+   int cargarEscena(DatosMouse *);
 
 };
 
@@ -32,44 +32,53 @@ ScreenManager::ScreenManager(DatosMouse * dm){
 ///////////////////////////////////////////////////////////////////////////
 
 ///////////////////////////////////////////////////////////////////////////
-bool ScreenManager::cargarEscena(DatosMouse *dm){
+int ScreenManager::cargarEscena(DatosMouse *dm){
 
-   bool retorno=false;
+   ventanaActual->dibujar(dm);
 
-   int seleccion = ventanaActual->obtenerBotonClick(dm);//si es zero no clickeo en un boton valido.
+   int selec= ventanaActual->getIDsalto();//-1 no cambio.
 
 
-   if(seleccion!=0){
+   if (selec!=0 && selec!=-1){
 
       ventanaActual->destruir();
 
-      switch(seleccion){
-         case 1://Siempre el boton 1 va ser el definido para Salir de cada ventana.
-            if(esMenuPrincipal){
-               //Salir del MenuPrincipal y del juego.
-               retorno=true;
+      switch (selec) {
 
-            }else{
-               ventanaActual=new MenuPrincipal();
-               esMenuPrincipal=true;
-            }
+         case 1:
+
+            ventanaActual=new MenuPrincipal();
+
             break;
 
-         case 2:
+         case 11:
 
-            ventanaActual = new MenuRanking();
-            esMenuPrincipal=false;
+            //ventanaActual=new NuevaPartida();
+
             break;
 
-         case 3:
-            // ventanaActual = new MenuCargar();
-            //esMenuPrincipal=false;
+         case 12:
+
+            //ventanaActual=new MenuCargar();
+
             break;
+
+         case 13:
+
+            //ventanaActual=new MenuOpciones();
+
+            break;
+
+         case 14:
+
+            ventanaActual=new MenuRanking();
+
+            break;
+
       }
 
+      return selec;
 
-      ventanaActual->dibujar(dm);
-      return retorno;
    }
 
 }

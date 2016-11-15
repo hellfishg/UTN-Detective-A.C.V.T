@@ -14,7 +14,7 @@ int main(void) {
    display = al_create_display (800,600);//FinDeJuego Display.
 
 
-   al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);//resizable nativo en la ventana.
+   al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);//resizable nativo en la ventana.//
    // al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);//Fullscreen en tu resolucion.
    al_set_window_position(display,200,100);//setea la posicion inicial de la ventana;
    al_set_window_title(display,"El JUEGO");//Nombre de la marquesina en la ventana;
@@ -48,14 +48,18 @@ int main(void) {
    ScreenManager screenManager(punteroMouse);//FinDeJuegor mostrar pantalla principal primera vez.
 
    ALLEGRO_EVENT events;
-   bool FinDeJuego=false;//Variable que maneja el hilo de ejecucion.
+   int FinDeJuego=0;//Variable que maneja el hilo de ejecucion.
 
 ///////////////////////////////////////////////////////////////////////////////
 
-   while(!FinDeJuego){//hilo de ejecucion:
+   while(FinDeJuego!=-1){//hilo de ejecucion:
+      al_wait_for_event (event_queue, &events);//Escucha los eventos:
 
       punteroMouse->CargarDatos(0,0,0);//Limpia el objeto mouse;
 
+      if(events.type == ALLEGRO_EVENT_DISPLAY_CLOSE){//Definicion del evento.
+         FinDeJuego=-1;
+      }
       if(events.type == ALLEGRO_EVENT_MOUSE_BUTTON_DOWN){
          punteroMouse->CargarDatos(events.mouse.x,events.mouse.y,events.mouse.button);
       }
@@ -67,16 +71,9 @@ int main(void) {
          std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;
       }//Para ver donde esta el mouse, funcion de debug.
 
+
+
       al_flip_display();
-
-      if (!FinDeJuego) {
-            al_wait_for_event (event_queue, &events);//Escucha los eventos:
-      }
-
-      if(events.type == ALLEGRO_EVENT_DISPLAY_CLOSE){//Definicion del evento.
-         FinDeJuego=true;
-      }
-
    }
 ///////////////////////////////////////////////////////////////////////////////
 
@@ -86,8 +83,8 @@ int main(void) {
   //regresa la memoria usada:
   al_destroy_display(display);
   al_destroy_event_queue(event_queue);
-  // al_destroy_bitmap(player);
-  // al_destroy_font(font);
+  // al_destroy_bitmap(   );
+  // al_destroy_font(   );
 
     return 0;
 }

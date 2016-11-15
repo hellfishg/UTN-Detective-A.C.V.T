@@ -5,11 +5,11 @@
 #include <iostream>
 
 //Externas:
-#include <allegro5/allegro5.hh>
-#include <allegro5/allegro_native_dialog.hh>
-#include <allegro5/allegro_image.hh>
-#include <allegro5/allegro_font.hh>//Agrega fonts
-#include <allegro5/allegro_ttf.hh>//Agrega ttf.
+#include <allegro5/allegro5.h>
+#include <allegro5/allegro_native_dialog.h>
+#include <allegro5/allegro_image.h>
+#include <allegro5/allegro_font.h>//Agrega fonts
+#include <allegro5/allegro_ttf.h>//Agrega ttf.
 
 //Propias:
 #include "DatosMouse.hh"

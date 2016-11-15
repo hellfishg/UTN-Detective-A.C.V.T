@@ -33,14 +33,14 @@ MenuRanking::MenuRanking(){
 
 
 
-<<<<<<< HEAD
+//<<<<<<< HEAD
 
 
 /*   al_init_font_addon();
    al_init_ttf_addon();
    ALLEGRO_FONT *font = al_load_font("orbitron-black.ttf",12,0);//la fuente en la carpeta*/
-=======
->>>>>>> 4f760aebb24c63d8dabfb647ba399b68d097cd03
+//=======
+//>>>>>>> 4f760aebb24c63d8dabfb647ba399b68d097cd03
 
 
 /////////////////////////////////////////////////////////////////////////////

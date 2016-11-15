@@ -15,9 +15,9 @@ int main(void) {
 
 
    al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);//resizable nativo en la ventana.//
-   // al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);//Fullscreen en tu resolucion.
-   al_set_window_position(display,200,100);//setea la posicion inicial de la ventana;
-   al_set_window_title(display,"El JUEGO");//Nombre de la marquesina en la ventana;
+   //al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);//Fullscreen en tu resolucion.
+   al_set_window_position(display,550,50);//setea la posicion inicial de la ventana;
+   al_set_window_title(display,"Detective A.C.V.T");//Nombre de la marquesina en la ventana;
 
    if (!display) {// el display y muestra error si no cargo.
       al_show_native_message_box (display, "Titulo","Settings","Ventana",NULL,ALLEGRO_MESSAGEBOX_ERROR);
@@ -64,6 +64,10 @@ int main(void) {
          punteroMouse->CargarDatos(events.mouse.x,events.mouse.y,events.mouse.button);
       }
 
+      if(events.type == ALLEGRO_EVENT_MOUSE_WARPED){
+         //no se, era para arreglar lo del doble click.
+      }
+
       if(punteroMouse->getBoton() == 1) {
          FinDeJuego=screenManager.cargarEscena(punteroMouse);
       }
@@ -71,7 +75,7 @@ int main(void) {
          std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;
       }//Para ver donde esta el mouse, funcion de debug.
 
-
+      std::cout << "x y" << std::endl;
 
       al_flip_display();
    }

@@ -16,6 +16,7 @@
 #include "Boton.hh"
 #include "Ventana.hh"
 #include "MenuPrincipal.hh"
+#include "MenuCargar.hh"
 #include "MenuRanking.hh"
 
 

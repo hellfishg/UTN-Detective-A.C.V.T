@@ -59,7 +59,7 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
          case 12:
 
-            //ventanaActual=new MenuCargar();
+            ventanaActual=new MenuCargar();
 
             break;
 

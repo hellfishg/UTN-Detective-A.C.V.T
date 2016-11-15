@@ -25,12 +25,18 @@ MenuPrincipal::MenuPrincipal(){
 
    this->setID(1);//Colocar la ID de la ventana.
 
-   this->cargarDatosVentana(2,al_load_bitmap("fondoMenu.png"));//El primer dato int pide la cantidad de botones totales.
+   this->cargarDatosVentana(5,al_load_bitmap("1FondoMenu.jpg"));//El primer dato int pide la cantidad de botones totales.
 
    //Cargar botones uno a uno:
-   this->cargarBoton(1,546,706,255,296,al_load_bitmap("Boton_3.png"));
+   this->cargarBoton(1,570,247,800,280,al_load_bitmap("btn1_NuevaPartida.jpg"));
 
-   this->cargarBoton(2,546,706,300,340,al_load_bitmap("Boton_2.png"));
+   this->cargarBoton(2,570,282,800,315,al_load_bitmap("btn1_CargarPartida.jpg"));
+
+   this->cargarBoton(3,570,317,800,350,al_load_bitmap("btn1_Opciones.jpg"));
+
+   this->cargarBoton(4,570,352,800,383,al_load_bitmap("btn1_Ranking.jpg"));
+
+   this->cargarBoton(5,570,389,800,419,al_load_bitmap("btn1_SalirDelJuego.jpg"));
 
 }
 ///////////////////////////////////////////////////////////////////////
@@ -45,13 +51,28 @@ void MenuPrincipal::dibujar(DatosMouse * dm){
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
+         this->setIDsalto(11);
+         std::cout << "Nuevo Juego" << std::endl;
+      break;
+
+      case 2:
+         this->setIDsalto(12);
+         std::cout << "Cargar Partida" << std::endl;
+      break;
+
+      case 3:
+         this->setIDsalto(13);
+         std::cout << "Opciones" << std::endl;
+      break;
+
+      case 4:
          this->setIDsalto(14);
          std::cout << "Ranking" << std::endl;
       break;
 
-      case 2:
+      case 5:
          this->setIDsalto(-1);
-         std::cout << "Salir" << std::endl;
+         std::cout << "Salir del Sistema" << std::endl;
       break;
    }
 
@@ -72,4 +93,4 @@ void MenuPrincipal::destruir(){
 ///////////////////////////////////////////////////////////////////////
 
 
-#endif //MenuPrincipal_H
+#endif //MenuPrincipal_HH

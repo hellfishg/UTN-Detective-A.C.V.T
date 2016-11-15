@@ -6,9 +6,9 @@
 class Boton {
 private:
    int xIzq;
-   int xDer;
-
    int ySup;
+
+   int xDer;
    int YInf;
 
    ALLEGRO_BITMAP *imagen;
@@ -22,18 +22,18 @@ public:
    int getYInf (){return YInf;}
    ALLEGRO_BITMAP * getImagen(){return imagen;}
 //Setters:
-   void setPosition(int xi,int xd,int ys,int yi);
+   void setPosition(int xi,int ys,int xd,int yi);
    void setImagen(ALLEGRO_BITMAP *i){imagen=i;}
 
 
 };
 
 
-void Boton::setPosition(int xi,int xd,int ys,int yi){
+void Boton::setPosition(int xi,int ys,int xd,int yi){
    xIzq=xi;
-   xDer=xd;//lol.
-
    ySup=ys;
+
+   xDer=xd;//lol.
    YInf=yi;
 
 }

@@ -28,9 +28,9 @@ MenuPrincipal::MenuPrincipal(){
 
    this->cargarDatosVentana(2,al_load_bitmap("fondoMenu.png"));
 
-   this->cargarBoton(1,546,706,255,296,al_load_bitmap("Boton_1.png"));
+   this->cargarBoton(1,546,706,255,296,al_load_bitmap("Boton_3.png"));
 
-   this->cargarBoton(2,546,706,300,340,al_load_bitmap("Boton_1.png"));
+   this->cargarBoton(2,546,706,300,340,al_load_bitmap("Boton_2.png"));
 
 }
 ///////////////////////////////////////////////////////////////////////

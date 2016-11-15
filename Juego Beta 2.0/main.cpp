@@ -31,6 +31,9 @@ int main(void) {
 
    al_install_mouse();//configura el mouse;
    al_init_image_addon();//configura la carga de imagenes por archivo;
+   al_init_font_addon();
+   al_init_ttf_addon();
+
 
 ///////////////////////////////////////////////////////////////////////////////
    ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();//Cola de eventos.

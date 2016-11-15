@@ -94,3 +94,9 @@ void MenuPrincipal::destruir(){
 
 
 #endif //MenuPrincipal_HH
+/*
+//Para escribir por pantalla:
+ALLEGRO_FONT *font = al_load_font("orbitron-black.ttf",36,0);
+
+al_draw_text(font, al_map_rgb(255, 255, 255), 400, 10, ALLEGRO_ALIGN_CENTER, "LOS MEJORES!!");
+                     */

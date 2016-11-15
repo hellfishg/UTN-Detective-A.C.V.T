@@ -34,7 +34,6 @@ ScreenManager::ScreenManager(DatosMouse * dm){
 ///////////////////////////////////////////////////////////////////////////
 int ScreenManager::cargarEscena(DatosMouse *dm){
 
-   ventanaActual->dibujar(dm);
 
    int selec= ventanaActual->getIDsalto();//0 no cambio.-1 salir del sistema.
 
@@ -53,7 +52,7 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
          case 11:
 
-            //ventanaActual=new NuevaPartida();
+            ventanaActual=new NuevaPartida();
 
             break;
 
@@ -78,6 +77,7 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
       }
    }
 
+   ventanaActual->dibujar(dm);
    return selec;
 }
 ///////////////////////////////////////////////////////////////////////

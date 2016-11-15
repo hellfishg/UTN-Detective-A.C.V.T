@@ -44,7 +44,7 @@ int main(void) {
 
 ///////////////////////////////////////////////////////////////////////////////
    DatosMouse *punteroMouse=new DatosMouse();
-
+//
    ScreenManager screenManager(punteroMouse);//FinDeJuegor mostrar pantalla principal primera vez.
 
    ALLEGRO_EVENT events;
@@ -75,7 +75,6 @@ int main(void) {
          std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;
       }//Para ver donde esta el mouse, funcion de debug.
 
-      std::cout << "x y" << std::endl;
 
       al_flip_display();
    }

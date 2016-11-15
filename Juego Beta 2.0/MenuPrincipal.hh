@@ -7,8 +7,6 @@ class MenuPrincipal:public Ventana{
 
 private:
 
-   // int seleccionDelmouse (int ,int );
-   //bool clickEnRectangulo(int ,int,int,int,int, int);
 
 public:
 
@@ -25,7 +23,7 @@ public:
 //Metodos:
 MenuPrincipal::MenuPrincipal(){
 
-   this->setID(0);//Colocar la ID de la ventana.
+   this->setID(1);//Colocar la ID de la ventana.
 
    this->cargarDatosVentana(2,al_load_bitmap("fondoMenu.png"));//El primer dato int pide la cantidad de botones totales.
 
@@ -45,7 +43,7 @@ void MenuPrincipal::dibujar(DatosMouse * dm){
 
    int selc=comprobarClickBoton(dm);
 
-   switch (selc) {
+   switch (selc) {//Regresa el numero del boton tocado.
       case 1:
          this->setIDsalto(14);
          std::cout << "Ranking" << std::endl;

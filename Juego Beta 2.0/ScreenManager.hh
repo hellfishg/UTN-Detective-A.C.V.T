@@ -36,7 +36,7 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
    ventanaActual->dibujar(dm);
 
-   int selec= ventanaActual->getIDsalto();//-1 no cambio.
+   int selec= ventanaActual->getIDsalto();//0 no cambio.-1 salir del sistema.
 
 
    if (selec!=0 && selec!=-1){
@@ -76,11 +76,9 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
             break;
 
       }
-
-      return selec;
-
    }
 
+   return selec;
 }
 ///////////////////////////////////////////////////////////////////////
 

@@ -70,8 +70,6 @@ bool ScreenManager::cargarEscena(DatosMouse *dm){
       return retorno;
    }
 
-
-
 }
 ///////////////////////////////////////////////////////////////////////
 

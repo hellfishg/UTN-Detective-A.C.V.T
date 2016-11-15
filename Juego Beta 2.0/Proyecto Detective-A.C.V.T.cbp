@@ -163,14 +163,15 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Bibliotecas.h" />
-		<Unit filename="Boton.h" />
-		<Unit filename="DatosMouse.h" />
-		<Unit filename="Menu.h" />
-		<Unit filename="MenuPrincipal.h" />
-		<Unit filename="MenuRanking.h" />
-		<Unit filename="ScreenManager.h" />
-		<Unit filename="Ventana.h" />
+		<Unit filename="Bibliotecas.hh" />
+		<Unit filename="Boton.hh" />
+		<Unit filename="DatosMouse.hh" />
+		<Unit filename="MenuCargar.hh" />
+		<Unit filename="MenuOpciones.h" />
+		<Unit filename="MenuPrincipal.hh" />
+		<Unit filename="MenuRanking.hh" />
+		<Unit filename="ScreenManager.hh" />
+		<Unit filename="Ventana.hh" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

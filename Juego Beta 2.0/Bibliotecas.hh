@@ -18,6 +18,7 @@
 #include "MenuPrincipal.hh"
 #include "MenuCargar.hh"
 #include "MenuRanking.hh"
+#include "MenuOpciones.h"
 
 
 

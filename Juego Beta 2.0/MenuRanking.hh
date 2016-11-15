@@ -26,33 +26,13 @@ public:
 MenuRanking::MenuRanking(){
 
 
-   this->cargarDatosVentana(1,al_load_bitmap("Fondo_ranking.jpg"));
+   this->cargarDatosVentana(1,al_load_bitmap("14FondoRanking.jpg"));
 
-   this->cargarBoton(1,300,500,355,395,al_load_bitmap("Boton_3.png"));
-
-
-
-
-//<<<<<<< HEAD
-
-
-/*   al_init_font_addon();
-   al_init_ttf_addon();
-   ALLEGRO_FONT *font = al_load_font("orbitron-black.ttf",12,0);//la fuente en la carpeta*/
-//=======
-//>>>>>>> 4f760aebb24c63d8dabfb647ba399b68d097cd03
-
-
-/////////////////////////////////////////////////////////////////////////////
-
-
-
+   this->cargarBoton(1,300,500,355,395,al_load_bitmap("boton_3.png"));
 
 }
 ///////////////////////////////////////////////////////////////////////
 void MenuRanking::dibujar(DatosMouse *dm){
-
-
 
    al_draw_bitmap(this->getFondo(),0,0,0);
 
@@ -63,11 +43,17 @@ void MenuRanking::dibujar(DatosMouse *dm){
       botTemp=this->getBoton(i);
       al_draw_bitmap(botTemp->getImagen(),botTemp->getXIzq(),botTemp->getYSup(),0);
 
-      ALLEGRO_FONT *font = al_load_font("orbitron-black.ttf",12,0);//la fuente en la carpeta
+      ALLEGRO_FONT *font = al_load_font("orbitron-black.ttf",36,0);//la fuente en la carpeta
+      ALLEGRO_FONT *font2 = al_load_font("orbitron-black.ttf",24,0);
 
+      al_draw_text(font, al_map_rgb(255, 255, 255), 400, 10, ALLEGRO_ALIGN_CENTER, "LOS MEJORES!!");
 
-      al_draw_text(font, al_map_rgb(222,222,223), 400, 300, ALLEGRO_ALIGN_CENTER, "HOLA A TODOS");
+      al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTER, "ANGEL - 15000 PUNTOS");
+      al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, "PEPE - 14900 PUNTOS");
+      al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 200, ALLEGRO_ALIGN_CENTER, "GENTES - 14500 PUNTOS");
+
       al_destroy_font(font);
+      al_destroy_font(font2);
 
    }
    // al_draw_bitmap(botones,400,200,0);

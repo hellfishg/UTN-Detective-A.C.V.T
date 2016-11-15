@@ -45,7 +45,7 @@ int main(void) {
 ///////////////////////////////////////////////////////////////////////////////
    DatosMouse *punteroMouse=new DatosMouse();
 
-   ScreenManager screenManager(punteroMouse);//FinDeJuegor mostrar pantalla principal primera vez.
+   ScreenManager screenManager(punteroMouse);//FinDeJuego mostrar pantalla principal primera vez.
 
    ALLEGRO_EVENT events;
    int FinDeJuego=0;//Variable que maneja el hilo de ejecucion.

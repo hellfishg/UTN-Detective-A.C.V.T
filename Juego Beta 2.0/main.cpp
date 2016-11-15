@@ -1,11 +1,11 @@
-    #include "Bibliotecas.h"
+    #include "Bibliotecas.hh"
 
-#include "ScreenManager.h"
+#include "ScreenManager.hh"
 
 int main(void) {
 
    if(!al_init()){//Carga los principios de allegro5.Como el constructor.
-      al_show_native_message_box (NULL,"Titulo","error","Display window could be show","Botton1",ALLEGRO_MESSAGEBOX_ERROR);
+      al_show_native_message_box (NULL,"Titulo","error","Se rompio la ventana","Botton1",ALLEGRO_MESSAGEBOX_ERROR);
       return -1;
    }
 

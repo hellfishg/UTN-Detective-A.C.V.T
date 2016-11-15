@@ -19,7 +19,7 @@ public:
    void cargarDatosVentana(int,ALLEGRO_BITMAP *);
    int obtenerBotonClick(DatosMouse *dm);
    bool clickEnRectangulo(int xM,int yM,int x1,int y1,int x2, int y2);
-   virtual void dibujar(){};
+   virtual void dibujar(DatosMouse *){};
    virtual void destruir(){};
 
 };

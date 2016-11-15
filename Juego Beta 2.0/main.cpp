@@ -14,12 +14,12 @@ int main(void) {
    display = al_create_display (800,600);//FinDeJuego Display.
 
 
-   al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);//resible nativo en la ventana.
+   al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);//resizable nativo en la ventana.
    // al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);//Fullscreen en tu resolucion.
    al_set_window_position(display,200,100);//setea la posicion inicial de la ventana;
    al_set_window_title(display,"El JUEGO");//Nombre de la marquesina en la ventana;
 
-   if (!display) {// el display y muestra cartel si no.
+   if (!display) {// el display y muestra error si no cargo.
       al_show_native_message_box (display, "Titulo","Settings","Ventana",NULL,ALLEGRO_MESSAGEBOX_ERROR);
       al_rest(0);
       al_destroy_display(display);
@@ -40,11 +40,11 @@ int main(void) {
    al_register_event_source(event_queue, al_get_mouse_event_source());
 
 ///////////////////////////////////////////////////////////////////////////////
+   DatosMouse *punteroMouse=new DatosMouse();
 
-   ScreenManager screenManager;//FinDeJuegor mostrar pantalla principal primera vez.
+   ScreenManager screenManager(punteroMouse);//FinDeJuegor mostrar pantalla principal primera vez.
 
    ALLEGRO_EVENT events;
-   DatosMouse *punteroMouse=new DatosMouse();
    bool FinDeJuego=false;//Variable que maneja el hilo de ejecucion.
 
 ///////////////////////////////////////////////////////////////////////////////
@@ -60,9 +60,9 @@ int main(void) {
       if(punteroMouse->getBoton() == 1) {
          FinDeJuego=screenManager.cargarEscena(punteroMouse);
       }
-      // if(punteroMouse->getBoton() == 2){
-      //    std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;
-      // }//Para ver donde esta el mouse, funcion de debug.
+      if(punteroMouse->getBoton() == 2){
+         std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;
+      }//Para ver donde esta el mouse, funcion de debug.
 
       al_flip_display();
 

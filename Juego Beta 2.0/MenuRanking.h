@@ -14,7 +14,7 @@ public:
 
    MenuRanking();
 
-   void dibujar();
+   void dibujar(DatosMouse *dm);
    void destruir();
 
    void cargarPantalla(int,int,int );
@@ -30,6 +30,8 @@ MenuRanking::MenuRanking(){
 
    this->cargarBoton(1,300,500,355,395,al_load_bitmap("Boton_1.png"));
 
+
+
 /*   al_init_font_addon();
    al_init_ttf_addon();
    ALLEGRO_FONT *font = al_load_font("orbitron-black.ttf",12,0);//la fuente en la carpeta*/
@@ -42,7 +44,7 @@ MenuRanking::MenuRanking(){
 
 }
 ///////////////////////////////////////////////////////////////////////
-void MenuRanking::dibujar(){
+void MenuRanking::dibujar(DatosMouse *dm){
 
 
 
@@ -62,7 +64,7 @@ void MenuRanking::dibujar(){
 ///////////////////////////////////////////////////////////////////////
 void MenuRanking::destruir(){
 
-   std::cout << "destruccion de todo el mundo todos" << std::endl;
+   std::cout << "destruccion de ranking" << std::endl;
 
 }
 ///////////////////////////////////////////////////////////////////////

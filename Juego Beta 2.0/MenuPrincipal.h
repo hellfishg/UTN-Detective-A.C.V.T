@@ -14,7 +14,7 @@ public:
 
    MenuPrincipal();
 
-   void dibujar();
+   void dibujar(DatosMouse *dm);
    void destruir();
 
    void cargarPantalla(int,int,int );
@@ -34,7 +34,7 @@ MenuPrincipal::MenuPrincipal(){
 
 }
 ///////////////////////////////////////////////////////////////////////
-void MenuPrincipal::dibujar(){
+void MenuPrincipal::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
 
@@ -52,7 +52,7 @@ void MenuPrincipal::dibujar(){
 ///////////////////////////////////////////////////////////////////////
 void MenuPrincipal::destruir(){
 
-   std::cout << "destruccion de todo el mundo todos" << std::endl;
+   std::cout << "destruccion de menuPrincipal" << std::endl;
 
 }
 ///////////////////////////////////////////////////////////////////////

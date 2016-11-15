@@ -13,19 +13,17 @@ int main(void) {
    ALLEGRO_DISPLAY * display;
    display = al_create_display (800,600);//FinDeJuego Display.
 
-
    al_set_new_display_flags(ALLEGRO_WINDOWED | ALLEGRO_RESIZABLE);//resible nativo en la ventana.
    // al_set_new_display_flags(ALLEGRO_FULLSCREEN_WINDOW);//Fullscreen en tu resolucion.
-   al_set_window_position(display,200,100);//setea la posicion inicial de la ventana;
+   al_set_window_position(display,200,100);//Setea la posicion inicial de la ventana;
    al_set_window_title(display,"El JUEGO");//Nombre de la marquesina en la ventana;
 
-   if (!display) {// el display y muestra cartel si no.
+   if (!display) {// El display y muestra cartel si no.
       al_show_native_message_box (display, "Titulo","Settings","Ventana",NULL,ALLEGRO_MESSAGEBOX_ERROR);
       al_rest(0);
       al_destroy_display(display);
       return -1;
    }
-
 
 ////////////////////////////////////////////////////////////////////////////////
 
@@ -73,10 +71,8 @@ int main(void) {
       if(events.type == ALLEGRO_EVENT_DISPLAY_CLOSE){//Definicion del evento.
          FinDeJuego=true;
       }
-
    }
 ///////////////////////////////////////////////////////////////////////////////
-
 
    std::cout << "Salimos" << std::endl;
 

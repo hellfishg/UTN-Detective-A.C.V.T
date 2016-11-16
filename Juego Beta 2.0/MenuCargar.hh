@@ -39,7 +39,7 @@ MenuCargar::MenuCargar(){
    //
    // this->cargarBoton(2,288,300,289,570,botee);
 
-   
+
 
 
 
@@ -52,6 +52,8 @@ void MenuCargar::dibujar(DatosMouse * dm){
 
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 
+
+   this->getBoton(1)->setImagen(al_load_bitmap("btn12_Volver.png"));
 
    int selc=comprobarClickBoton(dm);
 

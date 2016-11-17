@@ -1,9 +1,10 @@
-#ifndef PantallaAccion_HH
-#define PantallaAccion_HH
+#ifndef PANTALLAACCION_HH
+#define PANTALLAACCION_HH
 
 #include "Bibliotecas.hh"
 
-class PantallaAccion:public Ventana {
+class PantallaAccion:public Pantalla {
+
 private:
 
 public:
@@ -13,7 +14,8 @@ public:
    void dibujar(DatosMouse *dm);
    void destruir();
 
-   void cargarPantalla(int,int,int );
+   void cargarLocacion();
+
 
 };
 
@@ -24,24 +26,7 @@ PantallaAccion::PantallaAccion(){
 
    this->setID(111);//Colocar la ID de la ventana.
 
-   this->cargarDatosVentana(1,al_load_bitmap("12Fon_cargarPartida.jpg"));//El primer dato int pide la cantidad de botones totales.
-
-   //Cargar botones uno a uno:
-   this->cargarBoton(1,288,569,503,595,al_load_bitmap("btn12_Volver.png"));
-
-
-   //Creo un boton transparente para usar de marco.
-   //Para decirle el color transparente de una bitmap.
-
-   // ALLEGRO_BITMAP *boteee=al_load_bitmap("Test_transparencia.png");
-   //
-   // al_convert_mask_to_alpha(boteee,al_map_rgb(255,0,255));
-   //
-   // this->cargarBoton(2,288,300,289,570,botee);
-
-
-
-
+   //this-setLocacion(1);
 
 
 }
@@ -49,30 +34,116 @@ PantallaAccion::PantallaAccion(){
 void PantallaAccion::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
-
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
+/////////////////////////////////////////////////////////////////////////
+
+   this->cargarLocacion();
 
 
-   this->getBoton(1)->setImagen(al_load_bitmap("btn12_Volver.png"));
+
+
 
    int selc=comprobarClickBoton(dm);
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
-         this->setIDsalto(1);
-         std::cout << "Menu Principal" << std::endl;
+         this->setIDsalto(113);
+         std::cout << "Viaje" << std::endl;
+
       break;
 
       case 2:
-         this->setIDsalto(-1);
-         std::cout << "Cargar save" << std::endl;
+         this->setIDsalto(112);
+         std::cout << "Buscar" << std::endl;
       break;
+
+      case 3:
+         this->setIDsalto(114);
+         std::cout << "Data" << std::endl;
+      break;
+
+      case 4:
+         this->setIDsalto(12);
+         std::cout << "Salir" << std::endl;
+      break;
+
+      case 5:
+         this->setIDsalto(0);
+         std::cout << "btn 5" << std::endl;
+      break;
+
+      case 6:
+         this->setIDsalto(0);
+         std::cout << "btn 6" << std::endl;
+      break;
+
+      case 7:
+         this->setIDsalto(0);
+         std::cout << "btn 7" << std::endl;
+      break;
+
+      case 8:
+         this->setIDsalto(0);
+         std::cout << "btn 8" << std::endl;
+      break;
+
+      case 9:
+         this->setIDsalto(0);
+         std::cout << "btn 9" << std::endl;
+      break;
+
+      case 10:
+         this->setIDsalto(0);
+         std::cout << "regresar" << std::endl;
+      break;
+
    }
 
 
 
 }
 ///////////////////////////////////////////////////////////////////////
+void PantallaAccion::cargarLocacion(){
+
+   switch (this->getZonaIni()) {
+
+      case 1:
+         this->cargarModuloA("ModuloA_Bastilla.png");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,106,0,"Lo que escribo aca , quiero ver ");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),36,51,0,"Francia - 1489");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),0,106,0,"4 Time Jumps");
+      break;
+
+      case 2:
+         this->cargarModuloA("ModuloA_Piramides.png");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,106,0,"Lo que escribo aca , quiero ver ");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),36,51,0,"Egipto - 1500 AC");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),0,106,0,"4 Time Jumps");
+
+      break;
+
+      case 3:
+         this->cargarModuloA("ModuloA_Lejano.png");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,106,0,"Lo que escribo aca , quiero ver ");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),36,51,0,"EEUU - 1810");
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),0,106,0,"4 Time Jumps");
+
+      break;
+   }
+
+
+}
+
+////////////////////////////////////////////////////////////////////////
 void PantallaAccion::destruir(){
 
    std::cout << "destruccion de PantallaAccion" << std::endl;
@@ -86,4 +157,21 @@ void PantallaAccion::destruir(){
 ///////////////////////////////////////////////////////////////////////
 
 
+
 #endif //PantallaAccion_HH
+
+
+
+
+//this->getBoton(1)->setImagen(al_load_bitmap("btn12_Volver.png"));
+
+///////////////////////////////////////////////////////////////////////
+
+//Creo un boton transparente para usar de marco.
+//Para decirle el color transparente de una bitmap.
+
+// ALLEGRO_BITMAP *boteee=al_load_bitmap("Test_transparencia.png");
+//
+// al_convert_mask_to_alpha(boteee,al_map_rgb(255,0,255));
+//
+// this->cargarBoton(2,288,300,289,570,botee);

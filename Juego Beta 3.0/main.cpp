@@ -1,6 +1,6 @@
-#include "./libs/Bibliotecas.hh"
+#include "Bibliotecas.hh"
 
-#include "./libs/ScreenManager.hh"
+#include "ScreenManager.hh"
 
 int main(void) {
 

@@ -195,54 +195,138 @@ DIAGRAMA DE CLASES:
 			*Borrar save.
 -----------------------------------------------------------------------------------------
 
-ARCHIVOS REGISTROS:
+Estructura de datos:
+	-------------------
+	|       PJ        |
+	-------------------
+	CARACTERISTICAS:
+	+nombre
+	+descripcion
+	+descripcion skill
+	+path imagen
+	+daño
+	+vida
+	+saltos
+	-------------------
+	METODOS:
+	+getters de todo
+	-------------------
 
-	+Carpeta recursos.(las imagenes)
-	+Carpeta que tenga (las clases)
-	+Carpeta archivos reg.
-	+Carpeta musica.
+	-------------------
+	|     SECUAZ      |
+	-------------------
+	CARACTERISTICAS:
+	+path imagen
+	+path imagen derrota
+	+daño
+	+vida total
+	+vida actual
+	-------------------
+	METODOS:
+	+getters de todo
+	-------------------
 
-	recursos:
-		+imagenes enemigos.
-		+imagenes interfaz ventana.
-		+imagenes lugares.
-		+imagenes PJ.
-		+imagenes sprites.
-		+imagenes botones.
-		+imagenes textos.
-		+imagen puntero.
-		+imagenes tipografia.
-		+imagenes fondos. (Menu,intro,final/bueno/malo).
-		+imagenes items.
+	-------------------
+	|    VILLANO      |
+	-------------------
+	CARACTERISTICAS:
+	+nombre
+	+descripcion
+	||+pelo
+	||+señales
+	||+nacionalidad
+	||+ojos
+	||+genero
+	+vector pistas (3 POR TIPO, ej: ojos: "tiene los ojos color cafe","sus ojos son orientales")
+	-------------------
+	METODOS:
+	+getters de todo
+	-------------------
 
-	musica:
-		+sonidos botones.
-		+sonidos golpes.
-		+sonido viaje temporal.
-		+musicas.
+	-------------------
+	|    LOCACION     |
+	-------------------
+	CARACTERISTICAS:
+	+nombre
+	+descripcion
+	+path imagen
+	+desc. locacion (1,2,3)
+	-------------------
+	METODOS:
+	+getters de todo
+	-------------------
 
-	registros:
-		puntuaciones.
 
-		vidas enemigos.
-		vida personaje.
+	-------------------
+	|    RANKING      |
+	-------------------
+	CARACTERISTICAS:
+	+nombre
+	+puntos
+	+saltos realizados
+	+secuaces derrotados
+	+villanos derrotados
+	-------------------
+	METODOS:
+	+getters de todo
+	-------------------
 
-		tiempo restante.
-		daño enmigos.
-		daño personaje.
+	-------------------
+	|  CONFIGURACION  |
+	-------------------
+	CARACTERISTICAS:
+	+sonido
+	+musica
+	+color tipografia
+	+sacar presentacion
+	-------------------
+	METODOS:
+	+getters de todo
+	-------------------
 
-		textos locaciones.
-		locaciones temporales.
+	-------------------
+	|      SAVE       |
+	-------------------
+	CARACTERISTICAS:
 
-		registro save.
+	+nom. jugador
+	+vida actual
+	+saltos rest
+	+pj en uso
+	+villano
+	+loc.actual
+	+loc.hechas (1,2,3)
+	
+	+orden de arresto (bool)
+	||+señales
+	||+nacionalidad
+	||+ojos
+	||+genero
 
-		items.
-		textos de descripcion de personeje.
+	|+saltos hechos
+	|+saltos realizados por lugar (ver final historial)
+	|+secuaces derrotados.
 
-		base de datos de delincuentes.
+	-------------------
+	METODOS:
+	+getters de todo
+	-------------------	
 
-		registro fecha estelar.
 
-		configuracion.
 
-		archivo historia modificada.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

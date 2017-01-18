@@ -1,7 +1,7 @@
 # depslib dependency file v1.0
-1484698401 source:c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\main.cpp
-	"Bibliotecas.hh"
-	"ScreenManager.hh"
+1484699411 source:c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\main.cpp
+	"./libs/Bibliotecas.hh"
+	"./libs/ScreenManager.hh"
 
 1484697774 c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\libs\bibliotecas.hh
 	<iostream>
@@ -306,7 +306,7 @@
 1484697774 c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\libs\screenmanager.hh
 	"Bibliotecas.hh"
 
-1484698651 c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\bibliotecas.hh
+1484697774 c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\bibliotecas.hh
 	<iostream>
 	<cstdio>
 	<allegro5/allegro5.h>
@@ -314,20 +314,20 @@
 	<allegro5/allegro_image.h>
 	<allegro5/allegro_font.h>
 	<allegro5/allegro_ttf.h>
-	"./libs/DatosMouse.hh"
-	"./libs/Boton.hh"
-	"./libs/Ventana.hh"
-	"./libs/MenuPrincipal.hh"
-	"./libs/MenuCargar.hh"
-	"./libs/MenuRanking.hh"
-	"./libs/NuevaPartida.hh"
-	"./libs/MenuOpciones.hh"
-	"./libs/Pantalla.hh"
-	"./libs/PantallaAccion.hh"
-	"./libs/PantallaBusqueda.hh"
-	"./libs/PantallaViaje.hh"
-	"./libs/PantallaData.hh"
-	"./libs/PantallaCombate.hh"
+	"../libs/DatosMouse.hh"
+	"../libs/Boton.hh"
+	"../libs/Ventana.hh"
+	"../libs/MenuPrincipal.hh"
+	"../libs/MenuCargar.hh"
+	"../libs/MenuRanking.hh"
+	"../libs/NuevaPartida.hh"
+	"../libs/MenuOpciones.hh"
+	"../libs/Pantalla.hh"
+	"../libs/PantallaAccion.hh"
+	"../libs/PantallaBusqueda.hh"
+	"../libs/PantallaViaje.hh"
+	"../libs/PantallaData.hh"
+	"../libs/PantallaCombate.hh"
 
 1484697774 c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\screenmanager.hh
 	"Bibliotecas.hh"

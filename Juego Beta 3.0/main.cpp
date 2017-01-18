@@ -1,6 +1,6 @@
-#include "Bibliotecas.hh"
+#include "./libs/Bibliotecas.hh"
 
-#include "ScreenManager.hh"
+#include "./libs/ScreenManager.hh"
 
 int main(void) {
 
@@ -66,7 +66,7 @@ int main(void) {
       }
 
       if(events.type == ALLEGRO_EVENT_MOUSE_WARPED){
-         //no se, era para arreglar lo del doble click.
+         //no se, era para arreglar lo del doble clic   k.
       }
 
       if(punteroMouse->getBoton() == 1) {

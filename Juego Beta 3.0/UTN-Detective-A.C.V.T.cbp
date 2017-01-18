@@ -163,22 +163,23 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="Bibliotecas.hh" />
-		<Unit filename="Boton.hh" />
-		<Unit filename="DatosMouse.hh" />
-		<Unit filename="MenuCargar.hh" />
-		<Unit filename="MenuOpciones.hh" />
-		<Unit filename="MenuPrincipal.hh" />
-		<Unit filename="MenuRanking.hh" />
-		<Unit filename="NuevaPartida.hh" />
-		<Unit filename="Pantalla.hh" />
-		<Unit filename="PantallaAccion.hh" />
-		<Unit filename="PantallaBusqueda.hh" />
-		<Unit filename="PantallaCombate.hh" />
-		<Unit filename="PantallaData.hh" />
-		<Unit filename="PantallaViaje.hh" />
-		<Unit filename="ScreenManager.hh" />
-		<Unit filename="Ventana.hh" />
+		<Unit filename="libs/Archivo.hh" />
+		<Unit filename="libs/Bibliotecas.hh" />
+		<Unit filename="libs/Boton.hh" />
+		<Unit filename="libs/DatosMouse.hh" />
+		<Unit filename="libs/MenuCargar.hh" />
+		<Unit filename="libs/MenuOpciones.hh" />
+		<Unit filename="libs/MenuPrincipal.hh" />
+		<Unit filename="libs/MenuRanking.hh" />
+		<Unit filename="libs/NuevaPartida.hh" />
+		<Unit filename="libs/Pantalla.hh" />
+		<Unit filename="libs/PantallaAccion.hh" />
+		<Unit filename="libs/PantallaBusqueda.hh" />
+		<Unit filename="libs/PantallaCombate.hh" />
+		<Unit filename="libs/PantallaData.hh" />
+		<Unit filename="libs/PantallaViaje.hh" />
+		<Unit filename="libs/ScreenManager.hh" />
+		<Unit filename="libs/Ventana.hh" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

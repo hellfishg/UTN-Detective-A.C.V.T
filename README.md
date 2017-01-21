@@ -232,11 +232,9 @@ Estructura de datos:
 	CARACTERISTICAS:
 	+nombre
 	+descripcion
-	||+pelo
-	||+señales
-	||+nacionalidad
-	||+ojos
-	||+genero
+	||+caracteristica 1
+	||+caracteristica 2
+	||+caracteristica 3
 	+vector pistas (3 POR TIPO, ej: ojos: "tiene los ojos color cafe","sus ojos son orientales")
 	-------------------
 	METODOS:
@@ -298,10 +296,10 @@ Estructura de datos:
 	+loc.hechas (1,2,3)
 	
 	+orden de arresto (bool)
-	||+señales
-	||+nacionalidad
-	||+ojos
-	||+genero
+	||+caracteristica 1
+	||+caracteristica 2
+	||+caracteristica 3
+	
 
 	|+saltos hechos
 	|+saltos realizados por lugar (ver final historial)

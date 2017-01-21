@@ -2,32 +2,15 @@
 ----------------------------------------------------------------------------------------------------------
 Sebastian Moran
 
-Amigo personal de Moriarty y temido en prácticamente toda África, cazador de todas las criaturas conocidas y un tirador excepcional. También tenía acceso a todo tipo de armas avanzadas, como rifles de aire presurizado y armas ocultas en artefactos cotidianos, y era él quien se las proporcionaba al Profesor. Es descrito por Watson como un hombre de edad avanzada con una calva y un gran bigote blanco, alto y delgado.
+Amigo personal de Moriarty y temido en prácticamente toda África, cazador de todas las criaturas conocidas y un tirador excepcional. Acceso a todo tipo de armas avanzadas, como rifles de aire presurizado y armas ocultas en artefactos cotidianos, y era él quien se las proporcionaba al Profesor. Es descrito por Watson como un hombre de edad avanzada con una calva y un gran bigote blanco, alto y delgado.
 
 CARACTERISTIAS:
-	
-	GENERO:
 
-	NACIONALIDAD:
+	INGLES
 
-	PELO:
+	CAZADOR
 
-	OJOS:
-
-	SEÑAS:
-
-PISTAS:
-
-	GENERO:
-
-	NACIONALIDAD:
-
-	PELO:
-
-	OJOS:
-
-	SEÑAS:
-
+	MISTICO
 
 ----------------------------------------------------------------------------------------------------------
 James Moriarty
@@ -36,6 +19,13 @@ Es un hombre de buen nacimiento y excelente educación, dotado por la naturaleza
 
 Pero el hombre tenía tendencias hereditarias de la clase más diabólica. Una cepa criminal corría en su sangre, lo cual, en lugar de ser modificado, fue aumentado y lo hizo infinitamente más peligroso por sus extraordinarios poderes mentales. Oscuros rumores se reunieron alrededor de él en la ciudad universitaria, y finalmente se vio obligado a renunciar a su cátedra y venir a Londres.
 
+CARACTERISTIAS:
+
+	INGLES
+
+	ARISTOCRATA
+
+	ERUDITO
 
 ----------------------------------------------------------------------------------------------------------
 Gilgamesh
@@ -44,22 +34,64 @@ Gilgamesh el Inmortal príncipe nacido 3000 años a.C. en la antigua ciudad de U
 
 Una de tantas noches, cansado del engaño de los que se dicen sabios y de experimentar y buscar una cura para la muerte, Gilgamesh sube a la cima del zigurat y pregunta a los dioses por qué debe morir. En ese momento ve una estrella fugaz pasar sobre su cabeza y estrellarse en la lejanía del desierto. El rey sube a un caballo y se dirige al lugar del impacto. Sorprendentemente, encuentra una nave espacial y se introduce en ella. Allí encuentra a un ser de otro planeta, más precisamente de Marte, llamado Utnapishtim, quien le revela que proviene de un mundo donde los seres no mueren gracias a que su tecnología ha llegado a un nivel superior. Gilgamesh le pide el secreto de la inmortalidad a cambio de curarle las heridas. El extranjero acepta. Una vez curadas las heridas, Utnapishtim le pide que atraviese un portal de luz y le anuncia que ya es inmortal. Antes de marcharse, la criatura le advierte que un día llegará a odiar la inmortalidad y que ese día deberá buscarlo en las estrellas para que él le regale la muerte. Gilgamesh le pregunta "¿cómo te encontraré?", a lo que la criatura le responde "tendrás millones de años para encontrarme".
 
+CARACTERISTIAS:
+
+	MISTICO
+
+	CAZADOR
+
+	ARISTOCRATA
 
 ----------------------------------------------------------------------------------------------------------
-Erzsébet Báthory
+Elizabet Báthory
 
-La condesa Isabel Báthory de Ecsed  Hungría, 7 de agosto de 1560-Castillo de Čachtice, actual Trenčín, Eslovaquia, 21 de agosto de 1614), fue una aristócrata húngara, perteneciente a una de las familias más poderosas de Hungría. Ha pasado a la historia por haber sido acusada y condenada de ser responsable de una serie de crímenes motivados por su obsesión por la belleza que le han valido el sobrenombre de la Condesa Sangrienta. 
+La condesa Isabet Báthory de Ecsed  Hungría, 7 de agosto de 1560-Castillo de Čachtice, actual Trenčín, Eslovaquia, 21 de agosto de 1614, fue una aristócrata húngara, perteneciente a una de las familias más poderosas de Hungría. Ha pasado a la historia por haber sido acusada y condenada de ser responsable de una serie de crímenes motivados por su obsesión por la belleza que le han valido el sobrenombre de la Condesa Sangrienta. 
 
 Según la leyenda, utilizaba la sangre de sus jóvenes sirvientas y pupilas para mantenerse joven en una época en que una mujer de 44 años se acercaba peligrosamente a la ancianidad. La leyenda cuenta que Erzsébet vio a su paso por un pueblo a una anciana decrépita y se burló de ella, y la anciana, ante su burla, la maldijo diciéndole que la noble también envejecería y se vería como ella algún día.
+
+CARACTERISTIAS:
+
+	MISTICO
+
+	ARISTOCRATA
+
+	ERUDITA
 
 ----------------------------------------------------------------------------------------------------------
 Dr. Henry Jekyll
 
-El Dr. Henry Jekyll es un "hombre grande, bien hecho, de cara lisa, de cincuenta años, con algo de slyish cast", que ocasionalmente siente que está luchando entre el bien y el mal dentro de sí mismo, llevando así a la lucha entre sus personalidades duales De Jekyll y Edward Hyde. Ha pasado gran parte de su vida tratando de reprimir los malos deseos que no eran apropiados para un hombre de su estatura. Él crea un suero, o poción, en un intento de enmascarar este mal oculto dentro de su personalidad. Sin embargo, al hacerlo, Jekyll se transforma en Mr. Hyde, una horrible y malvada criatura sin compasión ni remordimiento. Jekyll tiene muchos amigos y tiene una personalidad amistosa, pero como Hyde, se vuelve misterioso y violento. Con el paso del tiempo, Hyde crece en el poder. Después de tomar la poción repetidamente, ya no se basa en ella para desencadenar su demonio interior, es decir, su alter ego. Eventualmente, Hyde crece para ser más fuerte que Jekyll.
+El Dr. Henry Jekyll es un "hombre grande, bien hecho, de cara lisa, de cincuenta años, que ocasionalmente siente que está luchando entre el bien y el mal dentro de sí mismo, llevando así a la lucha entre sus personalidades duales De Jekyll y Edward Hyde. Ha pasado gran parte de su vida tratando de reprimir los malos deseos que no eran apropiados para un hombre de su estatura. Creo un suero, o poción, en un intento de enmascarar este mal oculto dentro de su personalidad. Sin embargo, al hacerlo, Jekyll se transforma en Mr. Hyde, una horrible y malvada criatura sin compasión ni remordimiento. Jekyll tiene muchos amigos y tiene una personalidad amistosa, pero como Hyde, se vuelve misterioso y violento. Con el paso del tiempo, Hyde crece en el poder, eventualmente, Hyde crece para ser más fuerte que Jekyll.
 
+CARACTERISTIAS:
+
+	INGLES
+
+	CAZADOR
+
+	ERUDITO
 
 ----------------------------------------------------------------------------------------------------------
 
+PISTAS: (Los puntos suspensivos conectan los dialogos de pistas de salto temporal. ej: stringSalto+stringPista)
 
+	INGLES: "Estabamos jugando Críquet cuando me dijo..."
+			"... Dado que no podia encontrar un te que le gustara"
+			"Me dijo Bloody Hell, vamos a ...""
+
+	CAZADOR:"... Pero antes iba a comprar balas .270 winchester."
+			"Era una  buena oportunidad para medirse con la fauna local extinta"
+			"Despues de estar 2 dias 2 noches en el bosque, me dijo..."
+
+	ARISTOCRATA:"Sus sirvientes me dijieron que el: ..."
+				".... No soporta el servicio de esta epoca."
+				"Queria comprar una playa privada en ..."
+
+	ERUDITO:"Estaba trascribiendo unos textos y me dijo que ..."
+			"... Dado que siempre quiso conocer la arquitectura del lugar."
+			"Dijo que queria continuar sus estudio en antropologia en ..."
+
+	MISTICO:"Por la noche iniciamos un ritual de proteccion y ...."
+			"Estaba interezado en la criptozologia local"
+			"... Para encontrar un antiguo libro maldito."
 
 

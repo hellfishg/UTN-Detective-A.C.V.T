@@ -29,8 +29,13 @@
 #include "../libs/PantallaViaje.hh"
 #include "../libs/PantallaData.hh"
 #include "../libs/PantallaCombate.hh"
-//
 
+//Clases de gamplay:
+#include "../libs/Villano.hh"
+
+
+
+//Clases de Saves de menues:
 
 
 #endif //BIBLIOTECAS_HH

@@ -1,5 +1,4 @@
 #include "./libs/Bibliotecas.hh"
-
 #include "./libs/ScreenManager.hh"
 
 int main(void) {

@@ -1,4 +1,4 @@
-# UTN-Detective-A.C.V.T
+	# UTN-Detective-A.C.V.T
 Proyecto-juego para la universidad, parecido al Carmen Sandiego con toques de RPG.
 
 Historia:Somos parte de la policia temporal y nuestra mision es detener a un delicuente que intenta alterar los hechos historicos mas importantes con el objetivo de dominar el futuro.
@@ -232,13 +232,25 @@ Estructura de datos:
 	CARACTERISTICAS:
 	+nombre
 	+descripcion
+	+imagen path
 	||+caracteristica 1
 	||+caracteristica 2
 	||+caracteristica 3
-	+vector pistas (3 POR TIPO, ej: ojos: "tiene los ojos color cafe","sus ojos son orientales")
+	*vector pistas consulatado
 	-------------------
 	METODOS:
 	+getters de todo
+	-------------------
+
+	-------------------
+	| PISTASVILLANOS  |
+	-------------------
+	CARACTERISTICAS:
+	matriz:
+		ingles|cazador|mistico|etc..
+		pista1|pista1 |pista1 |
+		pista2|pista2 |pista2 |
+		pista3|etc..
 	-------------------
 
 	-------------------
@@ -294,12 +306,12 @@ Estructura de datos:
 	+villano
 	+loc.actual
 	+loc.hechas (1,2,3)
-	
+
 	+orden de arresto (bool)
 	||+caracteristica 1
 	||+caracteristica 2
 	||+caracteristica 3
-	
+
 
 	|+saltos hechos
 	|+saltos realizados por lugar (ver final historial)
@@ -308,23 +320,4 @@ Estructura de datos:
 	-------------------
 	METODOS:
 	+getters de todo
-	-------------------	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	-------------------

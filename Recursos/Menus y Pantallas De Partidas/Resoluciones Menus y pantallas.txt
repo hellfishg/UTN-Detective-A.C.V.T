@@ -1,0 +1,4 @@
+Menus: 640x480 pxls
+
+pantalla de combate y seleccion de personaje: 430x370 pxls
+pantalla de partida normal: 625x366 pxls

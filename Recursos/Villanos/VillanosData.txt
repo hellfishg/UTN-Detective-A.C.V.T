@@ -43,9 +43,9 @@ CARACTERISTIAS:
 	ARISTOCRATA
 
 ----------------------------------------------------------------------------------------------------------
-Elizabet Báthory
+Elizabet Bathory
 
-La condesa Isabet Báthory de Ecsed  Hungría, 7 de agosto de 1560-Castillo de Čachtice, actual Trenčín, Eslovaquia, 21 de agosto de 1614, fue una aristócrata húngara, perteneciente a una de las familias más poderosas de Hungría. Ha pasado a la historia por haber sido acusada y condenada de ser responsable de una serie de crímenes motivados por su obsesión por la belleza que le han valido el sobrenombre de la Condesa Sangrienta. 
+La condesa Isabet Báthory de Ecsed  Hungría, 7 de agosto de 1560-Castillo de Čachtice, actual Trenčín, Eslovaquia, 21 de agosto de 1614, fue una aristócrata húngara, perteneciente a una de las familias más poderosas de Hungría. Ha pasado a la historia por haber sido acusada y condenada de ser responsable de una serie de crímenes motivados por su obsesión por la belleza que le han valido el sobrenombre de la Condesa Sangrienta.
 
 Según la leyenda, utilizaba la sangre de sus jóvenes sirvientas y pupilas para mantenerse joven en una época en que una mujer de 44 años se acercaba peligrosamente a la ancianidad. La leyenda cuenta que Erzsébet vio a su paso por un pueblo a una anciana decrépita y se burló de ella, y la anciana, ante su burla, la maldijo diciéndole que la noble también envejecería y se vería como ella algún día.
 
@@ -93,5 +93,3 @@ PISTAS: (Los puntos suspensivos conectan los dialogos de pistas de salto tempora
 	MISTICO:"Por la noche iniciamos un ritual de proteccion y ...."
 			"Estaba interezado en la criptozologia local"
 			"... Para encontrar un antiguo libro maldito."
-
-

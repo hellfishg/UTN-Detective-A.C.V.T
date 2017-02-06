@@ -15,6 +15,7 @@
 #include <allegro5/allegro_ttf.h>//Agrega ttf.
 
 //Clases de Base de datos:
+#include "../libs/Save.hh"
 #include "../libs/PistasVillanos.hh"
 #include "../libs/Villano.hh"
 

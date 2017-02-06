@@ -44,7 +44,7 @@ public:
    void btn10_OrdenArrestoEjecutar();
 
    void repetido(int pos);//funcion auxiliar para regresar la posicion no repetida.
-
+   
 };
 
 ///////////////////////////////////////////////////////////////////////
@@ -71,7 +71,6 @@ void PantallaData::dibujar(DatosMouse * dm){
        villanoSelc=1;
        inicio++;
    }
-
 
    int selc=comprobarClickBoton(dm);
 

@@ -7,6 +7,8 @@ class Pantalla:public Ventana {
 
 private:
    ALLEGRO_BITMAP *moduloA;
+   ALLEGRO_BITMAP *moduloB;
+
    ALLEGRO_FONT *font;
 
    int vida;
@@ -20,6 +22,7 @@ public:
 
 
    void cargarModuloA(char *cad);
+   void cargarModuloB(char *cad);
 
    ALLEGRO_FONT * getFont(){return font;}
 
@@ -105,9 +108,25 @@ void Pantalla::cargarModuloA(char *cad){
 
    this->moduloA=al_load_bitmap(cad);
    al_draw_bitmap(this->moduloA,28,113,0);//Dibuja moduloA;
-
-
 }
 
+void Pantalla::cargarModuloB(char *cad){
 
+   this->moduloB=al_load_bitmap(cad);
+   al_draw_bitmap(this->moduloB,416,105,0);//Dibuja moduloB;
+
+}
 #endif //Pantalla_HH
+/*
+///////////////////////////////////////////////////////////////////////////////////////////
+//REFERENCIA MEDIA PARA CARTELES EN BOTONES DEL PANEL B:
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,106,0,"   CARTEL DE PRESENTACION");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,119,0,"<---boton 5");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,160,0,"<---boton 6");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,206,0,"<---boton 7");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,251,0,"<---boton 8");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,290,0,"<---boton 9");
+
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,376,0,"<---boton 10");
+///////////////////////////////////////////////////////////////////////////////////////////
+*/

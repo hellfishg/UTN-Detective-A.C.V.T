@@ -169,7 +169,19 @@ void PantallaAccion::destruir(){
 #endif //PantallaAccion_HH
 
 
+/*
+///////////////////////////////////////////////////////////////////////////////////////////
+//REFERENCIA MEDIA PARA CARTELES EN BOTONES DEL PANEL B:
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,106,0,"   CARTEL DE PRESENTACION");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,119,0,"<---boton 5");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,160,0,"<---boton 6");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,206,0,"<---boton 7");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,251,0,"<---boton 8");
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,290,0,"<---boton 9");
 
+al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,376,0,"<---boton 10");
+///////////////////////////////////////////////////////////////////////////////////////////
+*/
 
 //this->getBoton(1)->setImagen(al_load_bitmap("btn12_Volver.png"));
 

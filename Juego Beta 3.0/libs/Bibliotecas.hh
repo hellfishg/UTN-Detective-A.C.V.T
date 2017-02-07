@@ -4,6 +4,8 @@
 //De sistema:
 #include <iostream>
 #include <cstdio>
+#include "string.h"
+#include "stdlib.h"//libreria para usar rand
 
 //Externas:
 #include <allegro5/allegro5.h>
@@ -11,6 +13,11 @@
 #include <allegro5/allegro_image.h>
 #include <allegro5/allegro_font.h>//Agrega fonts
 #include <allegro5/allegro_ttf.h>//Agrega ttf.
+
+//Clases de Base de datos:
+#include "../libs/Save.hh"
+#include "../libs/PistasVillanos.hh"
+#include "../libs/Villano.hh"
 
 //Menues:
 #include "../libs/DatosMouse.hh"
@@ -22,6 +29,7 @@
 #include "../libs/NuevaPartida.hh"
 #include "../libs/MenuOpciones.hh"
 
+
 //Pantallas de gamplay:
 #include "../libs/Pantalla.hh"
 #include "../libs/PantallaAccion.hh"
@@ -30,8 +38,6 @@
 #include "../libs/PantallaData.hh"
 #include "../libs/PantallaCombate.hh"
 
-//Clases de gamplay:
-#include "../libs/Villano.hh"
 
 
 

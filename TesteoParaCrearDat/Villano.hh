@@ -11,7 +11,7 @@ class Villano{
 private:
 
    char nombre[30];
-   char descripcion[1700];
+   char descripcion[40];
    char caracteristicas[3][12];//las 3 caracteristicas.
    char foto[40];
 
@@ -35,7 +35,7 @@ public:
 
    //setters:
    void setNombre (char nom[30]){strcpy(nombre,nom);}
-   void setDescripcion (char des[1700]){strcpy(descripcion,des);}
+   void setDescripcion (char des[40]){strcpy(descripcion,des);}
    void setCaracteristica (char car[3][12]){
 
       for (int i=0; i<3; i++){

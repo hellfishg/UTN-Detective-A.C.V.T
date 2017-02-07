@@ -14,11 +14,11 @@ void pistas();
 
 int main(void) {
 
-/* vill1();
+   vill1();
    vill2();
    vill3();
    vill4();
-   vill5();*/
+   vill5();
 
    //TESTEO DE LA COPIA DEL .DAT
    Villano vVill[5];
@@ -35,18 +35,18 @@ int main(void) {
    fclose(p);
 
 
-   for(int i=0;i<50;i++){
+/*   for(int i=0;i<50;i++){
 
       std::cout << vVill[1].obtenerPista() << '\n';
 
 
 
-   }
-
-/*   for (int i=0; i<5; i++) {
-
-      std::cout << vVill[i].getNombre() << '\n';
    }*/
+
+   for (int i=0; i<5; i++) {
+
+      std::cout << vVill[i].getDescripcion() << '\n';
+   }
 //////////////////////////////////////////////////////////7
    //ARCHIVOS PISTAS:
 
@@ -122,7 +122,7 @@ void vill1(){
    char seb[30]={"Sebastian Moran"};
    v1.setNombre(seb);
 
-   char des[1700]={"Amigo personal de Moriarty y temido en prácticamente toda África, cazador de todas las criaturas conocidas y un tirador excepcional. Acceso a todo tipo de armas avanzadas, como rifles de aire presurizado y armas ocultas en artefactos cotidianos, y era él quien se las proporcionaba al Profesor. Es descrito por Watson como un hombre de edad avanzada con una calva y un gran bigote blanco, alto y delgado."};
+   char des[40]={"./images/Vill_SebastianDes.jpg"};
    v1.setDescripcion(des);
 
    char fot[40]={"./images/Vill_Sebastian.jpg"};
@@ -142,10 +142,10 @@ void vill2(){
    char seb[30]={"James Moriarty"};
    v1.setNombre(seb);
 
-   char des[1700]={"Es un hombre de buen nacimiento y excelente educación, dotado por la naturaleza con una fenomenal habilidad matemática. A la edad de 21 años escribió un tratado sobre el teorema del binomio que ha tenido éxito en Europa. En virtud de ello, ganó la cátedra en matemáticas en una de nuestras universidades más pequeñas y tenía todos los aspectos de una carrera más brillante delante de él.Pero el hombre tenía tendencias hereditarias de la clase más diabólica. Una cepa criminal corría en su sangre, lo cual, en lugar de ser modificado, fue aumentado y lo hizo infinitamente más peligroso por sus extraordinarios poderes mentales. Oscuros rumores se reunieron alrededor de él en la ciudad universitaria, y finalmente se vio obligado a renunciar a su cátedra y venir a Londres."};
+   char des[40]={"./images/Vill_MoriartyDes.jpg"};
    v1.setDescripcion(des);
 
-   char fot[40]={"./images/Vill_Moriarty.png"};
+   char fot[40]={"./images/Vill_Moriarty.jpg"};
    v1.setFoto(fot);
 
    char vDes[3][12]={"INGLES","ARISTOCRATA","ERUDITO"};
@@ -162,7 +162,7 @@ void vill3(){
    char seb[30]={"Gilgamesh"};
    v1.setNombre(seb);
 
-   char des[1700]={"Gilgamesh el Inmortal príncipe nacido 3000 años a.C. en la antigua ciudad de Uruk (Mesopotamia), que se cuestiona porqué debe morir. Gilgamesh pierde a su padre en una guerra con un pueblo rival y es cuando decide que no morirá nunca. Una vez que es coronado rey de Uruk, entrena su mente y su cuerpo, se vuelve sabio, justo y convierte a Uruk en la ciudad más próspera de todo el mundo conocido.   Una de tantas noches, cansado del engaño de los que se dicen sabios y de experimentar y buscar una cura para la muerte, Gilgamesh sube a la cima del zigurat y pregunta a los dioses por qué debe morir. En ese momento ve una estrella fugaz pasar sobre su cabeza y estrellarse en la lejanía del desierto. El rey sube a un caballo y se dirige al lugar del impacto. Sorprendentemente, encuentra una nave espacial y se introduce en ella. Allí encuentra a un ser de otro planeta, más precisamente de Marte, llamado Utnapishtim, quien le revela que proviene de un mundo donde los seres no mueren gracias a que su tecnología ha llegado a un nivel superior. Gilgamesh le pide el secreto de la inmortalidad a cambio de curarle las heridas. El extranjero acepta. Una vez curadas las heridas, Utnapishtim le pide que atraviese un portal de luz y le anuncia que ya es inmortal. Antes de marcharse, la criatura le advierte que un día llegará a odiar la inmortalidad y que ese día deberá buscarlo en las estrellas para que él le regale la muerte. Gilgamesh le pregunta \"¿cómo te encontraré?\", a lo que la criatura le responde \"tendrás millones de años para encontrarme\"."};
+   char des[40]={"./images/Vill_GilgameshDes.jpg"};
    v1.setDescripcion(des);
 
    char fot[40]={"./images/Vill_Gilgamesh.jpg"};
@@ -182,7 +182,7 @@ void vill4(){
    char seb[30]={"Elizabet Bathory"};
    v1.setNombre(seb);
 
-   char des[1700]={"La condesa Isabet Báthory de Ecsed  Hungría, 7 de agosto de 1560-Castillo de Čachtice, actual Trenčín, Eslovaquia, 21 de agosto de 1614, fue una aristócrata húngara, perteneciente a una de las familias más poderosas de Hungría. Ha pasado a la historia por haber sido acusada y condenada de ser responsable de una serie de crímenes motivados por su obsesión por la belleza que le han valido el sobrenombre de la Condesa Sangrienta. Según la leyenda, utilizaba la sangre de sus jóvenes sirvientas y pupilas para mantenerse joven en una época en que una mujer de 44 años se acercaba peligrosamente a la ancianidad. La leyenda cuenta que Erzsébet vio a su paso por un pueblo a una anciana decrépita y se burló de ella, y la anciana, ante su burla, la maldijo diciéndole que la noble también envejecería y se vería como ella algún día."};
+   char des[40]={"./images/Vill_BathoryDes.jpg"};
    v1.setDescripcion(des);
 
    char fot[40]={"./images/Vill_Bathory.jpg"};
@@ -202,7 +202,7 @@ void vill5(){
    char seb[30]={"Dr. Henry Jekyll"};
    v1.setNombre(seb);
 
-char des[1700]={"El Dr. Henry Jekyll es un \" hombre grande, bien hecho, de cara lisa, de cincuenta años, que ocasionalmente siente que está luchando entre el bien y el mal dentro de sí mismo, llevando así a la lucha entre sus personalidades duales De Jekyll y Edward Hyde. Ha pasado gran parte de su vida tratando de reprimir los malos deseos que no eran apropiados para un hombre de su estatura. Creo un suero, o poción, en un intento de enmascarar este mal oculto dentro de su personalidad. Sin embargo, al hacerlo, Jekyll se transforma en Mr. Hyde, una horrible y malvada criatura sin compasión ni remordimiento. Jekyll tiene muchos amigos y tiene una personalidad amistosa, pero como Hyde, se vuelve misterioso y violento. Con el paso del tiempo, Hyde crece en el poder, eventualmente, Hyde crece para ser más fuerte que Jekyll."};
+   char des[40]={"./images/Vill_JekyllDes.jpg"};
    v1.setDescripcion(des);
 
    char fot[40]={"./images/Vill_Jekyll.jpg"};

@@ -1,16 +1,7 @@
 #ifndef SECUAZ_HH
 #define SECUAZ_HH
 
-//#include "Biblotecas.hh"
-
-#include <iostream>
-#include <cstdio>
-#include "string.h"
-#include "stdlib.h"
-#include "Save.hh"
-#include "Villano.hh"
-#include "PistasVillanos.hh"
-
+#include "Bibliotecas.hh"
 
 class Secuaz{
 
@@ -66,7 +57,7 @@ void Secuaz::randomSecuaz(){
 
    std::cout << ran << '\n';
 
-   FILE *p=fopen ("./Secuaces.dat","rb");
+   FILE *p=fopen ("./Dat/Secuaces.dat","rb");
    if(p==NULL){std::cout<<"Error de apertura en Secuaces.dat!!"<<std::endl;}
 
    for(int i=0;i<ran;i++){
@@ -86,7 +77,7 @@ char * Secuaz::obtenerPista(){
    Save save;
    Villano vil;
 
-   FILE *p=fopen("./Villanos.dat","rb");
+   FILE *p=fopen("./Dat/Villanos.dat","rb");
    if(p==NULL){std::cout << "ERROR AL ABRIR VILLANOS.DAT!" << '\n';}
 
    while( fread(&vil,sizeof (Villano),1,p)){
@@ -102,7 +93,7 @@ char * Secuaz::obtenerPista(){
 
 void Secuaz::grabar(){
 
-   FILE *p=fopen ("./Secuaces.dat","ab");
+   FILE *p=fopen ("./Dat/Secuaces.dat","ab");
 
    if(p==NULL){std::cout<<"Error de apertura en secuaces.dat!!"<<std::endl;}
 

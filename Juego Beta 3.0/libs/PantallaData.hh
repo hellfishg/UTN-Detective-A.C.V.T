@@ -10,7 +10,7 @@ private:
    int modo;
    /*
    0=bienvenida/1=BDBienve/2=BDSiguiente/
-   3=OrdenDeArresBienbenida/4=OrdenDeArrestoCarga
+   3=OrdenDeArresBienbenida/4=OrdenDeArrestoCarga/5=ODA_pedida.
    */
 
    Villano vil[5];
@@ -44,7 +44,7 @@ public:
    void btn10_OrdenArrestoEjecutar();
 
    void repetido(int pos);//funcion auxiliar para regresar la posicion no repetida.
-   
+
 };
 
 ///////////////////////////////////////////////////////////////////////

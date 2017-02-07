@@ -5,15 +5,21 @@
 
 class PantallaCombate:public Pantalla {
 private:
-    int vidaSecuaz;
 
+   int inicio=0;
+   int modo;
+   Secuaz sec;
+
+   int vidaSecuaz;//borrar.
 public:
 
    PantallaCombate();
-   void setVida (int v){vidaSecuaz = v;}
+   void setVida (int v){vidaSecuaz = v;}//Borrar.
 
    void dibujar(DatosMouse *dm);
    void destruir();
+
+   void graficosIniciales();
 
 };
 
@@ -24,35 +30,37 @@ PantallaCombate::PantallaCombate(){
 
    this->setID(115);//Colocar la ID de la ventana.
 
-   vidaSecuaz = 1;
-
-
-
+   vidaSecuaz = 1;//borrar
 }
 ///////////////////////////////////////////////////////////////////////
+
 void PantallaCombate::dibujar(DatosMouse * dm){
 
    ALLEGRO_BITMAP *lifeH = al_load_bitmap("./images/111Vida_100.png");// Vida del heroe
    ALLEGRO_BITMAP *lifeV = al_load_bitmap("./images/111Vida_100.png");// Vida del villano
 
-   al_draw_bitmap(this->getFondo(),0,0,0);
    al_draw_bitmap(lifeH,438,43,0);
-   if (vidaSecuaz == 1)
-   {al_draw_bitmap(lifeV,80,45,0);
-   this->setVida(2);
+
+   if (vidaSecuaz == 1){
+
+      al_draw_bitmap(lifeV,80,45,0);
+      this->setVida(2);
    }
+   
+if(inicio==0){
+
+   //al_draw_bitmap(this->getFondo(),0,0,0);
 
 
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
+
+   graficosIniciales();
+
+   modo=0;
+   inicio++;
+}
+
 /////////////////////////////////////////////////////////////////////////
-
-   this->cargarModuloA("./images/ModuloA_Secuaz1.png");
-
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------ATACAR");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,"<------DEFENDER");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,"<------USAR HABILIDAD ESPECIAL");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
 
    int selc=comprobarClickBoton(dm);
 
@@ -131,6 +139,21 @@ void PantallaCombate::dibujar(DatosMouse * dm){
 
    }
 
+}
+///////////////////////////////////////////////////////////////////////
+void PantallaCombate::graficosIniciales(){
+
+   sec.randomSecuaz();
+
+   this->cargarModuloA(sec.getImagen());
+
+   this->cargarModuloB("./images/111Panel_b.png");
+
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------ATACAR");
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,"<------DEFENDER");
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,"<------USAR HABILIDAD ESPECIAL");
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
 
 
 }

@@ -18,6 +18,7 @@
 #include "../libs/Save.hh"
 #include "../libs/PistasVillanos.hh"
 #include "../libs/Villano.hh"
+#include "../libs/Secuaz.hh"
 
 //Menues:
 #include "../libs/DatosMouse.hh"

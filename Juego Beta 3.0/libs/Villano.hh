@@ -58,7 +58,7 @@ char * Villano::obtenerPista(){
    FILE *pi;
    pi=fopen ("./Dat/PistasVillanos.dat","rb");
 
-   if(pi==NULL){std::cout<<"Error de apertura de archivo!!"<<std::endl;}
+   if(pi==NULL){std::cout<<"Error de apertura Villanos.dat!!"<<std::endl;}
 
    for (int i=0; i<5; i++) {
 
@@ -92,7 +92,7 @@ void Villano::grabar(){
 
    p=fopen ("./Villanos.dat","ab");
 
-   if(p==NULL){std::cout<<"Error de apertura de archivo!!"<<std::endl;}
+   if(p==NULL){std::cout<<"Error de apertura Villanos.dat!!"<<std::endl;}
 
    fwrite (this,sizeof * this,1,p);
 

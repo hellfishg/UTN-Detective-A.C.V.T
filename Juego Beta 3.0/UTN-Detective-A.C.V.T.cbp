@@ -163,10 +163,10 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="libs/Archivo.hh" />
 		<Unit filename="libs/Bibliotecas.hh" />
 		<Unit filename="libs/Boton.hh" />
 		<Unit filename="libs/DatosMouse.hh" />
+		<Unit filename="libs/Locacion.hh" />
 		<Unit filename="libs/MenuCargar.hh" />
 		<Unit filename="libs/MenuOpciones.hh" />
 		<Unit filename="libs/MenuPrincipal.hh" />
@@ -178,8 +178,12 @@
 		<Unit filename="libs/PantallaCombate.hh" />
 		<Unit filename="libs/PantallaData.hh" />
 		<Unit filename="libs/PantallaViaje.hh" />
+		<Unit filename="libs/PistasVillanos.hh" />
+		<Unit filename="libs/Save.hh" />
 		<Unit filename="libs/ScreenManager.hh" />
+		<Unit filename="libs/Secuaz.hh" />
 		<Unit filename="libs/Ventana.hh" />
+		<Unit filename="libs/Villano.hh" />
 		<Unit filename="main.cpp" />
 		<Extensions>
 			<code_completion />

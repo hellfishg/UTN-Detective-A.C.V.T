@@ -15,6 +15,7 @@ public:
 
    void CargarDatos(int,int,int);
 
+//////////////// getters //////////////////////////////////////////////
    int getX(){return x;}
    int getY(){return y;}
    int getBoton(){return boton;}

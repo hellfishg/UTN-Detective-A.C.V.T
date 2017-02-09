@@ -19,6 +19,7 @@
 #include "../libs/PistasVillanos.hh"
 #include "../libs/Villano.hh"
 #include "../libs/Secuaz.hh"
+#include "../libs/Locacion.hh"
 
 //Menues:
 #include "../libs/DatosMouse.hh"
@@ -31,7 +32,7 @@
 #include "../libs/MenuOpciones.hh"
 
 
-//Pantallas de gamplay:
+//Pantallas de gameplay:
 #include "../libs/Pantalla.hh"
 #include "../libs/PantallaAccion.hh"
 #include "../libs/PantallaBusqueda.hh"

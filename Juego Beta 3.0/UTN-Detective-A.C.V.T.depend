@@ -332,3 +332,338 @@
 1484697774 c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\screenmanager.hh
 	"Bibliotecas.hh"
 
+1486600444 source:c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\main.cpp
+	"./libs/Bibliotecas.hh"
+	"./libs/ScreenManager.hh"
+
+1486602420 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\bibliotecas.hh
+	<iostream>
+	<cstdio>
+	"string.h"
+	"stdlib.h"
+	<allegro5/allegro5.h>
+	<allegro5/allegro_native_dialog.h>
+	<allegro5/allegro_image.h>
+	<allegro5/allegro_font.h>
+	<allegro5/allegro_ttf.h>
+	"../libs/Save.hh"
+	"../libs/PistasVillanos.hh"
+	"../libs/Villano.hh"
+	"../libs/Secuaz.hh"
+	"../libs/Locacion.hh"
+	"../libs/DatosMouse.hh"
+	"../libs/Boton.hh"
+	"../libs/Ventana.hh"
+	"../libs/MenuPrincipal.hh"
+	"../libs/MenuCargar.hh"
+	"../libs/MenuRanking.hh"
+	"../libs/NuevaPartida.hh"
+	"../libs/MenuOpciones.hh"
+	"../libs/Pantalla.hh"
+	"../libs/PantallaAccion.hh"
+	"../libs/PantallaBusqueda.hh"
+	"../libs/PantallaViaje.hh"
+	"../libs/PantallaData.hh"
+	"../libs/PantallaCombate.hh"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro5.h
+	"allegro.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro.h
+	"allegro5/base.h"
+	"allegro5/altime.h"
+	"allegro5/bitmap.h"
+	"allegro5/bitmap_draw.h"
+	"allegro5/bitmap_io.h"
+	"allegro5/bitmap_lock.h"
+	"allegro5/blender.h"
+	"allegro5/color.h"
+	"allegro5/config.h"
+	"allegro5/debug.h"
+	"allegro5/display.h"
+	"allegro5/drawing.h"
+	"allegro5/error.h"
+	"allegro5/events.h"
+	"allegro5/file.h"
+	"allegro5/fixed.h"
+	"allegro5/fmaths.h"
+	"allegro5/fshook.h"
+	"allegro5/fullscreen_mode.h"
+	"allegro5/joystick.h"
+	"allegro5/keyboard.h"
+	"allegro5/memory.h"
+	"allegro5/monitor.h"
+	"allegro5/mouse.h"
+	"allegro5/mouse_cursor.h"
+	"allegro5/path.h"
+	"allegro5/system.h"
+	"allegro5/threads.h"
+	"allegro5/timer.h"
+	"allegro5/tls.h"
+	"allegro5/transformations.h"
+	"allegro5/utf8.h"
+	"allegro5/alcompat.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\base.h
+	<errno.h>
+	<limits.h>
+	<limits.h>
+	<stdarg.h>
+	<stddef.h>
+	<stdlib.h>
+	<time.h>
+	<string.h>
+	<sys/types.h>
+	<fortify/fortify.h>
+	<dmalloc.h>
+	"allegro5/internal/alconfig.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\internal\alconfig.h
+	"allegro5/platform/alplatf.h"
+	"allegro5/platform/alwatcom.h"
+	"allegro5/platform/almngw32.h"
+	"allegro5/platform/albcc32.h"
+	"allegro5/platform/almsvc.h"
+	"allegro5/platform/aliphonecfg.h"
+	"allegro5/platform/alosxcfg.h"
+	"allegro5/platform/alucfg.h"
+	"allegro5/platform/astdint.h"
+	"allegro5/platform/astdbool.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alplatf.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alwatcom.h
+	<io.h>
+	<i86.h>
+	<conio.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\almngw32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\albcc32.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\almsvc.h
+	<io.h>
+	<fcntl.h>
+	<direct.h>
+	<malloc.h>
+	"allegro5/platform/alplatf.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\aliphonecfg.h
+	<fcntl.h>
+	<unistd.h>
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alosxcfg.h
+	"allegro5/platform/alplatf.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alucfg.h
+	<fcntl.h>
+	<unistd.h>
+	"alunix.h"
+	"allegro5/platform/alplatf.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\alunix.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\astdint.h
+	<inttypes.h>
+	<stdint.h>
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\platform\astdbool.h
+	<stdbool.h>
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\altime.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap.h
+	"allegro5/color.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\color.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap_draw.h
+	"allegro5/bitmap.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap_io.h
+	"allegro5/bitmap.h"
+	"allegro5/file.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\file.h
+	"allegro5/base.h"
+	"allegro5/path.h"
+	"allegro5/utf8.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\path.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\utf8.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\bitmap_lock.h
+	"allegro5/bitmap.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\blender.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\config.h
+	"allegro5/file.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\debug.h
+	<assert.h>
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\display.h
+	"allegro5/bitmap.h"
+	"allegro5/color.h"
+	"allegro5/events.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\events.h
+	"allegro5/altime.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\drawing.h
+	"allegro5/color.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\error.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\fixed.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\fmaths.h
+	"allegro5/base.h"
+	"allegro5/fixed.h"
+	"allegro5/inline/fmaths.inl"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\inline\fmaths.inl
+	"allegro5/error.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\fshook.h
+	"allegro5/base.h"
+	"allegro5/file.h"
+	"allegro5/path.h"
+	<sys/types.h>
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\fullscreen_mode.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\joystick.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\keyboard.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+	"allegro5/keycodes.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\keycodes.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\memory.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\monitor.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\mouse.h
+	"allegro5/base.h"
+	"allegro5/events.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\mouse_cursor.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\system.h
+	"allegro5/config.h"
+	"allegro5/path.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\threads.h
+	"allegro5/altime.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\timer.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\tls.h
+	"allegro5/base.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\transformations.h
+	"allegro5/display.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\alcompat.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_native_dialog.h
+	"allegro5/allegro.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_image.h
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_font.h
+	"allegro5/allegro.h"
+
+1486600442 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\allegro-5.0.10-mingw-4.5.0\include\allegro5\allegro_ttf.h
+	"allegro5/allegro.h"
+	"allegro5/allegro_font.h"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\save.hh
+	<iostream>
+	<cstdio>
+	"string.h"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pistasvillanos.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\villano.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\secuaz.hh
+	"Bibliotecas.hh"
+
+1486603965 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\datosmouse.hh
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\boton.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\ventana.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menuprincipal.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menucargar.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menuranking.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\nuevapartida.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menuopciones.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantalla.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallaaccion.hh
+	"Bibliotecas.hh"
+
+1486618857 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallabusqueda.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallaviaje.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantalladata.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallacombate.hh
+	"Bibliotecas.hh"
+
+1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\screenmanager.hh
+	"Bibliotecas.hh"
+
+1486617285 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\locacion.hh
+	"Bibliotecas.hh"
+

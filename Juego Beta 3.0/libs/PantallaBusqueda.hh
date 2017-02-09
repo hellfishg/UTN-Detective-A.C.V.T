@@ -5,6 +5,7 @@
 
 class PantallaBusqueda:public Pantalla {
 private:
+    Locacion loc;
 
 public:
 
@@ -12,6 +13,7 @@ public:
 
    void dibujar(DatosMouse *dm);
    void destruir();
+   void cargarLocacion();
 
 };
 
@@ -31,11 +33,17 @@ void PantallaBusqueda::dibujar(DatosMouse * dm){
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 /////////////////////////////////////////////////////////////////////////
 
-   //this->cargarModuloA("jhonTitor.png");
+   //this->cargarModuloA("jhonTitor.png")
 
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------HOTEL");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,"<------BAR");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,"<------MUSEO");
+   cargarLocacion();
+   cargarModuloA(loc.getFoto());
+
+   char flecha1[30] = {"<--------- "};
+   char flecha2[30] = {"<--------- "};
+   char flecha3[30] = {"<--------- "};
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,strcat(flecha1,loc.getLug1()));
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,strcat(flecha2,loc.getLug2()));
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,strcat(flecha3,loc.getLug3()));
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
 
@@ -98,6 +106,29 @@ void PantallaBusqueda::dibujar(DatosMouse * dm){
 
 
 }
+//////////////////////////////////////////////////////////////////////
+
+void PantallaBusqueda::cargarLocacion()
+{
+   FILE *p;
+
+   Locacion loc2;
+   Save save;
+
+   p=fopen ("./Dat/Locaciones.dat","rb");
+
+   if(p==NULL){std::cout<<"Error de apertura Locaciones.dat!!"<<std::endl;}
+
+   while (fread (&loc2,sizeof (Locacion),1,p))
+   {
+       if (strcmp(save.getLocActual(),loc2.getNombre())==0)
+       {
+           loc = loc2;
+       }
+   }
+   fclose(p);
+}
+
 ///////////////////////////////////////////////////////////////////////
 void PantallaBusqueda::destruir(){
 

@@ -55,11 +55,4 @@ void Locacion::grabar(){
 }
 
 
-
-
-
-
-
-
-
 #endif // LOCACION_HH_INCLUDED

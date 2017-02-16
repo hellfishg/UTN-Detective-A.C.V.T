@@ -3,6 +3,7 @@
 #include "string.h"
 #include "Locacion.hh"
 
+void loc0 ();
 void loc1 ();
 void loc2 ();
 void loc3 ();
@@ -15,6 +16,7 @@ void loc9 ();
 
 int main(void)
 {
+     loc0 ();
      loc1 ();
      loc2 ();
      loc3 ();
@@ -154,10 +156,22 @@ void loc9 ()
 {
     Locacion loc9;
 
-    loc9.setNombre("EGIPTO");
+    loc9.setNombre("EEUU");
     loc9.setDescripcion("./images/Loc_EEUUDesc.jpg");
     loc9.setFoto("./images/Loc_EEUU.jpg");
-    loc9.setLugares("POSADA", "PIRAMIDE", "TEMPLO");
+    loc9.setLugares("POSADA", "BAR", "IGLESIA");
 
     loc9.grabar();
+}
+
+void loc0 ()
+{
+    Locacion loc0;
+
+    loc0.setNombre("BASE");
+    loc0.setDescripcion("./images/Loc_BaseDesc.jpg");
+    loc0.setFoto("./images/Loc_Base.jpg");
+    //loc0.setLugares("POSADA", "PIRAMIDE", "TEMPLO");
+
+    loc0.grabar();
 }

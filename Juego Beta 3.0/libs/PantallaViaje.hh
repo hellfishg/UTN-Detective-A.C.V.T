@@ -6,12 +6,18 @@
 class PantallaViaje:public Pantalla {
 private:
 
+   char viajesLoc[4][30];
+
+
 public:
 
    PantallaViaje();
 
    void dibujar(DatosMouse *dm);
    void destruir();
+
+   void generarNuevasLocaciones();
+   void saltoTemp(int s);
 
 };
 
@@ -36,9 +42,17 @@ void PantallaViaje::dibujar(DatosMouse * dm){
    this->cargarModuloA("./images/ModuloA_TimeMachine.png");
 
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------FRANCIA, 1489 DC");
+
+
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,"<------EGITPO, 2800 AC");
+
+
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,"<------NUEVO MEJICO, 1800 DC");
+
+
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
+
+
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
 
    int selc=comprobarClickBoton(dm);
@@ -91,6 +105,7 @@ void PantallaViaje::dibujar(DatosMouse * dm){
       case 9:
          this->setIDsalto(0);
          std::cout << "btn 9" << std::endl;
+         generarNuevasLocaciones();
       break;
 
       case 10:
@@ -99,10 +114,77 @@ void PantallaViaje::dibujar(DatosMouse * dm){
       break;
 
    }
-
-
-
 }
+
+///////////////////////////////////////////////////////////////////////
+void PantallaViaje::saltoTemp(int s){
+
+   Save save;
+
+   if(s==4){
+      //Si es regreso.
+
+      save.setLocActual(viajesLoc[3]);
+
+      //aca me quede.
+   }
+}
+///////////////////////////////////////////////////////////////////////
+void PantallaViaje::generarNuevasLocaciones(){
+
+   Save save;
+
+   //De testeo.
+/*   save.setLocActual("ROMA");
+   save.setSaltosHechos(0);
+   save.setLocHechas("BASE");
+   save.setSaltosHechos(1);
+   save.setLocHechas("EEUU");
+   save.grabar();*/
+   //borrar despues
+
+   //Genera el salto-anterior hecho:
+   strcpy(viajesLoc[3], save.getLocHechas(save.getSaltosHechos()) );
+
+   Locacion loc;
+
+   for(int cont=0;cont<3;cont++){
+
+      int aux=0;
+
+      while(aux!=3){
+
+         loc.random();//autocarga una locacion random
+
+         aux=0;
+
+         if( strcmp(loc.getNombre(),save.getLocActual())!=0 ){//ran==locActual?
+
+            if(! save.reconLocal(loc.getNombre()) ){//ran==locHechas?
+
+               for(int a=0;a<3;a++){
+
+                  if( strcmp(loc.getNombre(),viajesLoc[a])!=0 ){//ran==yaElegidos?
+
+                     std::cout << "Ya elegidos: "<<loc.getNombre()<<"!="<<viajesLoc[a] << '\n';
+
+                     aux++;
+                  }
+               }
+            }
+         }
+      }
+
+      strcpy( viajesLoc[cont],loc.getNombre());
+   }
+
+   for(int i=0;i<4;i++){
+
+      std::cout << viajesLoc[i] << '\n';
+   }
+}
+
+
 ///////////////////////////////////////////////////////////////////////
 void PantallaViaje::destruir(){
 

@@ -16,7 +16,7 @@ void loc9 ();
 
 int main(void)
 {
-     loc0 ();
+     /*loc0 ();
      loc1 ();
      loc2 ();
      loc3 ();
@@ -25,10 +25,10 @@ int main(void)
      loc6 ();
      loc7 ();
      loc8 ();
-     loc9 ();
+     loc9 ();*/
 
 
-    Locacion vLoc[9];
+    Locacion vLoc[10];
 
     FILE *p;
     p=fopen ("./Locaciones.dat","rb");
@@ -38,14 +38,14 @@ int main(void)
         std::cout<<"Error de apertura de archivo!!"<<std::endl;
     }
 
-    for (int i=0; i<9; i++)
+    for (int i=0; i<10; i++)
     {
         fread(&vLoc[i], sizeof(Locacion), 1, p);
     }
 
     fclose(p);
 
-    for (int i=0; i<9; i++)
+    for (int i=0; i<10; i++)
     {
         std::cout << vLoc[i].getDescripcion() << '\n';
     }
@@ -70,7 +70,7 @@ void loc2 ()
 {
     Locacion loc2;
 
-    loc2.setNombre("VIRREINATO DEL RIO DE LA PLATA");
+    loc2.setNombre("ARGENTINA");
     loc2.setDescripcion("./images/Loc_ArgentinaDesc.jpg");
     loc2.setFoto("./images/Loc_Argentina_1.jpg");
     loc2.setLugares("POSADA", "PULPERIA", "PARROQUIA");
@@ -111,7 +111,7 @@ void loc5 ()
     loc5.setNombre("ROMA");
     loc5.setDescripcion("./images/Loc_RomaDesc.jpg");
     loc5.setFoto("./images/Loc_Roma_1.jpg");
-    loc5.setLugares("POSADA", "BAR", "BAÑOS PUBLICOS");
+    loc5.setLugares("POSADA", "BAR", "BAï¿½OS PUBLICOS");
 
     loc5.grabar();
 }
@@ -132,7 +132,7 @@ void loc7 ()
 {
     Locacion loc7;
 
-    loc7.setNombre("PARIS");
+    loc7.setNombre("FRANCIA");
     loc7.setDescripcion("./images/Loc_FranciaDesc.jpg");
     loc7.setFoto("./images/Loc_Francia.jpg");
     loc7.setLugares("POSADA", "BAR", "TEMPLO");
@@ -171,7 +171,7 @@ void loc0 ()
     loc0.setNombre("BASE");
     loc0.setDescripcion("./images/Loc_BaseDesc.jpg");
     loc0.setFoto("./images/Loc_Base.jpg");
-    //loc0.setLugares("POSADA", "PIRAMIDE", "TEMPLO");
+    loc0.setLugares(" ", " ", " ");
 
     loc0.grabar();
 }

@@ -18,6 +18,8 @@ public:
 
    void grabar();
 
+   Locacion random();//regresa una locacion random pidiendo el numero de registro.
+
 //////getters:
    char * getNombre(){return nombre;}
    char * getDescripcion(){return descripcion;}
@@ -39,7 +41,26 @@ public:
 ///////////////////////////////////////////////////////////////////////////
 //Metodos:
 
+Locacion Locacion::random(){
 
+/*   int seed=time(0);
+
+   srand(seed);*/
+
+   int cant=10; //cantidad de locaciones en la base de datos.Cambiar aca si cambian!!
+
+   int ran=rand()%cant+1;
+
+   FILE *p=fopen ("./Dat/Locaciones.dat","rb");
+   if(p==NULL){std::cout<<"Error de apertura en Locaciones.dat!!"<<std::endl;}
+
+   for(int i=0;i<ran;i++){
+
+      fread (this,sizeof (Locacion),1,p);
+   }
+
+   fclose(p);
+}
 
 void Locacion::grabar(){
 

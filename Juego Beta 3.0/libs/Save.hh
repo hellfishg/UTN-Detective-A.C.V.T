@@ -18,16 +18,17 @@ private:
 
    //ver de incorporar la eleccion de las caracteristicas elegidas anteriormente de la busqueda de villanos.
 
-   //para ranking:
+   //para ranking tambien:
    char locHechas[10][30];
-   int saltosHechos;
+   int saltosHechos=0;
    int secuacesDerrotados;
 
 public:
 
    Save();
-
    void grabar();
+   void incrementarSaltosHechos();
+   bool reconLocal(char s[30]); //regresa true si existe la localizacion.
 
    //getters:
    char * getNombre(){return nombre;}
@@ -37,7 +38,8 @@ public:
    char * getVillano(){return villano;}
    char * getLocActual(){return locActual;}
 
-   char * getLocHechas(){return *locHechas;}//ver puntero.
+   char * getLocHechas(int i){return locHechas[i];}
+
    int getSaltosHechos(){return saltosHechos;}
    int getSecuDerrotados(){return secuacesDerrotados;}
    //Setters:
@@ -48,12 +50,15 @@ public:
    void setVillano(char v[30]){strcpy(villano,v);}
    void setLocActual(char loc[30]){strcpy(locActual,loc);}
 
-   void setLocHechas(char loc[30]){ strcpy(locHechas[saltosHechos],loc );}
+
    void setSaltosHechos(int s){saltosHechos=s;}
    void setSecuacesDerrotados(int s){secuacesDerrotados=s;}
 
-};
+   void setLocHechas(char loc[30]){ strcpy(locHechas[saltosHechos],loc );}
 
+
+};
+///////////////////////////////////////////////////////////////////////
 Save::Save(){
 
    FILE *p=fopen("./Dat/Save.dat","rb");
@@ -68,7 +73,25 @@ Save::Save(){
       fclose(p);
    }
 }
+///////////////////////////////////////////////////////////////////////
+void Save::incrementarSaltosHechos(){
 
+   saltosHechos++;
+}
+///////////////////////////////////////////////////////////////////////
+bool Save::reconLocal(char s[30]){
+
+   for(int i=0;i<=saltosHechos;i++){
+
+      if(strcmp(s,locHechas[i])==0){
+
+         return true;
+      }
+   }
+
+   return false;
+}
+///////////////////////////////////////////////////////////////////////
 void Save::grabar(){
 
    FILE *p=fopen("./Dat/Save.dat","wb");
@@ -76,5 +99,5 @@ void Save::grabar(){
    fwrite(this,sizeof (Save),1,p);
    fclose(p);
 }
-
+///////////////////////////////////////////////////////////////////////
 #endif //SAVE_HH

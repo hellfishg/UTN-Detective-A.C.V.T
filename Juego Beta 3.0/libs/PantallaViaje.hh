@@ -16,7 +16,7 @@ public:
    void dibujar(DatosMouse *dm);
    void destruir();
 
-   void generarNuevasLocaciones();
+   void generarNuevasLocaciones();//Crea nuevas locaciones randoms sin repetir y elije una para ser la pista correcta y lo guarda en save.
    void saltoTemp(int s);
 
 };
@@ -28,12 +28,11 @@ PantallaViaje::PantallaViaje(){
 
    this->setID(113);//Colocar la ID de la ventana.
 
-
-
-
 }
 ///////////////////////////////////////////////////////////////////////
 void PantallaViaje::dibujar(DatosMouse * dm){
+
+   generarNuevasLocaciones();
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
@@ -105,7 +104,7 @@ void PantallaViaje::dibujar(DatosMouse * dm){
       case 9:
          this->setIDsalto(0);
          std::cout << "btn 9" << std::endl;
-         generarNuevasLocaciones();
+
       break;
 
       case 10:
@@ -118,15 +117,40 @@ void PantallaViaje::dibujar(DatosMouse * dm){
 
 ///////////////////////////////////////////////////////////////////////
 void PantallaViaje::saltoTemp(int s){
+   //Carga todos los datos de del salto temporal:
 
    Save save;
 
+   if(s<=3){
+      //Salto correcto:
+
+      if( strcmp(save.getLugarPista(),save.getViajesLoc(s))==0){
+
+         save.setLocActual(save.getViajesLoc(s));
+
+         save.incrementarSaltosHechos();
+
+         save.setLocHechas(save.getLocActual());
+
+         generarNuevasLocaciones();
+
+         save.setViajesLoc( "                     ", 3);
+
+      }else{
+         //Salto falso:
+
+         save.setSaltosRestantes( save.getSaltosRestantes() -1 );
+
+         save.setLocActual(save.getViajesLoc(s));
+      }
+   }
+
    if(s==4){
-      //Si es regreso.
+      //Si es regreso:
 
-      save.setLocActual(viajesLoc[3]);
+      save.setSaltosRestantes( save.getSaltosRestantes() -1 );
 
-      //aca me quede.
+      save.setLocActual(save.getLocHechas(save.getSaltosHechos()));
    }
 }
 ///////////////////////////////////////////////////////////////////////
@@ -144,7 +168,7 @@ void PantallaViaje::generarNuevasLocaciones(){
    //borrar despues
 
    //Genera el salto-anterior hecho:
-   strcpy(viajesLoc[3], save.getLocHechas(save.getSaltosHechos()) );
+   save.setViajesLoc(save.getLocHechas(save.getSaltosHechos()),3);
 
    Locacion loc;
 
@@ -160,13 +184,13 @@ void PantallaViaje::generarNuevasLocaciones(){
 
          if( strcmp(loc.getNombre(),save.getLocActual())!=0 ){//ran==locActual?
 
-            if(! save.reconLocal(loc.getNombre()) ){//ran==locHechas?
+            if(! (save.reconLocal(loc.getNombre())) ){//ran==locHechas?
 
                for(int a=0;a<3;a++){
 
-                  if( strcmp(loc.getNombre(),viajesLoc[a])!=0 ){//ran==yaElegidos?
+                  if( strcmp(loc.getNombre(),save.getViajesLoc(a))!=0 ){//ran==yaElegidos?
 
-                     std::cout << "Ya elegidos: "<<loc.getNombre()<<"!="<<viajesLoc[a] << '\n';
+                     std::cout << "Ya elegidos: "<<loc.getNombre()<<"!="<<save.getViajesLoc(a) << '\n';
 
                      aux++;
                   }
@@ -175,15 +199,20 @@ void PantallaViaje::generarNuevasLocaciones(){
          }
       }
 
-      strcpy( viajesLoc[cont],loc.getNombre());
+      save.setViajesLoc(loc.getNombre(),cont);
    }
 
-   for(int i=0;i<4;i++){
-
-      std::cout << viajesLoc[i] << '\n';
+   for(int i=0;i<4;i++){//salida de consola.
+      std::cout << save.getViajesLoc(i) << '\n';
    }
+
+   //Elije una ubicacion correcta y la guarda en save:
+
+    save.setLugarPista( save.getViajesLoc(rand()%3));
+    save.grabar();
+
+    std::cout <<"Lugar del villano: " <<save.getLugarPista() << '\n';
 }
-
 
 ///////////////////////////////////////////////////////////////////////
 void PantallaViaje::destruir(){

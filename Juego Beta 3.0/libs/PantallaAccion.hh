@@ -40,9 +40,6 @@ void PantallaAccion::dibujar(DatosMouse * dm){
    this->cargarLocacion();
 
 
-
-
-
    int selc=comprobarClickBoton(dm);
 
    switch (selc) {//Regresa el numero del boton tocado.
@@ -99,8 +96,6 @@ void PantallaAccion::dibujar(DatosMouse * dm){
 
    }
 
-
-
 }
 ///////////////////////////////////////////////////////////////////////
 void PantallaAccion::cargarLocacion(){
@@ -109,7 +104,7 @@ void PantallaAccion::cargarLocacion(){
 
       case 1:
          this->cargarModuloA("./images/ModuloA_Bastilla.png");
-        //  . Durante varios siglos cumpli� un papel fundamental en la defensa de la ciudad, pero con el pas�
+
          al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,106,0,"La Bastilla o Bastilla de San Antonio");
          al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,126,0,"fue una fortaleza que protegia");
          al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,146,0,"el costado oriental de la ciudad de");
@@ -147,8 +142,6 @@ void PantallaAccion::cargarLocacion(){
 
       break;
    }
-
-
 }
 
 ////////////////////////////////////////////////////////////////////////

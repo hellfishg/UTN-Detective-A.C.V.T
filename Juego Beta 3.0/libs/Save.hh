@@ -9,19 +9,23 @@
 
 private:
 
-   char nombre[30];
-   int vida;
-   int saltosRestantes;
-   int pjEnUso;
-   char villano[30];
-   char locActual[30];//ver si se va manejar con chars.
+   char nombre[30];//nombre del usuario.
+   int vida;//vida actual.
+   int pjEnUso;//pj en uso de la partida.
+   char villano[30];//el villano de la partida.
 
-   //ver de incorporar la eleccion de las caracteristicas elegidas anteriormente de la busqueda de villanos.
+   int saltosRestantes;//cantidad de saltos restantes.
+
+   char locActual[30];//donde esta actualmente.
+   char viajesLoc[4][30];
+   char lugarPista[30];//donde guarda el lugar rastro.
+   char locHechas[10][30];//registro de lugares correctos visitados.
+   int saltosHechos=0;//registro de saltos hechos.
+
 
    //para ranking tambien:
-   char locHechas[10][30];
-   int saltosHechos=0;
-   int secuacesDerrotados;
+   char OrdenDeArresto[30];//cuando se pida.
+   int secuacesDerrotados;//para calcular en ranking.
 
 public:
 
@@ -37,7 +41,9 @@ public:
    int getPj(){return pjEnUso;}
    char * getVillano(){return villano;}
    char * getLocActual(){return locActual;}
+   char * getViajesLoc(int i){return viajesLoc[i];}
 
+   char * getLugarPista(){return lugarPista;}
    char * getLocHechas(int i){return locHechas[i];}
 
    int getSaltosHechos(){return saltosHechos;}
@@ -50,11 +56,16 @@ public:
    void setVillano(char v[30]){strcpy(villano,v);}
    void setLocActual(char loc[30]){strcpy(locActual,loc);}
 
+   void setLugarPista(char l[30]){strcpy(lugarPista,l);}
 
    void setSaltosHechos(int s){saltosHechos=s;}
    void setSecuacesDerrotados(int s){secuacesDerrotados=s;}
 
    void setLocHechas(char loc[30]){ strcpy(locHechas[saltosHechos],loc );}
+
+   void setViajesLoc(char loc[30],int i){
+      strcpy(viajesLoc[i],loc);
+   }
 
 
 };
@@ -77,6 +88,7 @@ Save::Save(){
 void Save::incrementarSaltosHechos(){
 
    saltosHechos++;
+   saltosRestantes--;
 }
 ///////////////////////////////////////////////////////////////////////
 bool Save::reconLocal(char s[30]){

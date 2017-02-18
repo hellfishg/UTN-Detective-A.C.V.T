@@ -14,6 +14,8 @@ public:
 
     void dibujar(DatosMouse *dm);
     void destruir();
+    void createRegistro();
+    void createDat();
 
 };
 
@@ -31,6 +33,59 @@ MenuRanking::MenuRanking()
 ///////////////////////////////////////////////////////////////////////
 void MenuRanking::dibujar(DatosMouse *dm)
 {
+   Ranking *rank0;
+   int indice=0;
+   createDat();
+
+   FILE *p;
+   p=fopen ("./Dat/RankingTotal.dat","rb");
+
+   if(p==NULL){std::cout<<"Error de apertura de archivo!!"<<std::endl;}
+
+   while (fread(&rank0 , sizeof (Ranking), 1 , p))
+   {
+       indice++;
+   }
+
+
+   Ranking rank1[indice], rank2[5];
+
+   fread(&rank1, sizeof (Ranking), indice, p);
+
+   fclose(p);
+
+   //////////////// Ordenamiento del vector de Ranking ////////////////////////////////////
+
+    int i,j,pos;
+    struct Ranking aux;
+
+    for(i=0; i<indice-1; i++)
+    {
+        pos=i;
+        for(j=i+1; j<indice; j++)
+        {
+            if(rank1[j].getPuntos()>rank1[pos].getPuntos())
+            {
+                pos=j;
+            }
+        }
+
+        aux.setNombre(rank1[i].getNombre());
+        rank1[i].setNombre(rank1[pos].getNombre());
+        rank1[pos].setNombre(aux.getNombre());
+
+
+        //aux=reg[i];
+        //reg[i]=reg[pos];
+        //reg[pos]=aux;
+    }
+
+   /////////////////////////////////////////////////////////////////////////////////////////
+
+
+    char puntos [10];
+
+    itoa(rank0.getPuntos(), puntos, 10);
 
     al_draw_bitmap(this->getFondo(),0,0,0);
     this->colocarBotones();
@@ -40,7 +95,8 @@ void MenuRanking::dibujar(DatosMouse *dm)
 
     al_draw_text(font, al_map_rgb(255, 255, 255), 400, 10, ALLEGRO_ALIGN_CENTER, "LOS MEJORES!!");
 
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 100, ALLEGRO_ALIGN_CENTER, "ANGEL - 15000 PUNTOS");
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 100, ALLEGRO_ALIGN_CENTER, puntos);
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 100, ALLEGRO_ALIGN_CENTER, rank0.getNombre());
     al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, "PEPE - 14900 PUNTOS");
     al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 200, ALLEGRO_ALIGN_CENTER, "DANIEL - 14500 PUNTOS");
 
@@ -66,8 +122,45 @@ void MenuRanking::destruir()
 
 }
 ///////////////////////////////////////////////////////////////////////
+void MenuRanking::createRegistro()
+{
+    Ranking rank0;
+    Save save;
+
+    save.setNombre("GEEEEENTEEEEEES");
+    save.setSaltosRestantes(3);
+    save.setSecuacesDerrotados(6);
+    save.setVida(100);
+
+    rank0.setNombre(save.getNombre());
+    rank0.setSaltosRestantes(save.getSaltosRestantes());
+    rank0.setSecuacesDerrotados(save.getSecuDerrotados());
+
+    int puntaje = rank0.getSecuacesDerrotados() + save.getVida() - rank0.getSaltosRestantes();
+
+    rank0.setPuntos(puntaje);
+
+    rank0.grabar();
+}
+
+void MenuRanking::createDat()
+{
+   Ranking rankTotal;
+   createRegistro();
 
 
+   FILE *p;
+   p=fopen ("./Dat/Ranking.dat","rb");
+
+   if(p==NULL){std::cout<<"Error de apertura de registro Ranking!!"<<std::endl;}
+
+   fread(&rankTotal , sizeof (Ranking), 1 , p);
+
+   fclose(p);
+
+   rankTotal.grabarTotal();
+
+}
 
 #endif //MENURANKING_HH
 

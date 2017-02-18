@@ -14,8 +14,6 @@ private:
 
 public:
 
-   Locacion(){}
-
    void grabar();
 
    Locacion random();//regresa una locacion random pidiendo el numero de registro.

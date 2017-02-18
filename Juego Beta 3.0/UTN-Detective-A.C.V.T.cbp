@@ -179,6 +179,7 @@
 		<Unit filename="libs/PantallaData.hh" />
 		<Unit filename="libs/PantallaViaje.hh" />
 		<Unit filename="libs/PistasVillanos.hh" />
+		<Unit filename="libs/Ranking.hh" />
 		<Unit filename="libs/Save.hh" />
 		<Unit filename="libs/ScreenManager.hh" />
 		<Unit filename="libs/Secuaz.hh" />

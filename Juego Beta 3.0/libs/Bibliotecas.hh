@@ -21,6 +21,7 @@
 #include "../libs/Villano.hh"
 #include "../libs/Secuaz.hh"
 #include "../libs/Locacion.hh"
+#include "../libs/Ranking.hh"
 
 //Menues:
 #include "../libs/DatosMouse.hh"

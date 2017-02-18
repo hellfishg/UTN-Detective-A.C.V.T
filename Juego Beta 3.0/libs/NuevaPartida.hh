@@ -8,6 +8,7 @@ class NuevaPartida:public Ventana{
 private:
    int PJ;
 
+
 public:
 
    NuevaPartida();
@@ -18,6 +19,7 @@ public:
    void cargarPantalla(int,int,int );
 
    int seleccionPJ(int s);
+
 
 };
 

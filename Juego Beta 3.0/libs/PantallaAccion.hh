@@ -6,6 +6,7 @@
 class PantallaAccion:public Pantalla {
 
 private:
+    Locacion loc;
 
 public:
 
@@ -15,7 +16,7 @@ public:
    void destruir();
 
    void cargarLocacion();
-
+   void cargarLocacion2();
 
 };
 
@@ -100,11 +101,29 @@ void PantallaAccion::dibujar(DatosMouse * dm){
 ///////////////////////////////////////////////////////////////////////
 void PantallaAccion::cargarLocacion(){
 
-   switch (this->getZonaIni()) {
+
+// if ()
+ //{
+
+    cargarLocacion2();
+    cargarModuloA(loc.getFoto());
+
+    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,106,0,"Bienvenido a la base cadete, listo");
+    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,126,0,"para una nueva mision? ");
+    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,146,0,"Entonces preparate y atrapalos!");
+
+    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),55,55,0,"Base de la Policia Temporal");
+    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
+
+ //}
+
+//else
+ //{
+    switch (this->getZonaIni()) {
 
       case 1:
          this->cargarModuloA("./images/ModuloA_Bastilla.png");
-
+        //  . Durante varios siglos cumpli� un papel fundamental en la defensa de la ciudad, pero con el pas�
          al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,106,0,"La Bastilla o Bastilla de San Antonio");
          al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,126,0,"fue una fortaleza que protegia");
          al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,146,0,"el costado oriental de la ciudad de");
@@ -142,6 +161,8 @@ void PantallaAccion::cargarLocacion(){
 
       break;
    }
+
+
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -156,6 +177,27 @@ void PantallaAccion::destruir(){
    // }
 }
 ///////////////////////////////////////////////////////////////////////
+
+void PantallaAccion::cargarLocacion2()
+{
+   FILE *p;
+
+   Locacion loc2;
+
+   p=fopen ("./Dat/Locaciones.dat","rb");
+
+   if(p==NULL){std::cout<<"Error de apertura Locaciones.dat!!"<<std::endl;}
+
+   while (fread (&loc2,sizeof (Locacion),1,p))
+   {
+       if (strcmp("BASE",loc2.getNombre())==0)
+       {
+           loc = loc2;
+       }
+   }
+   fclose(p);
+}
+
 
 
 
@@ -188,3 +230,8 @@ al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,376,0,"<---boton 10");
 // al_convert_mask_to_alpha(boteee,al_map_rgb(255,0,255));
 //
 // this->cargarBoton(2,288,300,289,570,botee);
+
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,106,0,"La Bastilla o Bastilla de San Antonio");
+      break;
+   }

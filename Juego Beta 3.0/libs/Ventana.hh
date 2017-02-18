@@ -10,6 +10,7 @@ private:
    ALLEGRO_BITMAP *fondo;
    int cantBotones;
    Boton *botones;
+
 public:
 
    int getID(){return ID;}
@@ -30,6 +31,7 @@ public:
 
    virtual void dibujar(DatosMouse *){};
    virtual void destruir(){};
+
 
 };
 /////////////////////////////////////////////////

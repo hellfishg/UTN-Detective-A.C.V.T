@@ -70,7 +70,7 @@ void NuevaPartida::dibujar(DatosMouse * dm){
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
-         this->setIDsalto(111);
+         this->setIDsalto(15);
          std::cout << "Iniciar Partida" << std::endl;
 
       break;
@@ -106,12 +106,16 @@ int NuevaPartida::seleccionPJ(int s){
    ALLEGRO_BITMAP *retrato;
    ALLEGRO_FONT *font1;
 
+   Save save;
+   save.setPj(s);//Salva el pj elegido.
+   save.grabar();
+
    int selec=s;
 
    switch (s){
 
       case 1:
-         retrato=al_load_bitmap("./images/jhonTitor.png");
+         retrato=al_load_bitmap("./images/Pj_Jerome.jpeg");
          al_draw_bitmap(retrato,462,33,0);
 
          //En archivo:
@@ -123,10 +127,12 @@ int NuevaPartida::seleccionPJ(int s){
          al_draw_text(font1, al_map_rgb(78, 200, 3), 68,450, 0, "+Viajero experimentado: Reduce el costo");
          al_draw_text(font1, al_map_rgb(78, 200, 3), 68,464, 0, "de cada viaje en -0,5");
          al_draw_text(font1, al_map_rgb(78, 200, 3), 68,492, 0, "-Pensador: Empieza con menos vida.");
+
+
       break;
 
       case 2:
-         retrato=al_load_bitmap("./images/jhonaTitor.png");
+         retrato=al_load_bitmap("./images/Pj_Catlyn.jpeg");
          al_draw_bitmap(retrato,462,33,0);
 
          //En archivo:
@@ -140,7 +146,7 @@ int NuevaPartida::seleccionPJ(int s){
       break;
 
       case 3:
-         retrato=al_load_bitmap("./images/guybrush.png");
+         retrato=al_load_bitmap("./images/Pj_Patrick.jpeg");
          al_draw_bitmap(retrato,462,33,0);
 
          //En archivo:

@@ -34,6 +34,8 @@ public:
 
    void cortarString(char * tex1, char * tex2, int lineaM, int x, int y, int inc, int c1,int c2,int c3 );
 
+   void saveCheck();//Funcion de testeo para ver estado de save.dat
+
    Pantalla();
 
 
@@ -191,6 +193,29 @@ void Pantalla::cargarModuloB(char *cad){
    al_draw_bitmap(this->moduloB,416,105,0);//Dibuja moduloB;
 
 }
+////////////////////////////////////////////////////////////////
+void Pantalla::saveCheck(){
+
+   Save save;
+
+   std::cout << "|++++++++++++++++++++++++++++++++++++++++++|" << '\n';
+   std::cout << "Nombre:"<<save.getNombre() << '\n';
+   std::cout << "Vida:"<<save.getVida() << '\n';
+   std::cout << "Num PJ:"<<save.getPj() << '\n';
+   std::cout << "Vil:"<<save.getVillano() << '\n';
+   std::cout << "Dano:"<<save.getDano() << '\n';
+   std::cout << "--------------------------" << '\n';
+   std::cout << "SaltoRestantes:"<<save.getSaltosRestantes() << '\n';
+   std::cout << "LocActual:"<<save.getLocActual() << '\n';
+   std::cout << "Pista:" << save.getLugarPista()<<'\n';
+   std::cout << "SaltosHechos:" <<save.getSaltosHechos() <<'\n';
+   std::cout << "LocHecha Ultima:" << save.getLocHechas(save.getSaltosHechos())<< '\n';
+   std::cout << "--------------------------" << '\n';
+   std::cout << "OrdenArresto:" << save.getOrdenDeArresto()<< '\n';
+   std::cout << "SecuacesDerrotados:"<< save.getSecuDerrotados()<< '\n';
+   std::cout << "|++++++++++++++++++++++++++++++++++++++++++|" << '\n';
+}
+////////////////////////////////////////////////////////////////
 #endif //Pantalla_HH
 /*
 ///////////////////////////////////////////////////////////////////////////////////////////

@@ -33,9 +33,9 @@
 #include "../libs/NuevaPartida.hh"
 #include "../libs/MenuOpciones.hh"
 
-
 //Pantallas de gamplay:
 #include "../libs/Pantalla.hh"
+#include "../libs/PantallaInicial.hh"
 #include "../libs/PantallaAccion.hh"
 #include "../libs/PantallaBusqueda.hh"
 #include "../libs/PantallaViaje.hh"
@@ -43,13 +43,4 @@
 #include "../libs/PantallaCombate.hh"
 
 
-
-
-//Clases de Saves de menues:
-
-
 #endif //BIBLIOTECAS_HH
-
-//Pantallas de gamplay:
-
-//Pantallas de gameplay:

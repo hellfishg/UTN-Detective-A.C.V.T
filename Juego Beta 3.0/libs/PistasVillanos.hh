@@ -39,7 +39,7 @@ public:
 
 const char * PistasVillanos::obtenerPistaRandom(char car[3][12]){
 
-   //srand(time(0));
+   
 
    int ran1=rand()%3;
    int ran2=rand()%3+1;

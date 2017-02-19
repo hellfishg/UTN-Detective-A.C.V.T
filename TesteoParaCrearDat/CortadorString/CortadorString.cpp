@@ -1,18 +1,25 @@
 #include <iostream>
 #include <cstdio>
 #include "string.h"
+#include <cstdlib>
+
 
 void cortarString();
 void testeo();
 
 int main (void){
 
-   cortarString();
-
+   //cortarString();
    //testeo();
 
+   srand(time(0));
+
+   for(int i=0;i<10;i++){
 
 
+      int pepe=rand()%10;
+      std::cout << pepe << '\n';
+   }
 
    return 0;
 }

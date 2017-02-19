@@ -1,61 +1,67 @@
-#ifndef PANTALLAACCION_HH
-#define PANTALLAACCION_HH
+#ifndef PANTALLAINICIAL_HH
+#define PANTALLAINICIAL_HH
 
 #include "Bibliotecas.hh"
 
-class PantallaAccion:public Pantalla {
+class PantallaInicial:public Pantalla {
 
 private:
 
-   Locacion loc;
-
+   int modo=0;
 
 public:
 
-   PantallaAccion();
+   PantallaInicial();
 
    void dibujar(DatosMouse *dm);
    void destruir();
 
-   Locacion buscarLocacion(char c[30]);
-
+   void incializarSave();
    void cargarLocacion();
-   void cargarLocacion2();
+   void elegirVillanoRan();
 
 };
 
 
 ///////////////////////////////////////////////////////////////////////
 //Metodos:
-PantallaAccion::PantallaAccion(){
+PantallaInicial::PantallaInicial(){
 
-   this->setID(111);//Colocar la ID de la ventana.
-
-   //this-setLocacion(1);
+   this->setID(15);//Colocar la ID de la ventana.
 
 }
 ///////////////////////////////////////////////////////////////////////
-void PantallaAccion::dibujar(DatosMouse * dm){
+void PantallaInicial::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 /////////////////////////////////////////////////////////////////////////
+   this->cargarModuloA("./images/Loc_Base.jpg");
 
+   char text[]={"Bienvenido agente!... colocar texto aca"};
 
-   cargarLocacion();
+   this->cortarString(text,"",37,417,106,20,78,200,3);
 
+   if(modo==0){
+
+      incializarSave();
+
+      this->saveCheck();//funcion de testeo
+
+      modo++;
+   }
 
    int selc=comprobarClickBoton(dm);
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
-         this->setIDsalto(113);
+         this->setIDsalto(111);
          std::cout << "Viaje" << std::endl;
 
       break;
 
       case 2:
-         this->setIDsalto(112);
+         this->setIDsalto(0);
          std::cout << "Buscar" << std::endl;
       break;
 
@@ -103,75 +109,114 @@ void PantallaAccion::dibujar(DatosMouse * dm){
 
 }
 ///////////////////////////////////////////////////////////////////////
-void PantallaAccion::cargarLocacion(){
+
+void PantallaInicial::incializarSave(){
+
+   cargarLocacion();
+   elegirVillanoRan();
 
    Save save;
 
-   loc=buscarLocacion(save.getLocActual());
+   save.setNombre("Mongoide VII");
+   save.setSaltosHechos(0);
+   save.setSecuacesDerrotados(0);
+   save.setLocActual(save.getLugarPista());
+   save.setLocHechas("BASE");
+   save.setSecuacesDerrotados(0);
+   save.setOrdenDeArresto("DESCONOCIDO");
 
-   cargarModuloA(loc.getFoto());
-   cargarModuloB(loc.getDescripcion());
+   switch (save.getPj()) {
+      case 1:
+         //+Saltos -vida:
 
+         save.setSaltosRestantes(7);
+         save.setVida(150);
+         save.setDano(10);
+
+      break;
+      case 2:
+         //+Daño -Saltos:
+
+         save.setSaltosRestantes(5);
+         save.setVida(200);
+         save.setDano(15);
+
+      case 3:
+      break;
+         //+Vida -Daño:
+
+         save.setSaltosRestantes(6);
+         save.setVida(250);
+         save.setDano(8);
+
+      break;
+   }
+
+   save.grabar();
 
 }
+///////////////////////////////////////////////////////////////////////
+void PantallaInicial::cargarLocacion(){
 
-////////////////////////////////////////////////////////////////////////
-Locacion PantallaAccion::buscarLocacion(char c[30]){
-
+   Save save;
    Locacion loc;
+   bool aux=true;
 
-   FILE *p=fopen ("./Dat/Locaciones.dat","rb");
+   while(aux){
 
-   if(p==NULL){std::cout<<"Error de apertura Locaciones.dat!!"<<std::endl;}
+      loc.random();//autocarga una locacion random
 
-   while( fread (&loc,sizeof (Locacion),1,p) ){
+      if( strcmp(loc.getNombre(),save.getLocActual())!=0 ){//ran==locActual?
 
-      if( strcmp(loc.getNombre(),c)==0){
-
-         std::cout << "LOCACION:"<<loc.getNombre() << '\n';
-
-         fclose(p);
-         return loc;
+         aux=false;
       }
    }
+
+   std::cout << "Locacion:" <<loc.getNombre() <<'\n';
+
+   save.setLugarPista(loc.getNombre());
+   save.grabar();
 }
 ////////////////////////////////////////////////////////////////////////
+void PantallaInicial::elegirVillanoRan(){
 
-void PantallaAccion::destruir(){
+   Save save;
+   Villano vil;
 
-   std::cout << "destruccion de PantallaAccion" << std::endl;
+   int ran=rand()%5+1;
+
+   FILE *p=fopen("./Dat/Villanos.dat","rb");
+
+   if(p==NULL){std::cout << "ERROR DE APERTURA VILLANOS.DAT!!" << '\n';}
+
+   for(int i=0;i<ran;i++){
+
+      fread(&vil,sizeof(Villano),1,p);
+   }
+
+   std::cout << "Random: "<<ran<<":" << vil.getNombre() << '\n';
+
+   save.setVillano(vil.getNombre());
+
+
+   save.grabar();
+}
+////////////////////////////////////////////////////////////////////////
+void PantallaInicial::destruir(){
+
+   std::cout << "destruccion de PantallaInicial" << std::endl;
 
    // for(int i;i< this->getCantBotones();i++){
       // al_destroy
 
+      //bitmap(this->getBoton(1)->getImagen());//Da error en consola.ver.
    // }
 }
 ///////////////////////////////////////////////////////////////////////
 
-void PantallaAccion::cargarLocacion2()
-{
-   FILE *p;
-
-   Locacion loc2;
-
-   p=fopen ("./Dat/Locaciones.dat","rb");
-
-   if(p==NULL){std::cout<<"Error de apertura Locaciones.dat!!"<<std::endl;}
-
-   while (fread (&loc2,sizeof (Locacion),1,p))
-   {
-       if (strcmp("BASE",loc2.getNombre())==0)
-       {
-           loc = loc2;
-       }
-   }
-   fclose(p);
-}
 
 
-
-
-#endif //PantallaAccion_HH
+#endif //PANTALLAACCION_HH
 
 
 /*

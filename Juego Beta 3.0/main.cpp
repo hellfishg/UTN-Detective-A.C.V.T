@@ -31,6 +31,8 @@ int main(void) {
    al_init_image_addon();//configura la carga de imagenes por archivo;
    al_init_font_addon();
    al_init_ttf_addon();
+   
+   srand(time(0));//Carga la semilla de random.
 
 
 ///////////////////////////////////////////////////////////////////////////////

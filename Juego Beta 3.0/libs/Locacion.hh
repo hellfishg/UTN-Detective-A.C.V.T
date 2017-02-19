@@ -41,10 +41,6 @@ public:
 
 Locacion Locacion::random(){
 
-/*   int seed=time(0);
-
-   srand(seed);*/
-
    int cant=10; //cantidad de locaciones en la base de datos.Cambiar aca si cambian!!
 
    int ran=rand()%cant+1;

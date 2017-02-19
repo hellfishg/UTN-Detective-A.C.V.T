@@ -33,7 +33,7 @@ MenuRanking::MenuRanking()
 ///////////////////////////////////////////////////////////////////////
 void MenuRanking::dibujar(DatosMouse *dm)
 {
-   Ranking *rank0;
+   Ranking rank0;
    int indice=0;
    createDat();
 
@@ -85,7 +85,9 @@ void MenuRanking::dibujar(DatosMouse *dm)
 
     char puntos [10];
 
-    itoa(rank0.getPuntos(), puntos, 10);
+    sprintf(puntos,"%d",rank0.getPuntos()); //converts to decimal base.
+
+    //itoa(rank0.getPuntos(), puntos, 10);
 
     al_draw_bitmap(this->getFondo(),0,0,0);
     this->colocarBotones();

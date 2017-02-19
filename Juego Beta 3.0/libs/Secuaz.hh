@@ -49,7 +49,7 @@ int Secuaz::golpear(int golpe){
 
 void Secuaz::randomSecuaz(){
 
-   //srand(time(0));
+   
 
    int cant=10; //cantidad de secuaces en la base de datos.Cambiar aca si cambian!!
 

@@ -14,9 +14,6 @@ private:
 
 public:
 
-   Villano(){}
-
-
    char * obtenerPista();//busca y devuelve una pista random de su clase encontrada en PistasVillanos.dat
 
    bool reconocerVill(char c[12]);//regresa true si la caracteristicas la tiene.

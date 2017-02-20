@@ -38,6 +38,8 @@ public:
 
    Pantalla();
 
+   void jumpsTimes(int a);//imprime la cantidad de saltos restantes.
+
 
 };
 
@@ -191,6 +193,16 @@ void Pantalla::cargarModuloB(char *cad){
 
    this->moduloB=al_load_bitmap(cad);
    al_draw_bitmap(this->moduloB,416,105,0);//Dibuja moduloB;
+
+}
+
+void Pantalla::jumpsTimes(int a){
+
+   char jumps[5];
+
+   sprintf(jumps,"%d",a);
+
+   this->cortarString(jumps," Times Jumps",37,608,453,20,235,22,22);
 
 }
 ////////////////////////////////////////////////////////////////

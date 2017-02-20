@@ -32,7 +32,6 @@ PantallaViaje::PantallaViaje(){
 ///////////////////////////////////////////////////////////////////////
 void PantallaViaje::dibujar(DatosMouse * dm){
 
-   generarNuevasLocaciones();
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
@@ -40,25 +39,32 @@ void PantallaViaje::dibujar(DatosMouse * dm){
 
    this->cargarModuloA("./images/ModuloA_TimeMachine.png");
 
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------FRANCIA, 1489 DC");
+   Save save;
+   this->jumpsTimes(save.getSaltosRestantes());
+
+   std::cout << "PISTA INCIO VIAJES:" << save.getLugarPista()<< '\n';
+
+   if(strcmp(save.getLocActual(), save.getViajesLoc(0))!=0 &&
+      strcmp(save.getLocActual(), save.getViajesLoc(1))!=0 &&
+      strcmp(save.getLocActual(), save.getViajesLoc(2))!=0){
+
+      this->cortarString("<----- ", save.getViajesLoc(0),37,417,120,20,235,22,22);
+
+      this->cortarString("<----- ", save.getViajesLoc(1),37,417,160,20,235,22,22);
+
+      this->cortarString("<----- ", save.getViajesLoc(2),37,417,200,20,235,22,22);
+
+   }else{
+
+      this->cortarString("<----- ", save.getLocHechas(save.getSaltosHechos()),37,417,160,20,235,22,22);
+   }
 
 
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,"<------EGITPO, 2800 AC");
-
-
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,"<------NUEVO MEJICO, 1800 DC");
-
-
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
-
-
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
-
+////////////////////////////////////////////////////////
    int selc=comprobarClickBoton(dm);
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
-         this->setIDsalto(113);
          std::cout << "Viaje" << std::endl;
 
       break;
@@ -79,21 +85,42 @@ void PantallaViaje::dibujar(DatosMouse * dm){
       break;
 
       case 5:
-         this->setIDsalto(111);
-         this->setZonaIni(1);
-         std::cout << "btn 5 "  << this->getZonaIni() << std::endl;
+      if(strcmp(save.getLocActual(), save.getViajesLoc(0))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(1))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(2))!=0){
+            std::cout << "btn 5 "  << std::endl;
+
+            saltoTemp(0);
+            this->setIDsalto(111);
+         }
       break;
 
       case 6:
-         this->setIDsalto(111);
-         this->setZonaIni(2);
-         std::cout << "btn 6 " << this->getZonaIni() << std::endl;
+      if(strcmp(save.getLocActual(), save.getViajesLoc(0))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(1))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(2))!=0){
+            std::cout << "btn 6 " << std::endl;
+
+            saltoTemp(1);
+            this->setIDsalto(111);
+
+         }else{//Salto de regreso en pista mala.
+
+            saltoTemp(3);
+            this->setIDsalto(111);
+
+         }
       break;
 
       case 7:
-         this->setIDsalto(111);
-         this->setZonaIni(3);
-         std::cout << "btn 7 " << this->getZonaIni() << std::endl;
+      if(strcmp(save.getLocActual(), save.getViajesLoc(0))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(1))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(2))!=0){
+            std::cout << "btn 7 " << std::endl;
+
+            saltoTemp(2);
+            this->setIDsalto(111);
+         }
       break;
 
       case 8:
@@ -121,53 +148,50 @@ void PantallaViaje::saltoTemp(int s){
 
    Save save;
 
-   if(s<=3){
-      //Salto correcto:
+   if(s<=2){
 
       if( strcmp(save.getLugarPista(),save.getViajesLoc(s))==0){
-
-         save.setLocActual(save.getViajesLoc(s));
+         //Salto correcto:
 
          save.incrementarSaltosHechos();
-
          save.setLocHechas(save.getLocActual());
+         save.setLocActual(save.getViajesLoc(s));
+         save.grabar();
 
          generarNuevasLocaciones();
 
-         save.setViajesLoc( "                     ", 3);
+         std::cout << "Salio positivo!" << '\n';
 
       }else{
          //Salto falso:
 
-         save.setSaltosRestantes( save.getSaltosRestantes() -1 );
-
+         save.incrementarSaltosHechos();
+         save.setLocHechas(save.getLocActual());
          save.setLocActual(save.getViajesLoc(s));
+         save.grabar();
+
+         std::cout << "Salio falso!" << '\n';
       }
    }
 
-   if(s==4){
+   if(s==3){
       //Si es regreso:
 
       save.setSaltosRestantes( save.getSaltosRestantes() -1 );
-
       save.setLocActual(save.getLocHechas(save.getSaltosHechos()));
+      save.setLocHechas(save.getLocHechas(save.getSaltosHechos()-1));
+      save.setSaltosHechos(save.getSaltosHechos()-1);
+      save.grabar();
+
+      std::cout << "Salio back!" << '\n';
    }
+
 }
 ///////////////////////////////////////////////////////////////////////
 void PantallaViaje::generarNuevasLocaciones(){
 
    Save save;
 
-   //De testeo.
-/*   save.setLocActual("ROMA");
-   save.setSaltosHechos(0);
-   save.setLocHechas("BASE");
-   save.setSaltosHechos(1);
-   save.setLocHechas("EEUU");
-   save.grabar();*/
-   //borrar despues
-
-   //Genera el salto-anterior hecho:
    save.setViajesLoc(save.getLocHechas(save.getSaltosHechos()),3);
 
    Locacion loc;
@@ -200,6 +224,7 @@ void PantallaViaje::generarNuevasLocaciones(){
       }
 
       save.setViajesLoc(loc.getNombre(),cont);
+
    }
 
    for(int i=0;i<4;i++){//salida de consola.
@@ -209,9 +234,10 @@ void PantallaViaje::generarNuevasLocaciones(){
    //Elije una ubicacion correcta y la guarda en save:
 
     save.setLugarPista( save.getViajesLoc(rand()%3));
+    std::cout << "Pista elegida: "<<save.getLugarPista() << '\n';
+    std::cout << "//////////////////////////////////////" << '\n';
     save.grabar();
 
-    std::cout <<"Lugar del villano: " <<save.getLugarPista() << '\n';
 }
 
 ///////////////////////////////////////////////////////////////////////

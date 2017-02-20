@@ -41,6 +41,9 @@ void PantallaAccion::dibujar(DatosMouse * dm){
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 /////////////////////////////////////////////////////////////////////////
 
+   Save save;
+
+   this->jumpsTimes(save.getSaltosRestantes());
 
    cargarLocacion();
 
@@ -112,7 +115,6 @@ void PantallaAccion::cargarLocacion(){
    cargarModuloA(loc.getFoto());
    cargarModuloB(loc.getDescripcion());
 
-
 }
 
 ////////////////////////////////////////////////////////////////////////
@@ -136,6 +138,7 @@ Locacion PantallaAccion::buscarLocacion(char c[30]){
    }
 }
 ////////////////////////////////////////////////////////////////////////
+
 
 void PantallaAccion::destruir(){
 

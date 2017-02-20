@@ -332,11 +332,11 @@
 1484697774 c:\users\damian\utn-detective-a.c.v.t\juego beta 3.0\screenmanager.hh
 	"Bibliotecas.hh"
 
-1486600444 source:c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\main.cpp
+1487540406 source:c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\main.cpp
 	"./libs/Bibliotecas.hh"
 	"./libs/ScreenManager.hh"
 
-1487399650 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\bibliotecas.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\bibliotecas.hh
 	<iostream>
 	<cstdio>
 	"string.h"
@@ -362,6 +362,7 @@
 	"../libs/NuevaPartida.hh"
 	"../libs/MenuOpciones.hh"
 	"../libs/Pantalla.hh"
+	"../libs/PantallaInicial.hh"
 	"../libs/PantallaAccion.hh"
 	"../libs/PantallaBusqueda.hh"
 	"../libs/PantallaViaje.hh"
@@ -608,18 +609,16 @@
 	"allegro5/allegro.h"
 	"allegro5/allegro_font.h"
 
-1487399650 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\save.hh
-	<iostream>
-	<cstdio>
-	"string.h"
-
-1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pistasvillanos.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\save.hh
 	"Bibliotecas.hh"
 
-1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\villano.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pistasvillanos.hh
 	"Bibliotecas.hh"
 
-1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\secuaz.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\villano.hh
+	"Bibliotecas.hh"
+
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\secuaz.hh
 	"Bibliotecas.hh"
 
 1486603965 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\datosmouse.hh
@@ -636,19 +635,19 @@
 1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menucargar.hh
 	"Bibliotecas.hh"
 
-1487404949 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menuranking.hh
+1487559990 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menuranking.hh
 	"Bibliotecas.hh"
 
-1487399651 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\nuevapartida.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\nuevapartida.hh
 	"Bibliotecas.hh"
 
 1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\menuopciones.hh
 	"Bibliotecas.hh"
 
-1487206084 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantalla.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantalla.hh
 	"Bibliotecas.hh"
 
-1487400423 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallaaccion.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallaaccion.hh
 	"Bibliotecas.hh"
 
 1486618857 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallabusqueda.hh
@@ -663,15 +662,18 @@
 1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallacombate.hh
 	"Bibliotecas.hh"
 
-1486600444 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\screenmanager.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\screenmanager.hh
 	"Bibliotecas.hh"
 
-1487399651 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\locacion.hh
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\locacion.hh
 	"Bibliotecas.hh"
 
 1487206084 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pj.hh
 	"Bibliotecas.hh"
 
-1487399651 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\ranking.hh
+1487559762 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\ranking.hh
+	"Bibliotecas.hh"
+
+1487540406 c:\users\damian\documents\github\utn-detective-a.c.v.t\juego beta 3.0\libs\pantallainicial.hh
 	"Bibliotecas.hh"
 

@@ -7,6 +7,9 @@ class MenuRanking:public Ventana
 {
 
 private:
+    int bandera = 0;
+    Ranking rank2[5];
+    char puntos1 [10], puntos2 [10], puntos3 [10], puntos4 [10], puntos5 [10];
 
 public:
 
@@ -14,8 +17,9 @@ public:
 
     void dibujar(DatosMouse *dm);
     void destruir();
-    void createRegistro();
     void createDat();
+    int contadorRegistros();
+
 
 };
 
@@ -31,63 +35,75 @@ MenuRanking::MenuRanking()
 
 }
 ///////////////////////////////////////////////////////////////////////
+
 void MenuRanking::dibujar(DatosMouse *dm)
 {
-   Ranking rank0;
-   int indice=0;
-   createDat();
-
-   FILE *p;
-   p=fopen ("./Dat/RankingTotal.dat","rb");
-
-   if(p==NULL){std::cout<<"Error de apertura de archivo!!"<<std::endl;}
-
-   while (fread(&rank0 , sizeof (Ranking), 1 , p))
-   {
-       indice++;
-   }
-
-
-   Ranking rank1[indice], rank2[5];
-
-   fread(&rank1, sizeof (Ranking), indice, p);
-
-   fclose(p);
-
-   //////////////// Ordenamiento del vector de Ranking ////////////////////////////////////
-
-    int i,j,pos;
-    struct Ranking aux;
-
-    for(i=0; i<indice-1; i++)
+    if (bandera == 0)
     {
-        pos=i;
-        for(j=i+1; j<indice; j++)
+        createDat();// luego se usara para crear el ranking.dat una vez creada la class final, por ahora usa un .dat ya hecho
+        int indice = contadorRegistros();
+        Ranking rank1[indice];
+
+        FILE *p;
+        p=fopen ("./Dat/Ranking.dat","rb");
+
+        if(p==NULL)
         {
-            if(rank1[j].getPuntos()>rank1[pos].getPuntos())
-            {
-                pos=j;
-            }
+            std::cout<<"Error de apertura de archivosssssssss!!"<<std::endl;
         }
 
-        aux.setNombre(rank1[i].getNombre());
-        rank1[i].setNombre(rank1[pos].getNombre());
-        rank1[pos].setNombre(aux.getNombre());
+        fread(&rank1, sizeof (Ranking), indice, p);
+        fclose(p);
 
 
-        //aux=reg[i];
-        //reg[i]=reg[pos];
-        //reg[pos]=aux;
+        for (int i=0; i<indice; i++) std::cout << rank1[i].getNombre() << "  " << rank1[i].getPuntos() << std::endl;
+        std::cout << std::endl;
+
+/////////////////////////////// Ordenamiento del vector de Ranking ////////////////////////////////////
+
+        int i,j,pos;
+        Ranking aux;
+
+        for(i=0; i<indice-1; i++)
+        {
+            pos=i;
+            for(j=i+1; j<indice; j++)
+            {
+                if(rank1[j].getPuntos()>rank1[pos].getPuntos())
+                {
+                    pos=j;
+                }
+            }
+
+            aux.setNombre(rank1[i].getNombre());
+            aux.setPuntos(rank1[i].getPuntos());
+            rank1[i].setNombre(rank1[pos].getNombre());
+            rank1[i].setPuntos(rank1[pos].getPuntos());
+            rank1[pos].setNombre(aux.getNombre());
+            rank1[pos].setPuntos(aux.getPuntos());
+        }
+
+        for (int i=0; i<5; i++)
+        {
+            rank2[i].setNombre(rank1[i].getNombre());
+            rank2[i].setPuntos(rank1[i].getPuntos());
+        }
+
+/////////////////// Fin de ordenamiento ////////////////////////////////////////////////////////////
+
+        sprintf(puntos1,"%d",rank2[0].getPuntos()); //converts to decimal base.
+        sprintf(puntos2,"%d",rank2[1].getPuntos()); //converts to decimal base.
+        sprintf(puntos3,"%d",rank2[2].getPuntos()); //converts to decimal base.
+        sprintf(puntos4,"%d",rank2[3].getPuntos()); //converts to decimal base.
+        sprintf(puntos5,"%d",rank2[4].getPuntos()); //converts to decimal base.
+        //itoa(rank1[3].getPuntos(), puntos, 10);
+        bandera++;
+
+        for (int i=0; i<indice; i++) std::cout << rank1[i].getNombre() << "  " << rank1[i].getPuntos() << std::endl;
+
+        std::cout << "Cantidad de registros: " << indice << std::endl;
     }
-
-   /////////////////////////////////////////////////////////////////////////////////////////
-
-
-    char puntos [10];
-
-    sprintf(puntos,"%d",rank0.getPuntos()); //converts to decimal base.
-
-    //itoa(rank0.getPuntos(), puntos, 10);
+////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
     al_draw_bitmap(this->getFondo(),0,0,0);
     this->colocarBotones();
@@ -95,24 +111,41 @@ void MenuRanking::dibujar(DatosMouse *dm)
     ALLEGRO_FONT *font = al_load_font("./fonts/orbitron-black.ttf",36,0);//la fuente en la carpeta
     ALLEGRO_FONT *font2 = al_load_font("./fonts/orbitron-black.ttf",24,0);
 
+
+
+
     al_draw_text(font, al_map_rgb(255, 255, 255), 400, 10, ALLEGRO_ALIGN_CENTER, "LOS MEJORES!!");
 
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 100, ALLEGRO_ALIGN_CENTER, puntos);
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 100, ALLEGRO_ALIGN_CENTER, rank0.getNombre());
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 150, ALLEGRO_ALIGN_CENTRE, "PEPE - 14900 PUNTOS");
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 400, 200, ALLEGRO_ALIGN_CENTER, "DANIEL - 14500 PUNTOS");
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 100, ALLEGRO_ALIGN_CENTER, puntos1);
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 100, ALLEGRO_ALIGN_CENTER, rank2[0].getNombre());
+
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 150, ALLEGRO_ALIGN_CENTRE, puntos2);
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 150, ALLEGRO_ALIGN_CENTER, rank2[1].getNombre());
+
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 200, ALLEGRO_ALIGN_CENTER, puntos3);
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 200, ALLEGRO_ALIGN_CENTER, rank2[2].getNombre());
+
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 250, ALLEGRO_ALIGN_CENTER, puntos4);
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 250, ALLEGRO_ALIGN_CENTER, rank2[3].getNombre());
+
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 300, ALLEGRO_ALIGN_CENTER, puntos5);
+    al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 300, ALLEGRO_ALIGN_CENTER, rank2[4].getNombre());
+
+
 
     al_destroy_font(font);
     al_destroy_font(font2);
 
+
+
     int selc=comprobarClickBoton(dm);
 
-    switch (selc){
+    switch (selc)
+    {
     case 1:
         this->setIDsalto(1);
         std::cout << "Salir" << std::endl;
         break;
-
     }
 
 }
@@ -124,45 +157,44 @@ void MenuRanking::destruir()
 
 }
 ///////////////////////////////////////////////////////////////////////
-void MenuRanking::createRegistro()
+
+void MenuRanking::createDat()
 {
     Ranking rank0;
-    Save save;
 
-    save.setNombre("GEEEEENTEEEEEES");
-    save.setSaltosRestantes(3);
-    save.setSecuacesDerrotados(6);
-    save.setVida(100);
+    rank0.setNombre("PEPE GRILLO");
+    rank0.setSaltosRestantes(3);
+    rank0.setSecuacesDerrotados(6);
 
-    rank0.setNombre(save.getNombre());
-    rank0.setSaltosRestantes(save.getSaltosRestantes());
-    rank0.setSecuacesDerrotados(save.getSecuDerrotados());
-
-    int puntaje = rank0.getSecuacesDerrotados() + save.getVida() - rank0.getSaltosRestantes();
+    int puntaje = rank0.getSecuacesDerrotados() + 100 - rank0.getSaltosRestantes();
 
     rank0.setPuntos(puntaje);
 
     rank0.grabar();
-}
 
-void MenuRanking::createDat()
+}
+////////////////////////////////////////////////////////////////////
+int MenuRanking::contadorRegistros()
 {
-   Ranking rankTotal;
-   createRegistro();
+    Ranking rank0;
+    int indice=0;
 
+    FILE *p;
+    p=fopen ("./Dat/Ranking.dat","rb");
 
-   FILE *p;
-   p=fopen ("./Dat/Ranking.dat","rb");
+    if(p==NULL)
+    {
+        std::cout<<"Error de apertura de archivo Ranking!!"<<std::endl;
+    }
 
-   if(p==NULL){std::cout<<"Error de apertura de registro Ranking!!"<<std::endl;}
+    while (fread(&rank0, sizeof (Ranking), 1, p))
+    {
+        indice++;
+    }
 
-   fread(&rankTotal , sizeof (Ranking), 1 , p);
-
-   fclose(p);
-
-   rankTotal.grabarTotal();
-
+    return indice;
 }
+////////////////////////////////////////////////////////////////////////
 
 #endif //MENURANKING_HH
 

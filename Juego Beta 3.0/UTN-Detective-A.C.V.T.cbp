@@ -177,6 +177,7 @@
 		<Unit filename="libs/PantallaBusqueda.hh" />
 		<Unit filename="libs/PantallaCombate.hh" />
 		<Unit filename="libs/PantallaData.hh" />
+		<Unit filename="libs/PantallaInicial.hh" />
 		<Unit filename="libs/PantallaViaje.hh" />
 		<Unit filename="libs/PistasVillanos.hh" />
 		<Unit filename="libs/Ranking.hh" />

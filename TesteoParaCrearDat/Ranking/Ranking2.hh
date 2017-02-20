@@ -13,7 +13,6 @@ private:
 
 public:
     void grabar();
-    void grabarTotal();
 
 /////////////////getters/////////////////////////////////////
 
@@ -35,19 +34,7 @@ void Ranking::grabar(){
 
    FILE *p;
 
-   p=fopen ("./Ranking.dat","wb");
-
-   if(p==NULL){std::cout<<"Error de apertura Ranking.dat!!"<<std::endl;}
-
-   fwrite (this,sizeof * this,1,p);
-
-   fclose(p);
-}
-void Ranking::grabarTotal(){
-
-   FILE *p;
-
-   p=fopen ("./RankingTotal.dat","ab");
+   p=fopen ("./Ranking.dat","ab");
 
    if(p==NULL){std::cout<<"Error de apertura Ranking.dat!!"<<std::endl;}
 

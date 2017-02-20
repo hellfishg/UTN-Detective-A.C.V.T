@@ -3,20 +3,23 @@
 #include "string.h"
 #include "Locacion.hh"
 
-void loc0 ();
-void loc1 ();
-void loc2 ();
-void loc3 ();
-void loc4 ();
-void loc5 ();
-void loc6 ();
-void loc7 ();
-void loc8 ();
-void loc9 ();
+void loc0();
+void loc1();
+void loc2();
+void loc3();
+void loc4();
+void loc5();
+void loc6();
+void loc7();
+void loc8();
+void loc9();
+void loc10();
+void loc11();
+
 
 int main(void)
 {
-     /*loc0 ();
+     loc0 ();
      loc1 ();
      loc2 ();
      loc3 ();
@@ -25,10 +28,11 @@ int main(void)
      loc6 ();
      loc7 ();
      loc8 ();
-     loc9 ();*/
+     loc9 ();
+     loc10();
+     loc11();
 
-
-    Locacion vLoc[10];
+    Locacion vLoc[12];
 
     FILE *p;
     p=fopen ("./Locaciones.dat","rb");
@@ -38,14 +42,14 @@ int main(void)
         std::cout<<"Error de apertura de archivo!!"<<std::endl;
     }
 
-    for (int i=0; i<10; i++)
+    for (int i=0; i<12; i++)
     {
         fread(&vLoc[i], sizeof(Locacion), 1, p);
     }
 
     fclose(p);
 
-    for (int i=0; i<10; i++)
+    for (int i=0; i<12; i++)
     {
         std::cout << vLoc[i].getDescripcion() << '\n';
     }
@@ -60,7 +64,7 @@ void loc1 ()
 
     loc1.setNombre("IMPERIO RUSO");
     loc1.setDescripcion("./images/Loc_RusiaDesc.jpg");
-    loc1.setFoto("./images/Loc_Rusia_5.jpg");
+    loc1.setFoto("./images/Loc_Rusia.jpg");
     loc1.setLugares("POSADA", "BAR", "TEMPLO");
 
     loc1.grabar();
@@ -72,7 +76,7 @@ void loc2 ()
 
     loc2.setNombre("ARGENTINA");
     loc2.setDescripcion("./images/Loc_ArgentinaDesc.jpg");
-    loc2.setFoto("./images/Loc_Argentina_1.jpg");
+    loc2.setFoto("./images/Loc_Argentina.jpg");
     loc2.setLugares("POSADA", "PULPERIA", "PARROQUIA");
 
     loc2.grabar();
@@ -85,7 +89,7 @@ void loc3 ()
 
     loc3.setNombre("JERUSALEN");
     loc3.setDescripcion("./images/Loc_JerusalenDesc.jpg");
-    loc3.setFoto("./images/Loc_Jerusalen_2.jpg");
+    loc3.setFoto("./images/Loc_Jerusalen.jpg");
     loc3.setLugares("POSADA", "BAR", "MEZQUITA");
 
     loc3.grabar();
@@ -98,7 +102,7 @@ void loc4 ()
 
     loc4.setNombre("JAPON");
     loc4.setDescripcion("./images/Loc_JaponDesc.jpg");
-    loc4.setFoto("./images/Loc_Japon_2.jpg");
+    loc4.setFoto("./images/Loc_Japon.jpg");
     loc4.setLugares("POSADA", "BAR", "DOJO");
 
     loc4.grabar();
@@ -110,7 +114,7 @@ void loc5 ()
 
     loc5.setNombre("ROMA");
     loc5.setDescripcion("./images/Loc_RomaDesc.jpg");
-    loc5.setFoto("./images/Loc_Roma_1.jpg");
+    loc5.setFoto("./images/Loc_Roma.jpg");
     loc5.setLugares("POSADA", "BAR", "BA�OS PUBLICOS");
 
     loc5.grabar();
@@ -122,7 +126,7 @@ void loc6 ()
 
     loc6.setNombre("PARIS");
     loc6.setDescripcion("./images/Loc_ParisDesc.jpg");
-    loc6.setFoto("./images/Loc_Paris_3.jpg");
+    loc6.setFoto("./images/Loc_Paris.jpg");
     loc6.setLugares("HOTEL", "BAR", "IGLESIA");
 
     loc6.grabar();
@@ -162,6 +166,30 @@ void loc9 ()
     loc9.setLugares("POSADA", "BAR", "IGLESIA");
 
     loc9.grabar();
+}
+
+void loc10 ()
+{
+    Locacion loc10;
+
+    loc10.setNombre("MEXICO");
+    loc10.setDescripcion("./images/Loc_MexicoDesc.jpg");
+    loc10.setFoto("./images/Mexico.jpg");
+    loc10.setLugares("TEMPLO", "ARMERIA", "PALACIO");
+
+    loc10.grabar();
+}
+
+void loc11 ()
+{
+    Locacion loc11;
+
+    loc11.setNombre("ESCANDINAVIA");
+    loc11.setDescripcion("./images/Loc_EscandinaviaDes.jpg");
+    loc11.setFoto("./images/Loc_Escandinavia.jpg");
+    loc11.setLugares("BAR", "ARMERIA", "MUELLE");
+
+    loc11.grabar();
 }
 
 void loc0 ()

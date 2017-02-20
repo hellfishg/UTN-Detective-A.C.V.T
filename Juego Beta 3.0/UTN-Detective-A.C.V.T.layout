@@ -2,29 +2,14 @@
 <CodeBlocks_layout_file>
 	<FileVersion major="1" minor="0" />
 	<ActiveTarget name="Debug" />
+	<File name="libs\Bibliotecas.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="621" topLine="0" />
+		</Cursor>
+	</File>
 	<File name="libs\PantallaData.hh" open="0" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="799" topLine="370" />
-		</Cursor>
-	</File>
-	<File name="libs\PantallaCombate.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="315" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="libs\ScreenManager.hh" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1807" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="libs\PantallaBusqueda.hh" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="854" topLine="24" />
-		</Cursor>
-	</File>
-	<File name="libs\PantallaAccion.hh" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="4535" topLine="140" />
 		</Cursor>
 	</File>
 	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -32,9 +17,9 @@
 			<Cursor1 position="3354" topLine="71" />
 		</Cursor>
 	</File>
-	<File name="libs\Pantalla.hh" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="libs\PantallaCombate.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4668" topLine="194" />
+			<Cursor1 position="315" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="libs\Villano.hh" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -42,9 +27,9 @@
 			<Cursor1 position="1297" topLine="7" />
 		</Cursor>
 	</File>
-	<File name="libs\NuevaPartida.hh" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="libs\PantallaBusqueda.hh" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="374" topLine="20" />
+			<Cursor1 position="854" topLine="24" />
 		</Cursor>
 	</File>
 	<File name="libs\Ventana.hh" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -52,9 +37,24 @@
 			<Cursor1 position="2982" topLine="74" />
 		</Cursor>
 	</File>
-	<File name="libs\MenuRanking.hh" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="libs\PantallaAccion.hh" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="2376" topLine="70" />
+			<Cursor1 position="4535" topLine="140" />
+		</Cursor>
+	</File>
+	<File name="libs\Pantalla.hh" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="4668" topLine="194" />
+		</Cursor>
+	</File>
+	<File name="libs\ScreenManager.hh" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1807" topLine="4" />
+		</Cursor>
+	</File>
+	<File name="libs\NuevaPartida.hh" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="374" topLine="20" />
 		</Cursor>
 	</File>
 	<File name="libs\Save.hh" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -62,14 +62,19 @@
 			<Cursor1 position="82" topLine="76" />
 		</Cursor>
 	</File>
+	<File name="libs\MenuRanking.hh" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="3293" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="libs\Ranking.hh" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="859" topLine="13" />
+		</Cursor>
+	</File>
 	<File name="libs\MenuPrincipal.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="1474" topLine="33" />
-		</Cursor>
-	</File>
-	<File name="libs\Ranking.hh" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="211" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="libs\PantallaViaje.hh" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -77,24 +82,19 @@
 			<Cursor1 position="4975" topLine="188" />
 		</Cursor>
 	</File>
-	<File name="libs\Locacion.hh" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="990" topLine="42" />
-		</Cursor>
-	</File>
 	<File name="libs\PantallaInicial.hh" open="0" top="0" tabpos="5" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="4505" topLine="188" />
 		</Cursor>
 	</File>
+	<File name="libs\Locacion.hh" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="990" topLine="42" />
+		</Cursor>
+	</File>
 	<File name="libs\DatosMouse.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="318" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="libs\Bibliotecas.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="621" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="libs\Boton.hh" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">

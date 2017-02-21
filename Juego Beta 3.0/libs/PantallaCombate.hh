@@ -10,19 +10,21 @@ private:
    int modo;
    Secuaz sec;
 
-   int vidaSecuaz;//borrar.
+   ALLEGRO_BITMAP *lifeV;
+   ALLEGRO_BITMAP *lifeH;
+
 public:
 
    PantallaCombate();
-   void setVida (int v){vidaSecuaz = v;}//Borrar.
 
    void dibujar(DatosMouse *dm);
    void destruir();
 
    void graficosIniciales();
 
-};
+   void dibujarVidaSecuaz();//calcula y dibuja la vida del secuaz.
 
+};
 
 ///////////////////////////////////////////////////////////////////////
 //Metodos:
@@ -30,39 +32,42 @@ PantallaCombate::PantallaCombate(){
 
    this->setID(115);//Colocar la ID de la ventana.
 
-   vidaSecuaz = 1;//borrar
 }
 ///////////////////////////////////////////////////////////////////////
 
 void PantallaCombate::dibujar(DatosMouse * dm){
 
+   if(inicio==0){
+
+      this->colocarBotones();//Dibuja los botones del vector botones heredado.
+
+      graficosIniciales();
+
+      modo=0;
+      inicio++;
+   }
+
    Save save;
    this->jumpsTimes(save.getSaltosRestantes());
 
+   dibujarVidaSecuaz();
 
-   ALLEGRO_BITMAP *lifeH = al_load_bitmap("./images/111Vida_100.png");// Vida del heroe
-   ALLEGRO_BITMAP *lifeV = al_load_bitmap("./images/111Vida_100.png");// Vida del villano
+   if (sec.getVidaActual() == 0){//vida llega a 0:
 
-   al_draw_bitmap(lifeH,438,43,0);
+      std::cout << "Secuaz Muerto" << '\n';
 
-   if (vidaSecuaz == 1){
+      ////////ejemplo de pista:
 
-      al_draw_bitmap(lifeV,80,45,0);
-      this->setVida(2);
+      this->cargarModuloB("./images/111Panel_b.png");
+
+      char pistaLoc[60]={"Mi maestro se fue a un lugar donde no te da el sol."};
+
+      char randPistaVillano[60]={" ...Pero antes fue a comprar balas para la escopeta. jeje!"};
+
+      this->cortarString(pistaLoc,randPistaVillano,37,421,106,20,78,200,3);
+
+      al_draw_text(this->getFont(),al_map_rgb(78,200,3),417,376,0,"<----- VOLVER AL MENU ANTERIOR");
    }
-
-if(inicio==0){
-
-   //al_draw_bitmap(this->getFondo(),0,0,0);
-
-
-   this->colocarBotones();//Dibuja los botones del vector botones heredado.
-
-   graficosIniciales();
-
-   modo=0;
-   inicio++;
-}
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -70,61 +75,75 @@ if(inicio==0){
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
-         this->setIDsalto(113);
          std::cout << "Viaje" << std::endl;
+         if (sec.getVidaActual() > 0){
 
+            this->setIDsalto(0);
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+
+         }else{
+            this->setIDsalto(113);
+         }
       break;
 
       case 2:
-         this->setIDsalto(112);
          std::cout << "Buscar" << std::endl;
+         if (sec.getVidaActual() > 0){
+
+            this->setIDsalto(0);
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+
+         }else{
+            this->setIDsalto(112);
+         }
       break;
 
       case 3:
-         this->setIDsalto(114);
          std::cout << "Data" << std::endl;
+         if (sec.getVidaActual() > 0){
+
+            this->setIDsalto(0);
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+
+         }else{
+            this->setIDsalto(114);
+         }
       break;
 
       case 4:
-         this->setIDsalto(12);
          std::cout << "Salir" << std::endl;
+         if (sec.getVidaActual() > 0){
+
+            this->setIDsalto(0);
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+
+         }else{
+            this->setIDsalto(12);
+         }
       break;
 
       case 5:
-            switch (vidaSecuaz)
-            {
-            case 2:
-                lifeV = al_load_bitmap("./images/111Vida_50.png");
-                al_draw_bitmap(lifeV,80,45,0);
-                this->setVida(3);
-                break;
+         this->setIDsalto(0);
+         std::cout << "btn 5 Ataque!" << '\n';
 
-            case 3:
-                lifeV = al_load_bitmap("./images/111Vida_25.png");
-                al_draw_bitmap(lifeV,80,45,0);
-                this->setVida(4);
-                break;
+         std::cout << "***********************" << '\n';
+         std::cout << "GOLPE: " << save.getDano()<<" - " <<sec.getVidaActual() << " :VIDA"<<'\n';
 
-            case 4:
-                lifeV = al_load_bitmap("./images/111Vida_0.png");
-                al_draw_bitmap(lifeV,80,45,0);
+         sec.golpear(save.getDano());//golpea al villano.
 
-                al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"HE MORIDO!!!!! ");
-                al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,400,0,"MI JEFE ESTA EN EGIPTO ");
-                this->setIDsalto(111);
+         std::cout << "HP:" << sec.getVidaActual()<< '\n';
+         std::cout << "***********************" << '\n';
 
-                break;
-            }
       break;
 
       case 6:
-         //this->setIDsalto(111);
-         //std::cout << "btn 6 - Destino2" << std::endl;
+         this->setIDsalto(0);
+         std::cout << "btn 6" << std::endl;
       break;
 
       case 7:
-         //this->setIDsalto(111);
-         //std::cout << "btn 7 - Destino3" << std::endl;
+         this->setIDsalto(0);
+         std::cout << "btn 7" << std::endl;
       break;
 
       case 8:
@@ -138,16 +157,23 @@ if(inicio==0){
       break;
 
       case 10:
-         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO PUEDES ESCAPAR!!");
+         std::cout << "btn 10" << std::endl;
+         if (sec.getVidaActual() > 0){
+
+            this->setIDsalto(0);
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+
+         }else{
+            this->setIDsalto(112);
+         }
       break;
 
    }
-
 }
 ///////////////////////////////////////////////////////////////////////
 void PantallaCombate::graficosIniciales(){
 
-   sec.randomSecuaz();
+   sec.randomSecuaz();//crea un secuaz random.
 
    this->cargarModuloA(sec.getImagen());
 
@@ -159,9 +185,31 @@ void PantallaCombate::graficosIniciales(){
    Save save;
    this->jumpsTimes(save.getSaltosRestantes());
 
-
 }
 ///////////////////////////////////////////////////////////////////////
+
+void PantallaCombate::dibujarVidaSecuaz(){
+
+   char vida[4];
+   int n=sec.getVidaActual();
+
+   sprintf(vida,"%d",n);
+
+   char path[25]={"./images/vida_"};
+   char extencion[5]={".jpg"};
+
+   strcat(path,vida);
+   strcat(path,extencion);
+
+   std::cout << "Path vida secuaz|" << path<<"|" <<'\n';
+
+   lifeV = al_load_bitmap( path );
+   al_draw_bitmap(lifeV,29,45,0);
+
+};
+
+//////////////////////////////////////////////////////////////////////
+
 void PantallaCombate::destruir(){
 
    std::cout << "destruccion de PantallaCombate" << std::endl;

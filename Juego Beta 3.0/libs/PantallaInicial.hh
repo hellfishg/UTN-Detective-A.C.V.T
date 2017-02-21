@@ -148,8 +148,8 @@ void PantallaInicial::incializarSave(){
          save.setVida(200);
          save.setDano(15);
 
-      case 3:
       break;
+      case 3:
          //+Vida -Daño:
 
          save.setSaltosRestantes(8);

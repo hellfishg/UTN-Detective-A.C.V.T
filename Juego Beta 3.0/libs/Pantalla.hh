@@ -97,7 +97,7 @@ void Pantalla::cortarString(char * tex1, char * tex2, int lineaM, int x, int y, 
             if(i!=max-1){
 
                //Cuando imprime normalmente:
-               std::cout << str  << '\n';
+               //std::cout << str  << '\n';
                al_draw_text(this->getFont(),al_map_rgb(c1, c2, c3),x,y,0,str);
 
             }else{
@@ -105,14 +105,14 @@ void Pantalla::cortarString(char * tex1, char * tex2, int lineaM, int x, int y, 
                if(strlen(str)+strlen(palabra) <= lineaM){
                   //cuando imprime al final con menos caracteres:
                   strcat(str,palabra);
-                  std::cout << str << '\n';
+                  //std::cout << str << '\n';
                   al_draw_text(this->getFont(),al_map_rgb(c1, c2, c3),x,y,0,str);
 
                }else{
                   //Cuando imprime al final con mas caracteres:
-                  std::cout << str << '\n';
+                  //std::cout << str << '\n';
                   al_draw_text(this->getFont(),al_map_rgb(c1, c2, c3),x,y,0,str);
-                  std::cout << palabra << '\n';
+                  //std::cout << palabra << '\n';
                   y+=inc;
                   al_draw_text(this->getFont(),al_map_rgb(c1, c2, c3),x,y,0,palabra);
                }

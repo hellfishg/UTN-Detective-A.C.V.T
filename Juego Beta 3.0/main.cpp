@@ -76,7 +76,7 @@ int main(void) {
    }
 ///////////////////////////////////////////////////////////////////////////////
 
-   std::cout << "Salimos" << std::endl;
+   std::cout << "FIN DEL JUEGO" << std::endl;
 
   //regresa la memoria usada:
   al_destroy_display(display);

@@ -59,7 +59,7 @@ void PantallaViaje::dibujar(DatosMouse * dm){
       this->cortarString("<----- ", save.getLocHechas(save.getSaltosHechos()),37,417,160,20,235,22,22);
    }
 
-
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
 ////////////////////////////////////////////////////////
    int selc=comprobarClickBoton(dm);
 

@@ -6,7 +6,7 @@
 class NuevaPartida:public Ventana{
 
 private:
-   int PJ;
+   int PJ=1;
 
 
 public:
@@ -60,11 +60,10 @@ void NuevaPartida::dibujar(DatosMouse * dm){
    if(PJ==4){PJ=1;}
    if(PJ==0){PJ=3;}
 
-
    seleccionPJ(PJ);
 
-/////////////////////////////////////////////////////////////////////
 
+/////////////////////////////////////////////////////////////////////
 
    int selc=comprobarClickBoton(dm);
 
@@ -76,7 +75,7 @@ void NuevaPartida::dibujar(DatosMouse * dm){
       break;
 
       case 2:
-         PJ=PJ-1;
+         PJ--;
          std::cout << "boton izq" << std::endl;
       break;
 
@@ -93,11 +92,6 @@ void NuevaPartida::dibujar(DatosMouse * dm){
 
 
    al_destroy_font(font1);
-
-
-
-
-
 
 }
 ///////////////////////////////////////////////////////////////////////

@@ -24,16 +24,14 @@ int main(void) {
       return -1;
    }
 
-
 ////////////////////////////////////////////////////////////////////////////////
 
    al_install_mouse();//configura el mouse;
    al_init_image_addon();//configura la carga de imagenes por archivo;
-   al_init_font_addon();
+   al_init_font_addon();//configura la carga de fuentes externas.
    al_init_ttf_addon();
-   
-   srand(time(0));//Carga la semilla de random.
 
+   srand(time(0));//Carga la semilla de random.
 
 ///////////////////////////////////////////////////////////////////////////////
    ALLEGRO_EVENT_QUEUE *event_queue = al_create_event_queue();//Cola de eventos.
@@ -45,9 +43,7 @@ int main(void) {
 ///////////////////////////////////////////////////////////////////////////////
    DatosMouse *punteroMouse=new DatosMouse();
 
-
    ScreenManager screenManager(punteroMouse);//FinDeJuegor mostrar pantalla principal primera vez.
-
 
    ALLEGRO_EVENT events;
    int FinDeJuego=0;//Variable que maneja el hilo de ejecucion.
@@ -55,9 +51,9 @@ int main(void) {
 ///////////////////////////////////////////////////////////////////////////////
 
    while(FinDeJuego!=-1){//hilo de ejecucion:
-      al_wait_for_event (event_queue, &events);//Escucha los eventos:
-
       punteroMouse->CargarDatos(0,0,0);//Limpia el objeto mouse;
+
+      al_wait_for_event (event_queue, &events);//Escucha los eventos:
 
       if(events.type == ALLEGRO_EVENT_DISPLAY_CLOSE){//Definicion del evento.
          FinDeJuego=-1;
@@ -66,22 +62,19 @@ int main(void) {
          punteroMouse->CargarDatos(events.mouse.x,events.mouse.y,events.mouse.button);
       }
 
-      if(events.type == ALLEGRO_EVENT_MOUSE_WARPED){
-         //no se, era para arreglar lo del doble clic   k.
-      }
-
       if(punteroMouse->getBoton() == 1) {
          FinDeJuego=screenManager.cargarEscena(punteroMouse);
+         punteroMouse->CargarDatos(0,0,0);//se uso para solucionar el doble boton click que generaba la doble carga.
+         FinDeJuego=screenManager.cargarEscena(punteroMouse);//Se uso para soluciar el doble click.Pero trae problemas de doble click de boton en los menus combate y data.
+
       }
       if(punteroMouse->getBoton() == 2){
          std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;
       }//Para ver donde esta el mouse, funcion de debug.
 
-
       al_flip_display();
    }
 ///////////////////////////////////////////////////////////////////////////////
-
 
    std::cout << "Salimos" << std::endl;
 

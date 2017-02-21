@@ -42,6 +42,7 @@ MenuPrincipal::MenuPrincipal(){
 ///////////////////////////////////////////////////////////////////////
 void MenuPrincipal::dibujar(DatosMouse * dm){
 
+
    al_draw_bitmap(this->getFondo(),0,0,0);
 
    this->colocarBotones();//Dibuja los botones del vector botones heredado.

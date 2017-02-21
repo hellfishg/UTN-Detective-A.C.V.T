@@ -14,6 +14,11 @@ public:
 
    int cargarEscena(DatosMouse *);
 
+/*   void dibujarto(DatosMouse * dm){
+
+      ventanaActual->dibujar(dm);
+   }*/
+
 };
 
 
@@ -40,7 +45,7 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
    if (selec!=0 && selec!=-1){
 
-      ventanaActual->destruir();
+      //ventanaActual->destruir();
 
       switch (selec) {
 

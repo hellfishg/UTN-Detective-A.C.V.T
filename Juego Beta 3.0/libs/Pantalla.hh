@@ -11,12 +11,6 @@ private:
 
    ALLEGRO_FONT *font;
 
-   int vida;
-   int saltosRestantes;
-
-
-   int zona;
-
 
 public:
 
@@ -25,12 +19,6 @@ public:
    void cargarModuloB(char *cad);
 
    ALLEGRO_FONT * getFont(){return font;}
-
-   //int getZona(){return zona;}
-   //void setZona(int z){zona=z;}
-
-   void setZonaIni (int d);
-   int getZonaIni ();
 
    void cortarString(char * tex1, char * tex2, int lineaM, int x, int y, int inc, int c1,int c2,int c3 );
 
@@ -153,33 +141,6 @@ void Pantalla::cortarString(char * tex1, char * tex2, int lineaM, int x, int y, 
 //this->cortarString("Esto es un texto para ver donde corta la cadena de strings. es importante para los string salvados en base de datos, asi poder mostrarlos por pantalla.","...yeah!",37,417,106,20,78,200,3);
 
 //////////////////////////////////////////////////////////////////
-
-
-void Pantalla::setZonaIni (int d)
-{
-    FILE *p = fopen("./zona.dat","wb");
-    fwrite(&d, sizeof(int),1, p);
-    fclose(p);
-}
-
-
-////////////////////////////////////////////////////////////////////
-
-int Pantalla::getZonaIni ()
-{
-    int d;
-
-    FILE *p = fopen("./zona.dat","rb");
-    if (p == NULL) {this->setZonaIni(d);}
-
-    fread(&d, sizeof(int),1, p);
-    fclose(p);
-
-    return d;
-
-}
-
-////////////////////////////////////////////////////////////////
 
 
 void Pantalla::cargarModuloA(char *cad){

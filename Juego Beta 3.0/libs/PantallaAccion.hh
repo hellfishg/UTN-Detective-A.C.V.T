@@ -20,8 +20,8 @@ public:
    Locacion buscarLocacion(char c[30]);
 
    void cargarLocacion();
-   void cargarLocacion2();
-
+/*   void cargarLocacion2();
+*/
 };
 
 
@@ -39,11 +39,11 @@ void PantallaAccion::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
-/////////////////////////////////////////////////////////////////////////
-
    Save save;
 
    this->jumpsTimes(save.getSaltosRestantes());
+/////////////////////////////////////////////////////////////////////////
+
 
    cargarLocacion();
 
@@ -151,7 +151,7 @@ void PantallaAccion::destruir(){
 }
 ///////////////////////////////////////////////////////////////////////
 
-void PantallaAccion::cargarLocacion2()
+/*void PantallaAccion::cargarLocacion2()
 {
    FILE *p;
 
@@ -171,7 +171,7 @@ void PantallaAccion::cargarLocacion2()
    fclose(p);
 }
 
-
+*/
 
 
 #endif //PantallaAccion_HH

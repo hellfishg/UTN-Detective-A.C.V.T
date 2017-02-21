@@ -31,9 +31,11 @@ void PantallaBusqueda::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
+
 /////////////////////////////////////////////////////////////////////////
 
-   //this->cargarModuloA("jhonTitor.png")
+   Save save;
+   this->jumpsTimes(save.getSaltosRestantes());
 
    cargarLocacion();
    cargarModuloA(loc.getFoto());
@@ -45,8 +47,7 @@ void PantallaBusqueda::dibujar(DatosMouse * dm){
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,strcat(flecha2,loc.getLug2()));
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,strcat(flecha3,loc.getLug3()));
    al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
-
+   
    int selc=comprobarClickBoton(dm);
 
    switch (selc) {//Regresa el numero del boton tocado.

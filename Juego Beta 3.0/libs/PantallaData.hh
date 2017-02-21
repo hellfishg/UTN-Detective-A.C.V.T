@@ -64,13 +64,13 @@ void PantallaData::dibujar(DatosMouse * dm){
 
       graficosIniciales();//Carga la venta con lo textos.
 
-
-      al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),613,453,0,"4 Time Jumps");
-
        modo=0;
        villanoSelc=1;
        inicio++;
    }
+
+   Save save;
+   this->jumpsTimes(save.getSaltosRestantes());
 
    int selc=comprobarClickBoton(dm);
 
@@ -409,7 +409,7 @@ void PantallaData::btn10_OrdenArrestoEjecutar(){
 
          this->cargarModuloA(vil[i].getFoto());
          this->cargarModuloB(vil[i].getDescripcion());
-         al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,376,0,"   ||ORDEN DE CAPTURA PEDIDA||");
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"   ||ORDEN DE CAPTURA PEDIDA||");
 
          modo=5;
 

@@ -36,6 +36,10 @@ PantallaCombate::PantallaCombate(){
 
 void PantallaCombate::dibujar(DatosMouse * dm){
 
+   Save save;
+   this->jumpsTimes(save.getSaltosRestantes());
+
+
    ALLEGRO_BITMAP *lifeH = al_load_bitmap("./images/111Vida_100.png");// Vida del heroe
    ALLEGRO_BITMAP *lifeV = al_load_bitmap("./images/111Vida_100.png");// Vida del villano
 
@@ -46,7 +50,7 @@ void PantallaCombate::dibujar(DatosMouse * dm){
       al_draw_bitmap(lifeV,80,45,0);
       this->setVida(2);
    }
-   
+
 if(inicio==0){
 
    //al_draw_bitmap(this->getFondo(),0,0,0);
@@ -149,11 +153,11 @@ void PantallaCombate::graficosIniciales(){
 
    this->cargarModuloB("./images/111Panel_b.png");
 
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------ATACAR");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,160,0,"<------DEFENDER");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,200,0,"<------USAR HABILIDAD ESPECIAL");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),613,453,0,"4 Time Jumps");
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------ ATACAR");
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------ VOLVER AL MENU ANTERIOR");
+
+   Save save;
+   this->jumpsTimes(save.getSaltosRestantes());
 
 
 }

@@ -29,21 +29,6 @@ MenuCargar::MenuCargar(){
    //Cargar botones uno a uno:
    this->cargarBoton(1,288,569,503,595,al_load_bitmap("./images/btn12_Volver.png"));
 
-
-   //Creo un boton transparente para usar de marco.
-   //Para decirle el color transparente de una bitmap.
-
-   // ALLEGRO_BITMAP *boteee=al_load_bitmap("Test_transparencia.png");
-   //
-   // al_convert_mask_to_alpha(boteee,al_map_rgb(255,0,255));
-   //
-   // this->cargarBoton(2,288,300,289,570,botee);
-
-
-
-
-
-
 }
 ///////////////////////////////////////////////////////////////////////
 void MenuCargar::dibujar(DatosMouse * dm){
@@ -51,7 +36,6 @@ void MenuCargar::dibujar(DatosMouse * dm){
    al_draw_bitmap(this->getFondo(),0,0,0);
 
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
-
 
    this->getBoton(1)->setImagen(al_load_bitmap("./images/btn12_Volver.png"));
 
@@ -68,8 +52,6 @@ void MenuCargar::dibujar(DatosMouse * dm){
          std::cout << "Cargar save" << std::endl;
       break;
    }
-
-
 
 }
 ///////////////////////////////////////////////////////////////////////

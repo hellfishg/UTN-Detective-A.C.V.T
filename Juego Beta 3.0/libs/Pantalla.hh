@@ -31,7 +31,8 @@ public:
 
    void vidaHeroe();//imprime la vida del heroe.
 
-
+   char *buscarFechaLoc(char *nom);
+   void fechaLocActual();
 };
 
 Pantalla::Pantalla(){
@@ -182,12 +183,7 @@ void Pantalla::vidaHeroe(){
 
    Save save;
 
-/*   char *vida = new char[17];
 
-   sprintf(vida,"VIDA: ");
-   for(int i=0;i<10;i++)
-      sprintf(vida,"%s#",vida);
-   vida[16]='\0';*/
 
    cargarModuloV("./images/111Panel_v.png");
 
@@ -197,10 +193,52 @@ void Pantalla::vidaHeroe(){
 
    al_draw_text(this->getFont(),al_map_rgb(221, 30, 30),485,54,0,vida);
 
-   //481,54
+}
+////////////////////////////////////////////////////////////////
+void Pantalla::fechaLocActual(){
+
+   Save save;
+
+   char anio[20];
+   sprintf(anio,"%s\0",buscarFechaLoc(save.getLocActual()));
+
+   if(anio!=NULL){
+
+      al_draw_text(this->getFont(),al_map_rgb(221, 30, 30),134,56,0,anio);
+
+   }else{
+
+      std::cout << "no hay anio!" << '\n';
+   }
 
 
 }
+/////////////////////////////////////////////////////////////
+char *Pantalla::buscarFechaLoc(char *nom){
+
+   Locacion loc;
+
+   FILE *p=fopen("./Dat/Locaciones.dat","rb");
+
+   if(p==NULL){
+      std::cout << "NO SE PUEDO ABRIR LOCACIONES:DAT!!" << '\n';
+      return NULL;
+   }
+
+   while(fread(&loc,sizeof(Locacion),1,p)){
+
+      if(strcmp(nom,loc.getNombre())==0){
+
+         fclose(p);
+
+         return loc.getFecha();
+      }
+   }
+
+   fclose(p);
+   return NULL;
+}
+
 ////////////////////////////////////////////////////////////////
 void Pantalla::saveCheck(){
 

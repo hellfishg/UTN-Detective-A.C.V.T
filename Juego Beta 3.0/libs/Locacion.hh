@@ -12,13 +12,15 @@ private:
    char descripcion[40]; // se usa path de una imagen
    char foto[40]; // se usa path de una imagen
    char lugares[3][20];
-   char pistas [3][200];
+   char pistas [3][300];
 
 public:
 
    void grabar();
 
    Locacion random();//regresa una locacion random pidiendo el numero de registro.
+
+
 
 //////getters:
    char * getNombre(){return nombre;}
@@ -34,7 +36,7 @@ public:
 
    //setters:
    void setNombre (char nom[30]){strcpy(nombre,nom);}
-   void setFecha (char fecha[20]){strcpy(fecha, fecha);}
+   void setFecha (char f[20]){strcpy(fecha, f);}
    void setDescripcion (char des[40]){strcpy(descripcion,des);}
    void setFoto(char fot[30]){strcpy(foto,fot);}
    void setLugares (char l1[20], char l2[20],char l3[20]){strcpy(lugares[0],l1); strcpy(lugares[1],l2); strcpy(lugares[2],l3);}
@@ -46,7 +48,7 @@ public:
 
 Locacion Locacion::random(){
 
-   int cant=10; //cantidad de locaciones en la base de datos.Cambiar aca si cambian!!
+   int cant=18; //cantidad de locaciones en la base de datos.Cambiar aca si cambian!!
 
    int ran=rand()%cant+1;
 

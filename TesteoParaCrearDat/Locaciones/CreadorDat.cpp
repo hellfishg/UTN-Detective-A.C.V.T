@@ -218,7 +218,7 @@ void loc10 ()
     loc10.setNombre("MEXICO");
     loc10.setFecha("1399 AC");
     loc10.setDescripcion("./images/Loc_MexicoDesc.jpg");
-    loc10.setFoto("./images/Mexico.jpg");
+    loc10.setFoto("./images/Loc_Mexico.jpg");
     loc10.setLugares("TEMPLO", "ARMERIA", "PALACIO");
     loc10.setPistas("Comento que iria al siglo XIV", "Dijo que quería visitar el Nuevo Mundo.", "Comento que queria visitar el lugar de la leyenda de Hun-Hunahpú y Vucub-Hunahpú");
 
@@ -231,7 +231,7 @@ void loc11 ()
 
     loc11.setNombre("ESCANDINAVIA");
     loc11.setFecha("922 DC");
-    loc11.setDescripcion("./images/Loc_EscandinaviaDes.jpg");
+    loc11.setDescripcion("./images/Loc_EscandinaviaDesc.jpg");
     loc11.setFoto("./images/Loc_Escandinavia.jpg");
     loc11.setLugares("BAR", "ARMERIA", "MUELLE");
     loc11.setPistas("Comento que queria conocer a Harald el Despiadado.", "Dijo que iria al siglo X.", "Dijo que iria a ver a los que se adelantaron a Colon.");
@@ -245,7 +245,7 @@ void loc12 ()
 
     loc12.setNombre("MONGOLIA");
     loc12.setFecha("1337 DC");
-    loc12.setDescripcion("./images/Loc_MongoliaDes.jpg");
+    loc12.setDescripcion("./images/Loc_MongoliaDesc.jpg");
     loc12.setFoto("./images/Loc_Mongolia.jpg");
     loc12.setLugares("BAR", "ARMERIA", "POSADA");
     loc12.setPistas("Dijo que iria al sigle XIV", "Comento que queria visitar el segundo imperio más extenso de la historia.", "Comento que queria conocer a Gengis Kan.");
@@ -259,7 +259,7 @@ void loc13 ()
 
     loc13.setNombre("ESPARTA");
     loc13.setFecha("480 AC");
-    loc13.setDescripcion("./images/Loc_EspartaDes.jpg");
+    loc13.setDescripcion("./images/Loc_EspartaDesc.jpg");
     loc13.setFoto("./images/Loc_Esparta.jpg");
     loc13.setLugares("TEMPLO", "ARMERIA", "POSADA");
     loc13.setPistas("Dijo que iria a la capital de Laconia.", "Comento que queria presenciar las Guerras Medicas.", "Dijo que iria a conocer a los mejores guerreros de la historia");
@@ -273,7 +273,7 @@ void loc14 ()
 
     loc14.setNombre("CHINA");
     loc14.setFecha("100 DC");
-    loc14.setDescripcion("./images/Loc_ChinaDes.jpg");
+    loc14.setDescripcion("./images/Loc_ChinaDesc.jpg");
     loc14.setFoto("./images/Loc_China.jpg");
     loc14.setLugares("BAR", "MURALLA", "POSADA");
     loc14.setPistas("Comento que iria al siglo I", "Dijo que les gustaria conocer la obra que comenzo el emperador Qin Shi Huang.", "Dijo que iria a ver una de las obras mas grandes hechas por el hombre.");
@@ -287,7 +287,7 @@ void loc15 ()
 
     loc15.setNombre("BABILONIA");
     loc15.setFecha("578 AC");
-    loc15.setDescripcion("./images/Loc_BabiloniaDes.jpg");
+    loc15.setDescripcion("./images/Loc_BabiloniaDesc.jpg");
     loc15.setFoto("./images/Loc_Babilonia.jpg");
     loc15.setLugares("TEMPLO", "POSADA", "MUELLE");
     loc15.setPistas("Dijo que iria a ver una de las siete maravillas del mundo.", "Dijo que queria ver el lugar donde murio Alejandro Magno.", "Comento que iria a ver el Templo de Ishtar de Agadé.");

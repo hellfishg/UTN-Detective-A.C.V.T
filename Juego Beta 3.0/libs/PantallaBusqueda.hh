@@ -32,6 +32,7 @@ void PantallaBusqueda::dibujar(DatosMouse * dm){
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
    this->vidaHeroe();
+   this->fechaLocActual();
 
 /////////////////////////////////////////////////////////////////////////
 
@@ -69,23 +70,29 @@ void PantallaBusqueda::dibujar(DatosMouse * dm){
       break;
 
       case 4:
-         this->setIDsalto(12);
+         this->setIDsalto(1);
          std::cout << "Salir" << std::endl;
       break;
 
       case 5:
          this->setIDsalto(115);
          std::cout << "btn 5 - hacia pantallaCombate" << std::endl;
+         save.setsectorActual(0);
+         save.grabar();
       break;
 
       case 6:
          this->setIDsalto(115);
          std::cout << "btn 6 - pantallaCombate" << std::endl;
+         save.setsectorActual(1);
+         save.grabar();
       break;
 
       case 7:
          this->setIDsalto(115);
          std::cout << "btn 7 - pantallaCombate" << std::endl;
+         save.setsectorActual(2);
+         save.grabar();
       break;
 
       case 8:

@@ -68,8 +68,9 @@ void PantallaData::dibujar(DatosMouse * dm){
        villanoSelc=1;
        inicio++;
    }
-   
+
    this->vidaHeroe();
+   this->fechaLocActual();
 
    Save save;
    this->jumpsTimes(save.getSaltosRestantes());
@@ -93,7 +94,7 @@ void PantallaData::dibujar(DatosMouse * dm){
       break;
 
       case 4:
-         this->setIDsalto(12);
+         this->setIDsalto(1);
          std::cout << "Salir" << std::endl;
       break;
 

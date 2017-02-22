@@ -37,11 +37,11 @@ void PantallaInicial::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
-   
+
 /////////////////////////////////////////////////////////////////////////
    this->cargarModuloA("./images/Loc_Base.jpg");
    Save save;
-   this->jumpsTimes(save.getSaltosRestantes());
+
 
    char text[]={"Bienvenido agente!... colocar texto aca"};
 
@@ -79,7 +79,7 @@ void PantallaInicial::dibujar(DatosMouse * dm){
       break;
 
       case 4:
-         this->setIDsalto(12);
+         this->setIDsalto(0);
          std::cout << "Salir" << std::endl;
       break;
 

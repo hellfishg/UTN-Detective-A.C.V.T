@@ -15,11 +15,15 @@ private:
 
    int saltosRestantes;//cantidad de saltos restantes.
 
+   char anio[10];//de la locacion actual.
+
+   int sectorActual;//hotel/bar/cafeteria.
+
    char locActual[30];//donde esta actualmente.
    char viajesLoc[4][30];
    char lugarPista[30];//donde guarda el lugar rastro.
    int saltosHechos;//registro de saltos hechos.
-   char locHechas[10][30];//registro de lugares correctos visitados.
+   char locHechas[18][30];//registro de lugares correctos visitados.
 
    char ordenDeArresto[30];//cuando se pida.
 
@@ -47,6 +51,8 @@ public:
    char * getLugarPista(){return lugarPista;}
    char * getLocHechas(int i){return locHechas[i];}
 
+   int getSectorActual(){return sectorActual;}
+
    int getSaltosHechos(){return saltosHechos;}
    int getSecuDerrotados(){return secuacesDerrotados;}
    char * getOrdenDeArresto(){return ordenDeArresto;}
@@ -59,6 +65,9 @@ public:
    void setVillano(char v[30]){strcpy(villano,v);}
    void setLocActual(char loc[30]){strcpy(locActual,loc);}
 
+   void setsectorActual(int s){
+      sectorActual=s;
+   }
    void setLugarPista(char l[30]){strcpy(lugarPista,l);}
 
    void setSaltosHechos(int s){saltosHechos=s;}

@@ -41,6 +41,7 @@ void PantallaAccion::dibujar(DatosMouse * dm){
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 
    this->vidaHeroe();
+   this->fechaLocActual();
 
    Save save;
 
@@ -71,7 +72,7 @@ void PantallaAccion::dibujar(DatosMouse * dm){
       break;
 
       case 4:
-         this->setIDsalto(12);
+         this->setIDsalto(1);
          std::cout << "Salir" << std::endl;
       break;
 

@@ -129,7 +129,7 @@ void PantallaCombate::dibujar(DatosMouse * dm){
             al_rest(1.0);//pone en pausa el juego
 
          }else{
-            this->setIDsalto(12);
+            this->setIDsalto(1);
          }
       break;
 
@@ -176,7 +176,7 @@ void PantallaCombate::dibujar(DatosMouse * dm){
             al_rest(1.0);//pone en pausa el juego
 
          }else{
-            
+
             this->setIDsalto(112);
          }
       break;
@@ -226,6 +226,24 @@ void PantallaCombate::dibujarVidaSecuaz(){
 //////////////////////////////////////////////////////////////////////
 void PantallaCombate::dibujarPista(){
 
+   Save save;
+
+   Locacion loc;
+
+   FILE *p=fopen("./Dat/Locaciones.dat","rb");
+   if(p==NULL){
+      std::cout << "NO SE PUEDO ABRIR LOCACIONES:DAT!!" << '\n';
+   }
+
+   while(fread(&loc,sizeof(Locacion),1,p)){
+
+      if(strcmp(save.getLugarPista(),loc.getNombre())==0){
+
+         break;
+      }
+   }
+   fclose(p);
+
 
    int ran=rand()%10+1;
 
@@ -238,15 +256,15 @@ void PantallaCombate::dibujarPista(){
 
 
 
+
    ////////ejemplo de pista:
 
    this->cargarModuloB("./images/111Panel_b.png");
 
-   char pistaLoc[60]={"Mi maestro se fue a un lugar donde no te da el sol."};
 
    char randPistaVillano[60]={" ...Pero antes fue a comprar balas para la escopeta. jeje!"};
 
-   this->cortarString(pistaLoc,randPistaVillano,37,421,106,20,78,200,3);
+   this->cortarString(loc.getPistas(save.getSectorActual()),randPistaVillano,37,421,106,20,78,200,3);
 
    al_draw_text(this->getFont(),al_map_rgb(78,200,3),417,376,0,"<----- VOLVER AL MENU ANTERIOR");
 }

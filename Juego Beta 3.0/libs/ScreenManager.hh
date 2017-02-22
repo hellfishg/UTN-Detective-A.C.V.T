@@ -14,11 +14,6 @@ public:
 
    int cargarEscena(DatosMouse *);
 
-/*   void dibujarto(DatosMouse * dm){
-
-      ventanaActual->dibujar(dm);
-   }*/
-
 };
 
 
@@ -59,13 +54,12 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
             ventanaActual=new NuevaPartida();
 
-
             break;
 
          case 12:
 
-            //ventanaActual=new PantallaFinal();
-            ventanaActual=new PantallaAccion();
+            ventanaActual=new PantallaFinal();
+            //ventanaActual=new PantallaAccion();
 
             break;
 

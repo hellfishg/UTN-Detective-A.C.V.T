@@ -39,11 +39,11 @@ void PantallaInicial::dibujar(DatosMouse * dm){
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 
 /////////////////////////////////////////////////////////////////////////
-   this->cargarModuloA("./images/Loc_Base.jpg");
+   this->cargarModuloA("./images/Viaje.jpg");
    Save save;
 
 
-   char text[]={"Bienvenido agente!... colocar texto aca"};
+   char text[]={"Bienvenido cadete a la ACVT. Su mision es capturar a los mas peligroso malhechores que el tiempo y el espacio han conocido. Para dicho tarea contara con la mas avanzada tecnologia en saltos temporales, y por supuesto con su sagacidad, la cual le permitio estar entre nosotros. Asi que, adelante cadete, ve hacia tu primera mision y acaba con los delicuentes. Oh, no se te olvide, ten mucho cuidado con alterar el pasado, podria tener consecuencias inimaginables para todos."};
 
    this->cortarString(text,"",37,417,106,20,78,200,3);
 

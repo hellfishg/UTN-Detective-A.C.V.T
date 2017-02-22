@@ -35,6 +35,7 @@ void PantallaViaje::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
+   this->vidaHeroe();
 /////////////////////////////////////////////////////////////////////////
 
    this->cargarModuloA("./images/ModuloA_TimeMachine.png");

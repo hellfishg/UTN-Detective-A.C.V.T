@@ -68,6 +68,8 @@ void PantallaData::dibujar(DatosMouse * dm){
        villanoSelc=1;
        inicio++;
    }
+   
+   this->vidaHeroe();
 
    Save save;
    this->jumpsTimes(save.getSaltosRestantes());

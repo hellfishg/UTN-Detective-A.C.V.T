@@ -17,6 +17,7 @@ public:
 
    void cargarModuloA(char *cad);
    void cargarModuloB(char *cad);
+   void cargarModuloV(char *cad);
 
    ALLEGRO_FONT * getFont(){return font;}
 
@@ -27,6 +28,8 @@ public:
    Pantalla();
 
    void jumpsTimes(int a);//imprime la cantidad de saltos restantes.
+
+   void vidaHeroe();//imprime la vida del heroe.
 
 
 };
@@ -157,6 +160,14 @@ void Pantalla::cargarModuloB(char *cad){
 
 }
 
+
+void Pantalla::cargarModuloV(char *cad){
+
+   this->moduloB=al_load_bitmap(cad);
+   al_draw_bitmap(this->moduloB,477,44,0);//Dibuja moduloV;
+
+}
+
 void Pantalla::jumpsTimes(int a){
 
    char jumps[5];
@@ -164,6 +175,30 @@ void Pantalla::jumpsTimes(int a){
    sprintf(jumps,"%d",a);
 
    this->cortarString(jumps," Times Jumps",37,608,453,20,235,22,22);
+
+}
+////////////////////////////////////////////////////////////////
+void Pantalla::vidaHeroe(){
+
+   Save save;
+
+/*   char *vida = new char[17];
+
+   sprintf(vida,"VIDA: ");
+   for(int i=0;i<10;i++)
+      sprintf(vida,"%s#",vida);
+   vida[16]='\0';*/
+
+   cargarModuloV("./images/111Panel_v.png");
+
+   char *vida= new char[5];
+
+   sprintf(vida,"VIDA: %d\0",save.getVida());
+
+   al_draw_text(this->getFont(),al_map_rgb(221, 30, 30),485,54,0,vida);
+
+   //481,54
+
 
 }
 ////////////////////////////////////////////////////////////////

@@ -32,6 +32,7 @@ public:
    void grabar();
    void incrementarSaltosHechos();
    bool reconLocal(char s[30]); //regresa true si existe la localizacion.
+   int golpear(int golpe);
 
    //getters:
    char * getNombre(){return nombre;}
@@ -105,6 +106,15 @@ bool Save::reconLocal(char s[30]){
 
    return false;
 }
+
+int Save::golpear(int golpe){
+
+   vida=vida-golpe;
+   if(vida<0){vida=0;}
+
+   return vida;
+}
+
 ///////////////////////////////////////////////////////////////////////
 void Save::grabar(){
 

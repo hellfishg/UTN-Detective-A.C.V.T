@@ -13,6 +13,14 @@ private:
    ALLEGRO_BITMAP *lifeV;
    ALLEGRO_BITMAP *lifeH;
 
+
+   void refrescarPantalla();
+
+   void dibujarVidaSecuaz();//calcula y dibuja la vida del secuaz.
+   void dibujarPista();//dibuja la pista cuando el secuaz muere.
+
+   void ataque();
+
 public:
 
    PantallaCombate();
@@ -20,9 +28,7 @@ public:
    void dibujar(DatosMouse *dm);
    void destruir();
 
-   void graficosIniciales();
 
-   void dibujarVidaSecuaz();//calcula y dibuja la vida del secuaz.
 
 };
 
@@ -37,36 +43,33 @@ PantallaCombate::PantallaCombate(){
 
 void PantallaCombate::dibujar(DatosMouse * dm){
 
+
+   al_draw_bitmap(al_load_bitmap("./images/111Fondo.png"),0,0,0);
+
    if(inicio==0){
 
       this->colocarBotones();//Dibuja los botones del vector botones heredado.
 
-      graficosIniciales();
+      sec.randomSecuaz();
 
       modo=0;
       inicio++;
    }
 
-   Save save;
-   this->jumpsTimes(save.getSaltosRestantes());
+   refrescarPantalla();
 
-   dibujarVidaSecuaz();
+   Save save;
 
    if (sec.getVidaActual() == 0){//vida llega a 0:
 
       std::cout << "Secuaz Muerto" << '\n';
 
-      ////////ejemplo de pista:
+      dibujarPista();
 
-      this->cargarModuloB("./images/111Panel_b.png");
+   }else{
 
-      char pistaLoc[60]={"Mi maestro se fue a un lugar donde no te da el sol."};
-
-      char randPistaVillano[60]={" ...Pero antes fue a comprar balas para la escopeta. jeje!"};
-
-      this->cortarString(pistaLoc,randPistaVillano,37,421,106,20,78,200,3);
-
-      al_draw_text(this->getFont(),al_map_rgb(78,200,3),417,376,0,"<----- VOLVER AL MENU ANTERIOR");
+      al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------ ATACAR");
+      al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------ VOLVER AL MENU ANTERIOR");
    }
 
 /////////////////////////////////////////////////////////////////////////
@@ -79,7 +82,9 @@ void PantallaCombate::dibujar(DatosMouse * dm){
          if (sec.getVidaActual() > 0){
 
             this->setIDsalto(0);
-            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO ESCAPARAS!!");
+            al_flip_display();//refresca la pantalla.
+            al_rest(1.0);//pone en pausa el juego
 
          }else{
             this->setIDsalto(113);
@@ -91,7 +96,9 @@ void PantallaCombate::dibujar(DatosMouse * dm){
          if (sec.getVidaActual() > 0){
 
             this->setIDsalto(0);
-            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO ESCAPARAS!!");
+            al_flip_display();//refresca la pantalla.
+            al_rest(1.0);//pone en pausa el juego
 
          }else{
             this->setIDsalto(112);
@@ -103,7 +110,9 @@ void PantallaCombate::dibujar(DatosMouse * dm){
          if (sec.getVidaActual() > 0){
 
             this->setIDsalto(0);
-            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO ESCAPARAS!!");
+            al_flip_display();//refresca la pantalla.
+            al_rest(1.0);//pone en pausa el juego
 
          }else{
             this->setIDsalto(114);
@@ -115,7 +124,9 @@ void PantallaCombate::dibujar(DatosMouse * dm){
          if (sec.getVidaActual() > 0){
 
             this->setIDsalto(0);
-            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO ESCAPARAS!!");
+            al_flip_display();//refresca la pantalla.
+            al_rest(1.0);//pone en pausa el juego
 
          }else{
             this->setIDsalto(12);
@@ -126,13 +137,11 @@ void PantallaCombate::dibujar(DatosMouse * dm){
          this->setIDsalto(0);
          std::cout << "btn 5 Ataque!" << '\n';
 
-         std::cout << "***********************" << '\n';
-         std::cout << "GOLPE: " << save.getDano()<<" - " <<sec.getVidaActual() << " :VIDA"<<'\n';
+         if (sec.getVidaActual() > 0){
 
-         sec.golpear(save.getDano());//golpea al villano.
+            ataque();
 
-         std::cout << "HP:" << sec.getVidaActual()<< '\n';
-         std::cout << "***********************" << '\n';
+         }
 
       break;
 
@@ -161,9 +170,13 @@ void PantallaCombate::dibujar(DatosMouse * dm){
          if (sec.getVidaActual() > 0){
 
             this->setIDsalto(0);
-            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO VOY A DEJAR QUE TE ESCAPES!!");
+
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"NO ESCAPARAS!!");
+            al_flip_display();//refresca la pantalla.
+            al_rest(1.0);//pone en pausa el juego
 
          }else{
+            
             this->setIDsalto(112);
          }
       break;
@@ -171,19 +184,21 @@ void PantallaCombate::dibujar(DatosMouse * dm){
    }
 }
 ///////////////////////////////////////////////////////////////////////
-void PantallaCombate::graficosIniciales(){
+void PantallaCombate::refrescarPantalla(){
 
-   sec.randomSecuaz();//crea un secuaz random.
+   Save save;
+
+   al_draw_bitmap(al_load_bitmap("./images/111Fondo.png"),0,0,0);
 
    this->cargarModuloA(sec.getImagen());
 
    this->cargarModuloB("./images/111Panel_b.png");
 
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,120,0,"<------ ATACAR");
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------ VOLVER AL MENU ANTERIOR");
-
-   Save save;
    this->jumpsTimes(save.getSaltosRestantes());
+
+   dibujarVidaSecuaz();
+
+   this->vidaHeroe();
 
 }
 ///////////////////////////////////////////////////////////////////////
@@ -209,6 +224,33 @@ void PantallaCombate::dibujarVidaSecuaz(){
 };
 
 //////////////////////////////////////////////////////////////////////
+void PantallaCombate::dibujarPista(){
+
+
+   int ran=rand()%10+1;
+
+   if(ran<=3){//aca va la pista random del villano.
+
+
+   }
+
+
+
+
+
+   ////////ejemplo de pista:
+
+   this->cargarModuloB("./images/111Panel_b.png");
+
+   char pistaLoc[60]={"Mi maestro se fue a un lugar donde no te da el sol."};
+
+   char randPistaVillano[60]={" ...Pero antes fue a comprar balas para la escopeta. jeje!"};
+
+   this->cortarString(pistaLoc,randPistaVillano,37,421,106,20,78,200,3);
+
+   al_draw_text(this->getFont(),al_map_rgb(78,200,3),417,376,0,"<----- VOLVER AL MENU ANTERIOR");
+}
+//////////////////////////////////////////////////////////////////////
 
 void PantallaCombate::destruir(){
 
@@ -221,6 +263,75 @@ void PantallaCombate::destruir(){
    // }
 }
 ///////////////////////////////////////////////////////////////////////
+
+void PantallaCombate::ataque(){
+
+   Save save;
+
+   std::cout << "***********************" << '\n';
+   std::cout << "GOLPE: " << save.getDano()<<" - " <<sec.getVidaActual() << " :VIDA"<<'\n';
+
+   sec.golpear(save.getDano());//golpea al villano.
+
+   std::cout << "HP:" << sec.getVidaActual()<< '\n';
+   std::cout << "***********************" << '\n';
+
+   //animacion:
+
+   ALLEGRO_BITMAP *golpe3;
+   golpe3 = al_load_bitmap("./images/Golpe3.png");
+   al_convert_mask_to_alpha(golpe3, al_map_rgb(255, 0, 255));//convierte trasparente al fucia;
+
+   ALLEGRO_BITMAP *golpe2;
+   golpe2 = al_load_bitmap("./images/Golpe2.png");
+   al_convert_mask_to_alpha(golpe2, al_map_rgb(255, 0, 255));//convierte trasparente al fucia;
+
+   ALLEGRO_BITMAP *golpe;
+   golpe = al_load_bitmap("./images/Golpe.png");
+   al_convert_mask_to_alpha(golpe, al_map_rgb(255, 0, 255));//convierte trasparente al fucia;
+
+   al_draw_bitmap(golpe,124,194,0);
+   //124x,194y donde esta la cara.
+
+   al_flip_display();//refresca la pantalla.
+   al_rest(1.0);//pone en pausa el juego.
+
+   this->cargarModuloA(sec.getImagen());
+
+   ///////Hasta aca el golpe del jugador
+
+   save.golpear(sec.getDano());
+   save.grabar();
+
+   //437,44
+
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,370,0,"ESO ME DOLIO!!");
+
+   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),29,385,0,"TOMA ESTO!!!");
+   al_flip_display();//refresca la pantalla.
+
+   al_rest(2.0);//pone en pausa el juego
+
+   this->cargarModuloA("./images/111Panel_a.png");
+   this->cargarModuloA(sec.getImagen());
+   //al_flip_display();//refresca la pantalla.
+
+   al_draw_bitmap(golpe2,1,1,0);
+   al_flip_display();//refresca la pantalla.
+   al_rest(0.3);//pone en pausa el juego
+
+   refrescarPantalla();
+
+   al_draw_bitmap(golpe3,1,1,0);
+   al_flip_display();//refresca la pantalla.
+   al_rest(0.3);//pone en pausa el juego
+}
+
+//////////////////////////////////////////////////////////////////////
+
+///////////////////////////////////////////////////////////////////////
+
+
 
 #endif // PANTALLACOMBATE_HH_INCLUDED
 

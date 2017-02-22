@@ -64,7 +64,7 @@ int main(void) {
 
       if(punteroMouse->getBoton() == 1) {
          FinDeJuego=screenManager.cargarEscena(punteroMouse);
-         punteroMouse->CargarDatos(0,0,0);//se uso para solucionar el doble boton click que generaba la doble carga.
+         punteroMouse->CargarDatos(0,0,0);//se uso para solucionar el doble boton click que generaba la doble
          FinDeJuego=screenManager.cargarEscena(punteroMouse);//Se uso para soluciar el doble click.Pero trae problemas de doble click de boton en los menus combate y data.
 
       }
@@ -76,7 +76,7 @@ int main(void) {
    }
 ///////////////////////////////////////////////////////////////////////////////
 
-   std::cout << "FIN DEL JUEGO" << std::endl;
+   std::cout << "SALIR DEL JUEGO" << std::endl;
 
   //regresa la memoria usada:
   al_destroy_display(display);

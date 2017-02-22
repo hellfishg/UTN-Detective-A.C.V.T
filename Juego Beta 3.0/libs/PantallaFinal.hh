@@ -1,78 +1,130 @@
-#ifndef PANTALLAACCION_HH
-#define PANTALLAACCION_HH
+#ifndef PANTALLAFINAL_HH
+#define PANTALLAFINAL_HH
 
 #include "Bibliotecas.hh"
 
-class PantallaAccion:public Pantalla {
+class PantallaFinal:public Pantalla {
 
 private:
 
    Locacion loc;
+   int finalSelec=0;
+   int btnNext=0;
 
+   void guardarVictoria();//guarda en rankigs.dat si el final fue bueno.
 
 public:
 
-   PantallaAccion();
+   PantallaFinal();
 
    void dibujar(DatosMouse *dm);
    void destruir();
 
-   Locacion buscarLocacion(char c[30]);
-
-   void cargarLocacion();
-/*   void cargarLocacion2();
-*/
 };
-
 
 ///////////////////////////////////////////////////////////////////////
 //Metodos:
-PantallaAccion::PantallaAccion(){
+PantallaFinal::PantallaFinal(){
 
-   this->setID(111);//Colocar la ID de la ventana.
+   this->setID(116);//Colocar la ID de la ventana.
 
-   //this-setLocacion(1);
+
 
 }
 ///////////////////////////////////////////////////////////////////////
-void PantallaAccion::dibujar(DatosMouse * dm){
+void PantallaFinal::dibujar(DatosMouse * dm){
 
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 
-   this->vidaHeroe();
-   this->fechaLocActual();
+
+/////////////////////////////////////////////////////////////////////////
 
    Save save;
 
-   this->jumpsTimes(save.getSaltosRestantes());
+/*   if(save.getSaltosRestantes()<0){
+      //Final sin tiempo:
+
+      finalSelec=1;
+   }
+
+   if(save.getVida()<0 && finalSelec==0){
+      //Final sin vida:
+
+      finalSelec=1;
+   }
+
+   if(strcmp(save.getOrdenDeArresto(),save.getVillano())!=0 && finalSelec==0){
+      //Final sin orden de arresto:
+
+
+      finalSelec=1;
+   }*/
+
+   if(finalSelec==0){
+      //Final victoria:
+
+      char text1[]={"Enhorabuena, has atrapado al villano, ahora será trasladado a los cuarteles de la A.C.V.T, donde será interrogado, y luego encerrado en un tubo criogénico por el resto de sus días, ya que si escapara podría provocar más cambios en la historia. En cuanto a ti, puedes tomarte un merecido descanso, al menos por ahora…."};
+
+      switch (btnNext){
+
+         case 0:
+
+
+            this->cargarModuloA("./images/Loc_Egipto.jpg");
+            this->cargarModuloB("./images/111Panel_b");
+
+
+            this->cortarString(text1,"",37,417,106,20,78,200,3);
+
+            al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------SIGUIENTE");
+
+
+         break;
+
+         case 1:
+
+
+
+
+         break;
+
+      }
+
+      char text2[]={""};
+
+      this->cortarString(text1,"",37,417,106,20,78,200,3);
+
+      al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------SIGUIENTE");
+
+
+
+
+   }
+
+
 /////////////////////////////////////////////////////////////////////////
-
-
-   cargarLocacion();
-
-
    int selc=comprobarClickBoton(dm);
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
-         this->setIDsalto(113);
+         this->setIDsalto(0);
          std::cout << "Viaje" << std::endl;
 
       break;
 
       case 2:
-         this->setIDsalto(112);
+         this->setIDsalto(0);
          std::cout << "Buscar" << std::endl;
       break;
 
       case 3:
-         this->setIDsalto(114);
+         this->setIDsalto(0);
          std::cout << "Data" << std::endl;
       break;
 
       case 4:
-         this->setIDsalto(1);
+         this->setIDsalto(14);
          std::cout << "Salir" << std::endl;
       break;
 
@@ -110,50 +162,27 @@ void PantallaAccion::dibujar(DatosMouse * dm){
 
 }
 ///////////////////////////////////////////////////////////////////////
-void PantallaAccion::cargarLocacion(){
 
-   Save save;
+void  PantallaFinal::guardarVictoria(){
 
-   loc=buscarLocacion(save.getLocActual());
-
-   cargarModuloA(loc.getFoto());
-   cargarModuloB(loc.getDescripcion());
 
 }
 
 ////////////////////////////////////////////////////////////////////////
-Locacion PantallaAccion::buscarLocacion(char c[30]){
 
-   Locacion loc;
-
-   FILE *p=fopen ("./Dat/Locaciones.dat","rb");
-
-   if(p==NULL){std::cout<<"Error de apertura Locaciones.dat!!"<<std::endl;}
-
-   while( fread (&loc,sizeof (Locacion),1,p) ){
-
-      if( strcmp(loc.getNombre(),c)==0){
-
-         std::cout << "LOCACION:"<<loc.getNombre() << '\n';
-
-         fclose(p);
-         return loc;
-      }
-   }
-}
 ////////////////////////////////////////////////////////////////////////
 
 
-void PantallaAccion::destruir(){
+void PantallaFinal::destruir(){
 
-   std::cout << "destruccion de PantallaAccion" << std::endl;
+   std::cout << "destruccion de PantallaFinal" << std::endl;
 
 
 }
 ///////////////////////////////////////////////////////////////////////
 
 
-#endif //PantallaAccion_HH
+#endif //PantallaFinal_HH
 
 
 /*

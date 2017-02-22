@@ -59,11 +59,12 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
             ventanaActual=new NuevaPartida();
 
+
             break;
 
          case 12:
 
-            //ventanaActual=new MenuCargar();
+            //ventanaActual=new PantallaFinal();
             ventanaActual=new PantallaAccion();
 
             break;
@@ -106,6 +107,9 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
             ventanaActual=new PantallaCombate();
             break;
 
+         case 116:
+            ventanaActual=new PantallaFinal();
+            break;
 
       }
    }

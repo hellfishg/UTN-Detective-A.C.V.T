@@ -41,6 +41,7 @@
 #include "../libs/PantallaViaje.hh"
 #include "../libs/PantallaData.hh"
 #include "../libs/PantallaCombate.hh"
+#include "../libs/PantallaFinal.hh"
 
 
 #endif //BIBLIOTECAS_HH

@@ -64,6 +64,8 @@ void PantallaData::dibujar(DatosMouse * dm){
 
       graficosIniciales();//Carga la venta con lo textos.
 
+
+
        modo=0;
        villanoSelc=1;
        inicio++;
@@ -414,7 +416,13 @@ void PantallaData::btn10_OrdenArrestoEjecutar(){
          this->cargarModuloB(vil[i].getDescripcion());
          al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"   ||ORDEN DE CAPTURA PEDIDA||");
 
+         Save save;
+
+         save.setOrdenDeArresto(ordenDeArresto);
+
          modo=5;
+         save.setOrdenDeArrestoModo(modo);//Si vamos a blokear la pantalla.terminar.
+         save.grabar();
 
       }
    }

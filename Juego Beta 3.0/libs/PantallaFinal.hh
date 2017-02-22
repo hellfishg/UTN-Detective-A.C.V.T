@@ -11,6 +11,7 @@ private:
    int finalSelec=0;
    int btnNext=0;
 
+   void finalAct();
    void guardarVictoria();//guarda en rankigs.dat si el final fue bueno.
 
 public:
@@ -20,7 +21,6 @@ public:
    void dibujar(DatosMouse *dm);
    void destruir();
 
-   void finalAct();
 
 };
 
@@ -120,7 +120,9 @@ void PantallaFinal::finalAct(){
 
    Save save;
 
-   if(save.getSaltosRestantes()<0 || save.getVida()<=0){
+   this->saveCheck();
+
+   if( (save.getSaltosRestantes()<0 || save.getVida()<=0)){
       //Final sin tiempo y sin vida:
 
 
@@ -141,6 +143,7 @@ void PantallaFinal::finalAct(){
             this->cortarString(text1,"",37,417,106,20,78,200,3);
 
             al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------SIGUIENTE");
+
 
          break;
 
@@ -169,6 +172,7 @@ void PantallaFinal::finalAct(){
 
 
       finalSelec=1;
+      std::cout << "/* message */" <<  finalSelec<<'\n';
    }
 
    if(strcmp(save.getOrdenDeArresto(),save.getVillano())!=0 && finalSelec==0){
@@ -217,9 +221,9 @@ void PantallaFinal::finalAct(){
          break;
       }
 
+   }
 
-
-   }else{
+   if(strcmp(save.getOrdenDeArresto(),save.getVillano())==0 && save.getSaltosHechos() >= save.getPistasCorrectas()){
       //Final victoria:
 
       char text1[]={"Enhorabuena, has atrapado al villano, ahora será trasladado a los cuarteles de la A.C.V.T, donde será interrogado, y luego encerrado en un tubo criogénico por el resto de sus días, ya que si escapara podría provocar más cambios en la historia. En cuanto a ti, puedes tomarte un merecido descanso, al menos por ahora..."};

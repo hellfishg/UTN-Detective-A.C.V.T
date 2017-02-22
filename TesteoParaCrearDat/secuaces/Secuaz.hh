@@ -17,7 +17,6 @@ class Secuaz{
 private:
 
    char imagen[40];
-   char imagenDerrota[40];
    int dano;
    int vidaTotal;
    int vidaActual;
@@ -34,20 +33,17 @@ public:
 
    //getters:
    char * getImagen(){return imagen;}
-   char * getIMagenDerrota(){return imagenDerrota;}
    int getDano(){return dano;}
    int getVidaTotal(){return vidaTotal;}
    int getVidaActual(){return vidaActual;}
 
    //setters:
    void setImagen(char i[30]){strcpy(imagen,i);}
-   void setImagenDerrota(char i[30]){strcpy(imagenDerrota,i) ;}
    void setDano(int d){dano=d;}
    void setVidaTotal(int v){vidaTotal=v ;}
    void setVidaActual(int v){vidaActual=v;}
 
 };
-
 int Secuaz::golpear(int golpe){
 
    vidaActual=vidaActual-golpe;

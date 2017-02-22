@@ -250,6 +250,7 @@ void Pantalla::saveCheck(){
    std::cout << "Num PJ:"<<save.getPj() << '\n';
    std::cout << "Vil:"<<save.getVillano() << '\n';
    std::cout << "Dano:"<<save.getDano() << '\n';
+   std::cout << "PistaCorrectas:"<<save.getPistasCorrectas() << '\n';
    std::cout << "--------------------------" << '\n';
    std::cout << "SaltoRestantes:"<<save.getSaltosRestantes() << '\n';
    std::cout << "LocActual:"<<save.getLocActual() << '\n';

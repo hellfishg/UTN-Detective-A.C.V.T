@@ -12,6 +12,7 @@ private:
    int pjEnUso;//pj en uso de la partida.
    char villano[30];//el villano de la partida.
    int dano;//daño que hace el pj.
+   int pistasCorrectas;//cantidad de saltos para ganar.
 
    int saltosRestantes;//cantidad de saltos restantes.
 
@@ -26,6 +27,7 @@ private:
    char locHechas[18][30];//registro de lugares correctos visitados.
 
    char ordenDeArresto[30];//cuando se pida.
+   int ordenDeArrestoModo;//para blokear el pedido de orden.
 
    //para ranking tambien:
    int secuacesDerrotados;//para calcular en ranking.
@@ -42,6 +44,7 @@ public:
    char * getNombre(){return nombre;}
    int getVida(){return vida;}
    int getDano(){return dano;}
+   int getPistasCorrectas(){return pistasCorrectas;}
    int getSaltosRestantes(){return saltosRestantes;}
    int getPj(){return pjEnUso;}
    char * getVillano(){return villano;}
@@ -56,10 +59,12 @@ public:
    int getSaltosHechos(){return saltosHechos;}
    int getSecuDerrotados(){return secuacesDerrotados;}
    char * getOrdenDeArresto(){return ordenDeArresto;}
+   int getOrdenDeArrestoModo(){return ordenDeArrestoModo;}
    //Setters:
    void setNombre(char n[30]){strcpy(nombre,n);}
    void setVida(int v){vida=v;}
    void setDano(int d){dano=d;}
+   void setPistasCorrectas(int d){pistasCorrectas=d;}
    void setSaltosRestantes(int s){saltosRestantes=s;}
    void setPj(int pj){pjEnUso=pj;}
    void setVillano(char v[30]){strcpy(villano,v);}
@@ -80,6 +85,7 @@ public:
    }
 
    void setOrdenDeArresto(char n[30]){strcpy(ordenDeArresto,n);}
+   void setOrdenDeArrestoModo(int o){ordenDeArrestoModo=o;}
 };
 ///////////////////////////////////////////////////////////////////////
 Save::Save(){

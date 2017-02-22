@@ -29,7 +29,7 @@ int main(void) {
    al_install_mouse();//configura el mouse;
    al_init_image_addon();//configura la carga de imagenes por archivo;
    al_init_font_addon();//configura la carga de fuentes externas.
-   al_init_ttf_addon();
+   al_init_ttf_addon();//Fuentes gratuitas.
 
    srand(time(0));//Carga la semilla de random.
 

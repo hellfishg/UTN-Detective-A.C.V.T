@@ -126,6 +126,7 @@ void PantallaInicial::incializarSave(){
    Save save;
 
    save.setNombre("Mongoide VII");
+   save.setPistasCorrectas(5);
    save.setSaltosHechos(0);
    save.setSecuacesDerrotados(0);
    save.setLocActual(save.getLugarPista());

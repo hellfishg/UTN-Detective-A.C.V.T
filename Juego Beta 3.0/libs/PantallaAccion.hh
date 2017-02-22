@@ -9,6 +9,9 @@ private:
 
    Locacion loc;
 
+   Locacion buscarLocacion(char c[30]);
+   void cargarLocacion();
+   void analizarFinDeJuego();
 
 public:
 
@@ -17,11 +20,6 @@ public:
    void dibujar(DatosMouse *dm);
    void destruir();
 
-   Locacion buscarLocacion(char c[30]);
-
-   void cargarLocacion();
-/*   void cargarLocacion2();
-*/
 };
 
 
@@ -31,7 +29,7 @@ PantallaAccion::PantallaAccion(){
 
    this->setID(111);//Colocar la ID de la ventana.
 
-   //this-setLocacion(1);
+   analizarFinDeJuego();
 
 }
 ///////////////////////////////////////////////////////////////////////
@@ -40,6 +38,7 @@ void PantallaAccion::dibujar(DatosMouse * dm){
    al_draw_bitmap(this->getFondo(),0,0,0);
    this->colocarBotones();//Dibuja los botones del vector botones heredado.
 
+
    this->vidaHeroe();
    this->fechaLocActual();
 
@@ -47,7 +46,6 @@ void PantallaAccion::dibujar(DatosMouse * dm){
 
    this->jumpsTimes(save.getSaltosRestantes());
 /////////////////////////////////////////////////////////////////////////
-
 
    cargarLocacion();
 
@@ -143,6 +141,22 @@ Locacion PantallaAccion::buscarLocacion(char c[30]){
 }
 ////////////////////////////////////////////////////////////////////////
 
+void PantallaAccion::analizarFinDeJuego(){
+
+   Save save;
+
+   if(save.getSaltosRestantes()<0 || save.getVida()<=0){
+
+      this->setIDsalto(116);
+   }
+
+   if(save.getPistasCorrectas()==save.getSaltosHechos()){
+
+      this->setIDsalto(116);
+   }
+}
+
+///////////////////////////////////////////////////////////////////////
 
 void PantallaAccion::destruir(){
 
@@ -151,7 +165,6 @@ void PantallaAccion::destruir(){
 
 }
 ///////////////////////////////////////////////////////////////////////
-
 
 #endif //PantallaAccion_HH
 

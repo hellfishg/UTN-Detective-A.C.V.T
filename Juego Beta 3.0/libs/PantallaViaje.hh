@@ -9,6 +9,8 @@ private:
    char viajesLoc[4][30];
 
 
+   void analizarFinDeJuego();
+
 public:
 
    PantallaViaje();
@@ -27,6 +29,8 @@ public:
 PantallaViaje::PantallaViaje(){
 
    this->setID(113);//Colocar la ID de la ventana.
+
+   analizarFinDeJuego();
 
 }
 ///////////////////////////////////////////////////////////////////////
@@ -241,6 +245,22 @@ void PantallaViaje::generarNuevasLocaciones(){
     save.grabar();
 
 }
+//////////////////////////////////////////////////
+void PantallaViaje::analizarFinDeJuego(){
+
+   Save save;
+
+   if(save.getSaltosRestantes()<0 || save.getVida()<=0){
+
+      this->setIDsalto(116);
+   }
+
+   if(save.getPistasCorrectas()==save.getSaltosHechos()){
+
+      this->setIDsalto(116);
+   }
+}
+
 
 ///////////////////////////////////////////////////////////////////////
 void PantallaViaje::destruir(){

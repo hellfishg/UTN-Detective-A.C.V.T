@@ -8,20 +8,20 @@ void cargarSecuaz(int vi,int da,char path[30]);
 
 int main(void){
 
-   // ./images/Sec_Full.png
+   // ./images/Sec_Full.jpg
 
-   cargarSecuaz(30,10,"./images/Sec_Full.png");
-   cargarSecuaz(30,10,"./images/Sec_Full.png");
-   cargarSecuaz(30,10,"./images/Sec_Full.png");
-   cargarSecuaz(30,10,"./images/Sec_Full.png");
-   cargarSecuaz(30,10,"./images/Sec_Full.png");
+   cargarSecuaz(30,10,"./images/Sec_Normal.jpg");
+   cargarSecuaz(30,10,"./images/Sec_Normal.jpg");
+   cargarSecuaz(30,10,"./images/Sec_Normal.jpg");
+   cargarSecuaz(30,10,"./images/Sec_Normal.jpg");
+   cargarSecuaz(30,10,"./images/Sec_Normal.jpg");
 
-   cargarSecuaz(30,5,"./images/Sec_Full.png");
-   cargarSecuaz(30,5,"./images/Sec_Full.png");
-   cargarSecuaz(30,5,"./images/Sec_Full.png");
+   cargarSecuaz(30,5,"./images/Sec_Easy.jpg");
+   cargarSecuaz(30,5,"./images/Sec_Easy.jpg");
+   cargarSecuaz(30,5,"./images/Sec_Easy.jpg");
 
-   cargarSecuaz(30,15,"./images/Sec_Full.png");
-   cargarSecuaz(30,15,"./images/Sec_Full.png");
+   cargarSecuaz(30,15,"./images/Sec_Hard.jpg");
+   cargarSecuaz(30,15,"./images/Sec_Hard.jpg");
 
 
 /*

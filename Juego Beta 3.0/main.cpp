@@ -59,7 +59,7 @@ int main(void) {
 
 
       if(events.type == ALLEGRO_EVENT_KEY_DOWN){
-         
+
       }
 
       if(events.type == ALLEGRO_EVENT_DISPLAY_CLOSE){//Definicion del evento.

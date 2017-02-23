@@ -58,8 +58,9 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
          case 12:
 
-            ventanaActual=new PantallaFinal();
-            //ventanaActual=new PantallaAccion();
+            //ventanaActual=new PantallaFinal();
+            ventanaActual=new PantallaAccion();
+            //ventanaActual=new Pj();
 
             break;
 
@@ -103,6 +104,10 @@ int ScreenManager::cargarEscena(DatosMouse *dm){
 
          case 116:
             ventanaActual=new PantallaFinal();
+            break;
+
+         case 117:
+            ventanaActual=new Pj();
             break;
 
       }

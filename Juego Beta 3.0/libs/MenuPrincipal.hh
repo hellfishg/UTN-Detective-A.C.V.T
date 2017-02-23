@@ -60,7 +60,7 @@ void MenuPrincipal::dibujar(DatosMouse * dm){
 
    switch (selc) {//Regresa el numero del boton tocado.
       case 1:
-         this->setIDsalto(11);
+         this->setIDsalto(117);
          std::cout << "Nuevo Juego" << std::endl;
       break;
 

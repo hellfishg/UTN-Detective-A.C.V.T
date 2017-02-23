@@ -30,6 +30,7 @@ int main(void) {
    al_init_image_addon();//configura la carga de imagenes por archivo;
    al_init_font_addon();//configura la carga de fuentes externas.
    al_init_ttf_addon();//Fuentes gratuitas.
+   al_install_keyboard();//inicia el teclado.
 
    srand(time(0));//Carga la semilla de random.
 
@@ -39,6 +40,7 @@ int main(void) {
    //Definicion de tipos de escuchas de eventos:
    al_register_event_source(event_queue, al_get_display_event_source(display));
    al_register_event_source(event_queue, al_get_mouse_event_source());
+   al_register_event_source(event_queue, al_get_keyboard_event_source());
 
 ///////////////////////////////////////////////////////////////////////////////
    DatosMouse *punteroMouse=new DatosMouse();
@@ -55,6 +57,11 @@ int main(void) {
 
       al_wait_for_event (event_queue, &events);//Escucha los eventos:
 
+
+      if(events.type == ALLEGRO_EVENT_KEY_DOWN){
+         
+      }
+
       if(events.type == ALLEGRO_EVENT_DISPLAY_CLOSE){//Definicion del evento.
          FinDeJuego=-1;
       }
@@ -64,9 +71,8 @@ int main(void) {
 
       if(punteroMouse->getBoton() == 1) {
          FinDeJuego=screenManager.cargarEscena(punteroMouse);
-         punteroMouse->CargarDatos(0,0,0);//se uso para solucionar el doble boton click que generaba la doble
-         FinDeJuego=screenManager.cargarEscena(punteroMouse);//Se uso para soluciar el doble click.Pero trae problemas de doble click de boton en los menus combate y data.
-
+         punteroMouse->CargarDatos(0,0,0);//se uso para solucionar el doble boton click que generaba.
+         FinDeJuego=screenManager.cargarEscena(punteroMouse);
       }
       if(punteroMouse->getBoton() == 2){
          std::cout << "x=" << punteroMouse->getX() << ",y=" << punteroMouse->getY() << std::endl;

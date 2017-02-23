@@ -40,12 +40,12 @@ void MenuRanking::dibujar(DatosMouse *dm)
 {
     if (bandera == 0)
     {
-        createDat();// luego se usara para crear el ranking.dat una vez creada la class final, por ahora usa un .dat ya hecho
+        //createDat();// luego se usara para crear el ranking.dat una vez creada la class final, por ahora usa un .dat ya hecho
         int indice = contadorRegistros();
         Ranking rank1[indice];
 
         FILE *p;
-        p=fopen ("./Dat/Ranking.dat","rb");
+        p=fopen ("./Dat/Rankings.dat","rb");
 
         if(p==NULL)
         {
@@ -83,10 +83,13 @@ void MenuRanking::dibujar(DatosMouse *dm)
             rank1[pos].setPuntos(aux.getPuntos());
         }
 
+
         for (int i=0; i<5; i++)
         {
+            rank2[i].setPuntos(-1);
             rank2[i].setNombre(rank1[i].getNombre());
             rank2[i].setPuntos(rank1[i].getPuntos());
+            std::cout << rank2[i].getPuntos() << '\n';
         }
 
 /////////////////// Fin de ordenamiento ////////////////////////////////////////////////////////////
@@ -119,18 +122,28 @@ void MenuRanking::dibujar(DatosMouse *dm)
     al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 100, ALLEGRO_ALIGN_CENTER, puntos1);
     al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 100, ALLEGRO_ALIGN_CENTER, rank2[0].getNombre());
 
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 150, ALLEGRO_ALIGN_CENTRE, puntos2);
+    std:: cout << rank2[0].getPuntos() << std::endl;
+
+
+
+   al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 150, ALLEGRO_ALIGN_CENTRE, puntos2);
     al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 150, ALLEGRO_ALIGN_CENTER, rank2[1].getNombre());
+
+    std:: cout << rank2[1].getPuntos() << std::endl;
+
 
     al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 200, ALLEGRO_ALIGN_CENTER, puntos3);
     al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 200, ALLEGRO_ALIGN_CENTER, rank2[2].getNombre());
 
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 250, ALLEGRO_ALIGN_CENTER, puntos4);
+   std:: cout << rank2[2].getPuntos() << std::endl;
+
+
+
+   al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 250, ALLEGRO_ALIGN_CENTER, puntos4);
     al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 250, ALLEGRO_ALIGN_CENTER, rank2[3].getNombre());
 
-    al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 300, ALLEGRO_ALIGN_CENTER, puntos5);
+   al_draw_text(font2, al_map_rgb(255, 255, 255), 100, 300, ALLEGRO_ALIGN_CENTER, puntos5);
     al_draw_text(font2, al_map_rgb(255, 255, 255), 600, 300, ALLEGRO_ALIGN_CENTER, rank2[4].getNombre());
-
 
 
     al_destroy_font(font);
@@ -180,7 +193,7 @@ int MenuRanking::contadorRegistros()
     int indice=0;
 
     FILE *p;
-    p=fopen ("./Dat/Ranking.dat","rb");
+    p=fopen ("./Dat/Rankings.dat","rb");
 
     if(p==NULL)
     {

@@ -125,7 +125,7 @@ void PantallaInicial::incializarSave(){
 
    Save save;
 
-   save.setNombre("Mongoide VII");
+   save.setNombre("Guasu Guasu");
    save.setPistasCorrectas(5);
    save.setSaltosHechos(0);
    save.setSecuacesDerrotados(0);

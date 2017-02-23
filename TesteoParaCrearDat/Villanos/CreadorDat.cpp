@@ -50,7 +50,7 @@ int main(void) {
 //////////////////////////////////////////////////////////7
    //ARCHIVOS PISTAS:
 
-/*   pistas();
+   pistas();
 
    //TESTEO DE LA COPIA DEL pistas.DAT:
 
@@ -67,7 +67,7 @@ int main(void) {
    }
    fclose(pi);
 
-   pv.test();*/
+   pv.test();
 
 
 
@@ -81,33 +81,34 @@ int main(void) {
 
 void pistas(){
 
-   char p[5][4][75];
+   char p[5][4][100];
 
-      strcpy(p[0][0], "INGLES" );
-      strcpy(p[0][1], " ...Me lo dijo mientras estábamos jugando Críquet.");
-      strcpy(p[0][2], " ...Estaba buscando un te que le gustara");
-      strcpy(p[0][3], " ...Por cierto, usaba mucho la frase Bloody Hell!");
+   strcpy(p[0][0], "INGLES" );
+   strcpy(p[0][1], " ...Me lo dijo mientras estábamos jugando Críquet.");
+   strcpy(p[0][2], " ...Estaba buscando un té que le gustara");
+   strcpy(p[0][3], " ...Por cierto, usaba mucho la frase Bloody Hell!");
 
-      strcpy(p[1][0], "CAZADOR" );
-      strcpy(p[1][1], " ...Pero antes iba a comprar balas .270 winchester." );
-      strcpy(p[1][2], " ...Dijo que era una  buena oportunidad para medirse con la fauna local extinta." );
-      strcpy(p[1][3], " ...Despues de estar 2 días y 2 noches en el bosque." );
+   strcpy(p[1][0], "CAZADOR" );
+   strcpy(p[1][1], " ...Pero antes iba a comprar balas .270 winchester." );
 
-      strcpy(p[2][0], "ARISTOCRATA" );
-      strcpy(p[2][1], " ...Iba acompañado por sus sirvientes." );
-      strcpy(p[2][2], " ...No soporta el servicio de esta época." );
-      strcpy(p[2][3], " ...Dijo que quería comprar una playa privada." );
+   strcpy(p[1][2], " ...Dijo que era una buena oportunidad para medirse con la fauna local extinta." );
 
-      strcpy(p[3][0], "ERUDITO" );
-      strcpy(p[3][1], " ...Mientras estaba trascribiendo unos textos." );
-      strcpy(p[3][2], " ...Dado que siempre quiso conocer la arquitectura del lugar." );
-      strcpy(p[3][3], " ...Dijo que quería continuar sus estudio de antropología en." );
+   strcpy(p[1][3], " ...Después de estar 2 días y 2 noches en el bosque." );
 
-      strcpy(p[4][0], "MISTICO" );
-      strcpy(p[4][1], " ...Luego de que por la noche iniciamos un ritual de protección." );
-      strcpy(p[4][2], " ...Estaba interesado en la criptozologia local" );
-      strcpy(p[4][3], " ...Para encontrar un antiguo libro maldito." );
+   strcpy(p[2][0], "ARISTOCRATA" );
+   strcpy(p[2][1], " ...Iba acompañado por sus sirvientes." );
+   strcpy(p[2][2], " ...No soporta el servicio de esta época." );
+   strcpy(p[2][3], " ...Dijo que quería comprar una playa privada." );
 
+   strcpy(p[3][0], "ERUDITO" );
+   strcpy(p[3][1], " ...Mientras estaba trascribiendo unos textos." );
+   strcpy(p[3][2], " ...Dado que siempre quiso conocer la arquitectura del lugar." );
+   strcpy(p[3][3], " ...Dijo que quería continuar sus estudio de antropología allí." );
+
+   strcpy(p[4][0], "MISTICO" );
+   strcpy(p[4][1], " ...Luego de que por la noche iniciamos un ritual de protección." );
+   strcpy(p[4][2], " ...Estaba interesado en la criptozologia local" );
+   strcpy(p[4][3], " ...Para encontrar un antiguo libro maldito." );
       PistasVillanos pv;
 
       pv.setPistas(p);

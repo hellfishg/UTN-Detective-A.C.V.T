@@ -200,11 +200,17 @@ void Pantalla::fechaLocActual(){
    Save save;
 
    char anio[20];
+   char ubica[50];
+
    sprintf(anio,"%s\0",buscarFechaLoc(save.getLocActual()));
+
+   strcpy(ubica,save.getLocActual());
+   strcat(ubica," ");
+   strcat(ubica,anio);
 
    if(anio!=NULL){
 
-      al_draw_text(this->getFont(),al_map_rgb(221, 30, 30),134,56,0,anio);
+      al_draw_text(this->getFont(),al_map_rgb(221, 30, 30),35,56,0,ubica);
 
    }else{
 

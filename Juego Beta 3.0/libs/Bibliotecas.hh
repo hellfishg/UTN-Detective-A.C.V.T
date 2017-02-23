@@ -16,7 +16,6 @@
 
 //Clases de Base de datos:
 #include "../libs/Save.hh"
-#include "../libs/Pj.hh"
 #include "../libs/PistasVillanos.hh"
 #include "../libs/Villano.hh"
 #include "../libs/Secuaz.hh"
@@ -32,6 +31,7 @@
 #include "../libs/MenuRanking.hh"
 #include "../libs/NuevaPartida.hh"
 #include "../libs/MenuOpciones.hh"
+#include "../libs/Pj.hh"
 
 //Pantallas de gamplay:
 #include "../libs/Pantalla.hh"

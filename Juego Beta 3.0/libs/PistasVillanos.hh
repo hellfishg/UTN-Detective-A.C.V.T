@@ -7,14 +7,14 @@ class PistasVillanos{
 
 private:
 
-   char pistas[5][4][75];
+   char pistas[5][4][100];
 
 public:
 
    const char  * obtenerPistaRandom(char car[3][12]);
    void grabar();
 
-   void setPistas(char p[5][4][75]);
+   void setPistas(char p[5][4][100]);
 
 
 ////////////////////////////////////////////////////
@@ -39,7 +39,7 @@ public:
 
 const char * PistasVillanos::obtenerPistaRandom(char car[3][12]){
 
-   
+
 
    int ran1=rand()%3;
    int ran2=rand()%3+1;
@@ -55,7 +55,7 @@ const char * PistasVillanos::obtenerPistaRandom(char car[3][12]){
 }
 
 
-void PistasVillanos::setPistas(char p[5][4][75]){
+void PistasVillanos::setPistas(char p[5][4][100]){
 //usado unicamente para grabar la base de datos. una vez.
    for(int i=0;i<5;i++){
       for(int u=0;u<4;u++){
@@ -69,7 +69,7 @@ void PistasVillanos::grabar(){
 
    FILE *p;
 
-   p=fopen ("./PistasVillanos.dat","ab");
+   p=fopen ("./PistasVillanos.dat","wb");
 
    if(p==NULL){std::cout<<"Error de apertura de archivo!!"<<std::endl;}
 

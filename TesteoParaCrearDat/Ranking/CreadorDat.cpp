@@ -57,13 +57,13 @@ void rank0()
 {
     Ranking rank0;
 
-    rank0.setNombre("Pancho Dotaaaaaaaa");
+    rank0.setNombre("Gilgamesh");
     rank0.setSaltosHechos(2);
     rank0.setSecuacesDerrotados(4);
 
     int puntaje = rank0.getSecuacesDerrotados() + 100 - rank0.getSaltosHechos();
 
-    rank0.setPuntos(puntaje);
+    rank0.setPuntos(1);
 
     rank0.grabar();
 }
@@ -80,7 +80,7 @@ void rank1()
 
     puntaje = rank1.getSecuacesDerrotados() + 100 - rank1.getSaltosHechos();
 
-    rank1.setPuntos(puntaje);
+    rank1.setPuntos(2);
 
     rank1.grabar();
 }
@@ -97,7 +97,7 @@ void rank2()
 
     puntaje = rank2.getSecuacesDerrotados() + 100 - rank2.getSaltosHechos();
 
-    rank2.setPuntos(puntaje);
+    rank2.setPuntos(3);
 
     rank2.grabar();
 }
@@ -114,7 +114,7 @@ void rank3()
 
     puntaje = rank3.getSecuacesDerrotados() + 100 - rank3.getSaltosHechos();
 
-    rank3.setPuntos(puntaje);
+    rank3.setPuntos(4);
 
     rank3.grabar();
 }
@@ -125,13 +125,13 @@ void rank4()
     //Save save;
     int puntaje;
 
-    rank4.setNombre("Atun Saladitoooo");
+    rank4.setNombre("Mr Hyde");
     rank4.setSaltosHechos(23);
     rank4.setSecuacesDerrotados(31);
 
     puntaje = rank4.getSecuacesDerrotados() + 100 - rank4.getSaltosHechos();
 
-    rank4.setPuntos(puntaje);
+    rank4.setPuntos(5);
 
     rank4.grabar();
 }
@@ -142,13 +142,13 @@ void rank5()
     //Save save;
     int puntaje;
 
-    rank5.setNombre("Todos Sodot");
+    rank5.setNombre("Sebastian Moran");
     rank5.setSaltosHechos(23);
     rank5.setSecuacesDerrotados(59);
 
     puntaje = rank5.getSecuacesDerrotados() + 100 - rank5.getSaltosHechos();
 
-    rank5.setPuntos(puntaje);
+    rank5.setPuntos(6);
 
     rank5.grabar();
 }
@@ -158,13 +158,13 @@ void rank6()
     //Save save;
     int puntaje;
 
-    rank6.setNombre("Juan Perez");
+    rank6.setNombre("Elizabeth Bathory");
     rank6.setSaltosHechos(2);
     rank6.setSecuacesDerrotados(5);
 
     puntaje = rank6.getSecuacesDerrotados() + 100 - rank6.getSaltosHechos();
 
-    rank6.setPuntos(puntaje);
+    rank6.setPuntos(7);
 
     rank6.grabar();
 }
@@ -174,13 +174,13 @@ void rank7()
     //Save save;
     int puntaje;
 
-    rank7.setNombre("Batman");
+    rank7.setNombre("Gilgamesh");
     rank7.setSaltosHechos(2);
     rank7.setSecuacesDerrotados(8);
 
     puntaje = rank7.getSecuacesDerrotados() + 100 - rank7.getSaltosHechos();
 
-    rank7.setPuntos(puntaje);
+    rank7.setPuntos(8);
 
     rank7.grabar();
 }
@@ -192,13 +192,13 @@ void rank8()
     //Save save;
     int puntaje;
 
-    rank8.setNombre("Superman");
+    rank8.setNombre("James Moriarty");
     rank8.setSaltosHechos(2);
     rank8.setSecuacesDerrotados(31);
 
     puntaje = rank8.getSecuacesDerrotados() + 100 - rank8.getSaltosHechos();
 
-    rank8.setPuntos(puntaje);
+    rank8.setPuntos(9);
 
     rank8.grabar();
 }

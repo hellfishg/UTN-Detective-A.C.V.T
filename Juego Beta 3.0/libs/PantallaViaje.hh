@@ -54,18 +54,36 @@ void PantallaViaje::dibujar(DatosMouse * dm){
       strcmp(save.getLocActual(), save.getViajesLoc(1))!=0 &&
       strcmp(save.getLocActual(), save.getViajesLoc(2))!=0){
 
-      this->cortarString("<----- ", save.getViajesLoc(0),37,417,120,20,235,22,22);
+      char viaje1[50];
+      strcpy(viaje1,save.getViajesLoc(0));
+      strcat(viaje1," ");
+      strcat(viaje1,buscarFechaLoc(save.getViajesLoc(0)));
+      this->cortarString("<---- ",viaje1,37,417,120,20,78, 200, 3);
 
-      this->cortarString("<----- ", save.getViajesLoc(1),37,417,160,20,235,22,22);
+      char viaje2[50];
+      strcpy(viaje2,save.getViajesLoc(1));
+      strcat(viaje2," ");
+      strcat(viaje2,buscarFechaLoc(save.getViajesLoc(1)));
+      this->cortarString("<---- ",viaje2,37,417,160,20,78, 200, 3);
 
-      this->cortarString("<----- ", save.getViajesLoc(2),37,417,200,20,235,22,22);
+      char viaje3[50];
+      strcpy(viaje3,save.getViajesLoc(2));
+      strcat(viaje3," ");
+      strcat(viaje3,buscarFechaLoc(save.getViajesLoc(2)));
+      this->cortarString("<---- ",viaje3,37,417,200,20,78, 200, 3);
+
 
    }else{
 
-      this->cortarString("<----- ", save.getLocHechas(save.getSaltosHechos()),37,417,160,20,235,22,22);
+      char viaje4[50];
+      strcpy(viaje4,save.getLocHechas(save.getSaltosHechos()));
+      strcat(viaje4," ");
+      strcat(viaje4,buscarFechaLoc(save.getLocHechas(save.getSaltosHechos())));
+      this->cortarString("<---- ",viaje4,37,417,160,20,78, 200, 3);
+
    }
 
-   al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"<------VOLVER AL MENU ANTERIOR");
+   al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,376,0,"<------VOLVER AL MENU ANTERIOR");
 ////////////////////////////////////////////////////////
    int selc=comprobarClickBoton(dm);
 

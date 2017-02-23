@@ -60,8 +60,24 @@ void PantallaAccion::dibujar(DatosMouse * dm){
       break;
 
       case 2:
-         this->setIDsalto(112);
-         std::cout << "Buscar" << std::endl;
+      std::cout << "Buscar" << std::endl;
+
+      if(strcmp(save.getLocActual(), save.getViajesLoc(0))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(1))!=0 &&
+         strcmp(save.getLocActual(), save.getViajesLoc(2))!=0){
+
+
+            this->setIDsalto(112);
+
+      }else{
+
+         al_draw_text(this->getFont(),al_map_rgb(235, 22, 22),417,376,0,"NO SE DETECTAN SECUACES AQUI!");
+         al_flip_display();
+         al_rest(1.5);
+
+         this->setIDsalto(0);
+      }
+
       break;
 
       case 3:
@@ -186,12 +202,3 @@ al_draw_text(this->getFont(),al_map_rgb(78, 200, 3),417,376,0,"<---boton 10");
 //this->getBoton(1)->setImagen(al_load_bitmap("btn12_Volver.png"));
 
 ///////////////////////////////////////////////////////////////////////
-
-//Creo un boton transparente para usar de marco.
-//Para decirle el color transparente de una bitmap.
-
-// ALLEGRO_BITMAP *boteee=al_load_bitmap("Test_transparencia.png");
-//
-// al_convert_mask_to_alpha(boteee,al_map_rgb(255,0,255));
-//
-// this->cargarBoton(2,288,300,289,570,botee);

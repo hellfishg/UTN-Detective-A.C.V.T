@@ -35,7 +35,7 @@ void Ranking::grabar(){
 
    FILE *p;
 
-   p=fopen ("./Dat/Ranking2.dat","ab");
+   p=fopen ("./Dat/Rankings.dat","ab");
 
    if(p==NULL){std::cout<<"Error de apertura Ranking.dat!!"<<std::endl;}
 

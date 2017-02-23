@@ -114,13 +114,20 @@ int NuevaPartida::seleccionPJ(int s){
 
          //En archivo:
          font1 = al_load_font("./fonts/orbitron-black.ttf",12,0);
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 437,337, 0, "JHON TITOR: Su nombre real se desconoce.");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,337, 0, "JHON TITOR: Nació en Irlanda del Norte en el año");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,357, 0, "1845 y vivió toda su infancia en un orfanato.");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,377, 0,"Fue reclutado  a la edad de 17 años por el Coronel");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,397, 0,"Smith al notar su potencial.");
 
          //En archivo:
          font1 = al_load_font("./fonts/orbitron-black.ttf",12,0);
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,450, 0, "+Viajero experimentado: Reduce el costo");
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,464, 0, "de cada viaje en -0,5");
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,492, 0, "-Pensador: Empieza con menos vida.");
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,464, 0, "+Viajero experimentado: Reduce el costo");
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,477, 0, "de cada salto temporal");
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,528, 0, "-Pensador: Empieza con menos vida.");
 
 
       break;
@@ -131,12 +138,23 @@ int NuevaPartida::seleccionPJ(int s){
 
          //En archivo:
          font1 = al_load_font("./fonts/orbitron-black.ttf",12,0);
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 437,337, 0, "MARY HALLIGAN: Se la ha visto en numerosas lineas.");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,337, 0, "MARY HALLIGAN: Oriunda de Saint Etienne, Era la");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,357, 0, "heredera de una poderosa familia local del siglo");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,377, 0,"XV, pero dejo todo atrás cuando estuvo implicada");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,397, 0,"en un incidente con el bandido Moriarty,");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,417, 0,"ingresando a la ACVT con el fin de perseguirlo");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,437, 0, "y atraparlo.");
 
          //En archivo:
          font1 = al_load_font("./fonts/orbitron-black.ttf",12,0);
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,450, 0, "+Experta tiradora: Daño doble.");
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,492, 0, "-Licencia vencida: -2 saltos temporales");
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,464, 0, "+Experta tiradora: Daño doble.");
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,528, 0, "-Licencia vencida: -2 saltos temporales");
       break;
 
       case 3:
@@ -145,12 +163,19 @@ int NuevaPartida::seleccionPJ(int s){
 
          //En archivo:
          font1 = al_load_font("./fonts/orbitron-black.ttf",12,0);
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 437,337, 0, "Guybrush Threppod: Famoso pirata.");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,337, 0, "Guybrush Threppod: Creció en el Bronx, Cometio");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,357, 0, "múltiples delitos hakers en el mundo y fue");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,377, 0,"atrapado. En la cárcel le dieron a elegir,");
+
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 430,397, 0,"o dejar todo atrás o unirse a la ACVT.");
 
          //En archivo:
          font1 = al_load_font("./fonts/orbitron-black.ttf",12,0);
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,450, 0, "+Aguanta la respiracion 10 min bajo el agua");
-         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,492, 0, "-Hermano de lechuck.");
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,464, 0, "+Modificación genética: Aumenta su vida.");
+         al_draw_text(font1, al_map_rgb(78, 200, 3), 68,528, 0, "-Pacifista: Menos daño en el combate.");
       break;
 
 

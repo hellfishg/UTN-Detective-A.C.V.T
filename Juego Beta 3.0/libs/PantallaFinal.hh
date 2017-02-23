@@ -10,6 +10,7 @@ private:
    Locacion loc;
    int finalSelec=0;
    int btnNext=0;
+   int bandera = 0;
 
    void finalAct();
    void guardarVictoria();//guarda en rankigs.dat si el final fue bueno.
@@ -111,6 +112,16 @@ void PantallaFinal::dibujar(DatosMouse * dm){
 
 void  PantallaFinal::guardarVictoria(){
 
+Ranking rank;
+Save save;
+
+rank.setNombre(save.getNombre());
+rank.setPuntos (save.getVida()+ save.getSecuDerrotados() - save.getSaltosRestantes());
+rank.setSaltosRestantes(save.getSaltosRestantes());
+rank.setSecuacesDerrotados(save.getSecuDerrotados());
+
+
+rank.grabar();
 
 }
 
@@ -225,6 +236,9 @@ void PantallaFinal::finalAct(){
 
    if(strcmp(save.getOrdenDeArresto(),save.getVillano())==0 && save.getSaltosHechos() >= save.getPistasCorrectas()){
       //Final victoria:
+
+      if (bandera == 0) {guardarVictoria();
+      bandera = 1;}
 
       char text1[]={"Enhorabuena, has atrapado al villano, ahora será trasladado a los cuarteles de la A.C.V.T, donde será interrogado, y luego encerrado en un tubo criogénico por el resto de sus días, ya que si escapara podría provocar más cambios en la historia. En cuanto a ti, puedes tomarte un merecido descanso, al menos por ahora..."};
 

@@ -25,18 +25,26 @@ MenuPrincipal::MenuPrincipal(){
 
    this->setID(1);//Colocar la ID de la ventana.
 
-   this->cargarDatosVentana(5,al_load_bitmap("./images/1FondoMenu.jpg"));//El primer dato int pide la cantidad de botones totales.
+   this->cargarDatosVentana(4,al_load_bitmap("./images/1FondoMenu.jpg"));//El primer dato int pide la cantidad de botones totales.
 
    //Cargar botones uno a uno:
    this->cargarBoton(1,570,247,800,280,al_load_bitmap("./images/btn1_NuevaPartida.jpg"));
 
    this->cargarBoton(2,570,282,800,315,al_load_bitmap("./images/btn1_CargarPartida.jpg"));
 
-   this->cargarBoton(3,570,317,800,350,al_load_bitmap("./images/btn1_Opciones.jpg"));
+   this->cargarBoton(3,570,317,800,350,al_load_bitmap("./images/btn1_Ranking.jpg"));
+
+   this->cargarBoton(4,570,352,800,383,al_load_bitmap("./images/btn1_SalirDelJuego.jpg"));
+
+
+/*  this->cargarBoton(3,570,317,800,350,al_load_bitmap("./images/btn1_Opciones.jpg"));
 
    this->cargarBoton(4,570,352,800,383,al_load_bitmap("./images/btn1_Ranking.jpg"));
 
-   this->cargarBoton(5,570,389,800,419,al_load_bitmap("./images/btn1_SalirDelJuego.jpg"));
+   this->cargarBoton(5,570,389,800,419,al_load_bitmap("./images/btn1_SalirDelJuego.jpg"));*/
+
+
+
 
 }
 ///////////////////////////////////////////////////////////////////////
@@ -62,19 +70,15 @@ void MenuPrincipal::dibujar(DatosMouse * dm){
       break;
 
       case 3:
-         this->setIDsalto(13);
+         this->setIDsalto(14);
          std::cout << "Opciones" << std::endl;
       break;
 
       case 4:
-         this->setIDsalto(14);
+         this->setIDsalto(-1);
          std::cout << "Ranking" << std::endl;
       break;
 
-      case 5:
-         this->setIDsalto(-1);
-         std::cout << "Salir del Sistema" << std::endl;
-      break;
    }
 
 }
